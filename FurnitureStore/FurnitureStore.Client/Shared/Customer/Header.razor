@@ -1,0 +1,306 @@
+@using FurnitureStore.Client.Services
+@using FurnitureStore.Client.Services.IService
+@inject IBasketService CartService
+@inject CustomAuthenticationStateProvider _authStateProvider
+@inject NavigationManager navManager
+
+<header class="header">
+  <div class="container-nav">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary header__nav">
+      <div class="container-fluid">
+        <div class="grid">
+          <div class=" navbar-collapse wrapper-nav" id="navbarTogglerDemo01">
+            <!-- =====  hamburger navbar -->
+            <nav role="navigation" class="navigation">
+              <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+									
+									<a href="">
+										@if (_authStateProvider.CurrentUser is not null & _authStateProvider.CurrentUser.Id != Guid.Empty)
+										{
+											<div class="header-auth">
+												<div class="header-auth-logined">
+													<div class="nav-link-black nav-link-subLogin">
+														<i class="fa-solid fa-user"></i>
+														Chào Trinh
+													</div>
+													<div class="nav-link-subLogin-user">
+														<div class="header-auth-subLogin">
+															<div class="header-auth-subLogin__list">
+																<div class="header-auth-subLogin-item">
+																	<span class="material-symbols-outlined header-auth-subLogin-icon">
+																		manage_accounts
+																	</span>
+																	<a class="header-auth-subLogin-link" href="" onclick="">Tài khoản của bạn</a>
+																</div>
+																<div class="header-auth-subLogin-item">
+																	<span class="material-symbols-outlined header-auth-subLogin-icon">
+																		list_alt
+																	</span>
+																	<a class="header-auth-subLogin-link" href="/user/history-orders" onclick="">Quản lý đơn hàng</a>
+																</div>
+																<!-- <div class="header-auth-subLogin-item">
+																	<span class="material-symbols-outlined header-auth-subLogin-icon">
+																		favorite
+																	</span>
+																	<a class="header-auth-subLogin-link" href="">Sản phẩm yêu thích</a>
+																</div> -->
+																<div class="header-auth-subLogin-item">
+																	<span class="material-symbols-outlined header-auth-subLogin-icon">
+																		location_on
+																	</span>
+																	<a class="header-auth-subLogin-link" @onclick="@(e => addressManagementClick())" @onclick:preventDefault="preventDefault">Địa chỉ giao hàng</a>
+																</div>
+																<div class="header-auth-subLogin-item">
+																	<span class="material-symbols-outlined header-auth-subLogin-icon">
+																		logout
+																	</span>
+																	<a class="header-auth-subLogin-link" href="">Thoát</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										}
+										else
+										{
+											<div>
+												<a href="">
+										<li>Đăng nhập</li>
+										</a>
+										<a href="">
+										<li>Đăng ký</li>
+										</a>
+								</div>
+										}
+							</a>
+
+
+
+                  <a href="/user/wishlist">
+                    <li>Wishlist</li>
+                  </a>
+							<a href="/about-us">
+                    <li>Về chúng tôi</li>
+                  </a>
+                  <a href="">
+                 @*    @foreach($topCategories as $category) *@
+                    <li class="body-assort-item body-assort-item1">
+                      <a href="{{ route('get.products.by.category',[$category->id]) }}" class="body-assort-link">Nước tẩy trang
+                      </a>
+                      <ul class="body-subAssort">
+
+                      @*   @foreach($category->children as $item) *@
+
+                        <li class="body-subAssort-item">
+                          <a href="{{ route('get.products.by.category',[$item->id]) }}" class="body-subAssort-link">Nước tẩy trang cho da dầu</a>
+                        </li>
+                       @*  @endforeach *@
+                      </ul>
+                    </li>
+
+									<li class="body-assort-item body-assort-item1">
+										<a href="{{ route('get.products.by.category',[$category->id]) }}" class="body-assort-link">
+											Nước tẩy trang
+										</a>
+										<ul class="body-subAssort">
+
+												@*   @foreach($category->children as $item) *@
+
+											<li class="body-subAssort-item">
+												<a href="{{ route('get.products.by.category',[$item->id]) }}" class="body-subAssort-link">Nước tẩy trang cho da dầu</a>
+											</li>
+												@*  @endforeach *@
+										</ul>
+									</li>
+
+									<li class="body-assort-item body-assort-item1">
+										<a href="{{ route('get.products.by.category',[$category->id]) }}" class="body-assort-link">
+											Nước tẩy trang
+										</a>
+										<ul class="body-subAssort">
+
+												@*   @foreach($category->children as $item) *@
+
+											<li class="body-subAssort-item">
+												<a href="{{ route('get.products.by.category',[$item->id]) }}" class="body-subAssort-link">Nước tẩy trang cho da dầu</a>
+											</li>
+												@*  @endforeach *@
+										</ul>
+									</li>
+									<li class="body-assort-item body-assort-item1">
+										<a href="{{ route('get.products.by.category',[$category->id]) }}" class="body-assort-link">
+											Nước tẩy trang
+										</a>
+										<ul class="body-subAssort">
+
+												@*   @foreach($category->children as $item) *@
+
+											<li class="body-subAssort-item">
+												<a href="{{ route('get.products.by.category',[$item->id]) }}" class="body-subAssort-link">Nước tẩy trang cho da dầu</a>
+											</li>
+												@*  @endforeach *@
+										</ul>
+									</li>
+                   @*  @endforeach *@
+                  </a>
+                </ul>
+              </div>
+            </nav>
+            <!-- =====  end hamburger navbar -->
+
+		<a class="navbar-brand logo-header" href="/">
+			<img  class="header-logo" src="https://hasaki.vn/v3/images/graphics/logo_site.svg" alt="Logo cửa hàng">
+            </a>
+
+            <div class="container-search">
+              <div class="search-header">
+				<input @bind="keyWord" @bind:event="oninput" @onkeypress="HandleKeyPress" class="container-search-text" placeholder="Tìm kiếm sản phẩm">
+              </div>
+			<button @onclick="searchProductClick" class="search-button">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+            <ul class="navbar-list">
+              <li class="nav-item-align">
+                <img src="https://hasaki.vn/images/graphics/icon_header_2.svg" alt class="loading" data-was-processed="true">
+				<div class="header-auth-login">
+									@if (_authStateProvider.CurrentUser is not null && _authStateProvider.CurrentUser.Id != Guid.Empty)
+									{
+						<div class="header-auth">
+							<div class="header-auth-logined">
+								<div class="nav-link-black nav-link-subLogin">Chào @_authStateProvider.CurrentUser.Name,</div>
+								<div class="nav-link-subLogin-user">
+									<div class="nav-link-black nav-link-subLogin">
+										Tài khoản
+										<i class="fa-solid fa-caret-down"></i>
+									</div>
+									<div class="header-auth-subLogin">
+										<div class="header-auth-subLogin__list">
+											<div class="header-auth-subLogin-item">
+												<span class="material-symbols-outlined header-auth-subLogin-icon">
+													manage_accounts
+												</span>
+												<a class="header-auth-subLogin-link" href="{{route('front.account')}}" onclick="">Tài khoản của bạn</a>
+											</div>
+											<div class="header-auth-subLogin-item">
+												<span class="material-symbols-outlined header-auth-subLogin-icon">
+													list_alt
+												</span>
+												<a class="header-auth-subLogin-link" href="/user/history-orders" onclick="">Quản lý đơn hàng</a>
+											</div>
+											<!-- <div class="header-auth-subLogin-item">
+												<span class="material-symbols-outlined header-auth-subLogin-icon">
+													favorite
+												</span>
+												<a class="header-auth-subLogin-link" href="">Sản phẩm yêu thích</a>
+											</div> -->
+											<div class="header-auth-subLogin-item">
+												<span class="material-symbols-outlined header-auth-subLogin-icon">
+													location_on
+												</span>
+												<a class="header-auth-subLogin-link" @onclick="@(e => addressManagementClick())" @onclick:preventDefault="preventDefault">Địa chỉ giao hàng</a>
+											</div>
+											<div class="header-auth-subLogin-item">
+												<span class="material-symbols-outlined header-auth-subLogin-icon">
+													logout
+												</span>
+												<a class="header-auth-subLogin-link" href="{{route('logout')}}">Thoát</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+									}
+									else
+									{
+						<div class="header-auth-notlogin">
+							<a class="nav-link-black" href="/register" target="_blank">Đăng ký</a>
+							<div class="nav-link-line"></div>
+							<a class="nav-link-black" @onclick="@(e => loginClick())" @onclick:preventDefault="preventDefault" target="_blank">Đăng nhập</a>
+						</div>
+									}
+				</div>
+
+              </li>
+              <li class="nav-item-align">
+                <img src="https://hasaki.vn/images/graphics/icon_header_store.svg" alt class="loading" data-was-processed="true">
+				<a class="nav-link active nav-link-white" href="/about-us">Về Chúng Tôi</a>
+              </li>
+              <li>
+                <div class="nav-item-frame nav-item-pointer">
+                  <a href="{{route('wishlist')}}">
+                    <i class="fa-solid fa-heart nav-item__icon"></i>
+                  </a>
+                </div>
+              </li>
+              <li>
+								<a href="#" class="cart-click" @onclick="@(e => cartOnClick())" @onclick:preventDefault="preventDefault">
+                  <img id="button_cart_item" class="nav-item-pointer" src="https://hasaki.vn/images/graphics/icon_header_1.svg" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+  </div>
+    @*     @include('shared.front.assort') *@
+     <!-- show main content here -->
+     <!-- xử lý cart ajax  -->   
+@*      <script>
+      function redirectOnClick(event) {
+        event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+          var view_screen = document.querySelector('.modal-custom-cart');
+           view_screen.style.display = 'block !important';
+            
+      }
+         
+    </script> *@
+
+    
+</header>
+
+@code{
+
+	public bool preventDefault = true;
+	public string keyWord { get; set; }
+	public void cartOnClick()
+	{
+		CartService.ShowCart = true;
+	}
+	public void loginClick()
+	{
+		navManager.NavigateTo("/login");
+
+	}
+	public void addressManagementClick()
+	{
+		navManager.NavigateTo("/user/addresses");
+
+	}
+	public void searchProductClick()
+	{
+	
+		navManager.NavigateTo($"/products/{keyWord}");
+
+	
+
+	}
+	 
+	private void HandleKeyPress(KeyboardEventArgs e)
+	{
+		
+		if (e.Key == "Enter")
+		{
+			searchProductClick();
+		}
+	}
+}

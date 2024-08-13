@@ -1,0 +1,157 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\obj\\Debug\\net8.0\\compressed\\dej6e63ncj.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\admin-images\\addnew.png",
+      "PackagePath": "staticwebassets\\admin-images\\addnew.png"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\admin-images\\admin_icon.png",
+      "PackagePath": "staticwebassets\\admin-images\\admin_icon.png"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\admin-images\\logo-mini.svg",
+      "PackagePath": "staticwebassets\\admin-images\\logo-mini.svg"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\bootstrap-datepicker\\bootstrap-datepicker.min.css",
+      "PackagePath": "staticwebassets\\bootstrap-datepicker\\bootstrap-datepicker.min.css"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\bootstrap-datepicker\\bootstrap-datepicker.min.js",
+      "PackagePath": "staticwebassets\\bootstrap-datepicker\\bootstrap-datepicker.min.js"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\css\\addupdate.css",
+      "PackagePath": "staticwebassets\\css\\addupdate.css"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\css\\adminheader.css",
+      "PackagePath": "staticwebassets\\css\\adminheader.css"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\css\\popup.css",
+      "PackagePath": "staticwebassets\\css\\popup.css"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\css\\style.css.map"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\font-awesome\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\font-awesome\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\font-awesome\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\font-awesome\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\font-awesome\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\font-awesome\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\font-awesome\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\font-awesome\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\mdi\\css\\materialdesignicons.min.css",
+      "PackagePath": "staticwebassets\\mdi\\css\\materialdesignicons.min.css"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\mdi\\css\\materialdesignicons.min.css.map",
+      "PackagePath": "staticwebassets\\mdi\\css\\materialdesignicons.min.css.map"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\mdi\\fonts\\materialdesignicons-webfont.eot",
+      "PackagePath": "staticwebassets\\mdi\\fonts\\materialdesignicons-webfont.eot"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\mdi\\fonts\\materialdesignicons-webfont.ttf",
+      "PackagePath": "staticwebassets\\mdi\\fonts\\materialdesignicons-webfont.ttf"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\mdi\\fonts\\materialdesignicons-webfont.woff",
+      "PackagePath": "staticwebassets\\mdi\\fonts\\materialdesignicons-webfont.woff"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\mdi\\fonts\\materialdesignicons-webfont.woff2",
+      "PackagePath": "staticwebassets\\mdi\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\misc.js",
+      "PackagePath": "staticwebassets\\misc.js"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client.Admin\\wwwroot\\vendor.bundle.base.js",
+      "PackagePath": "staticwebassets\\vendor.bundle.base.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FurnitureStore.Client.Admin.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FurnitureStore.Client.Admin.props",
+      "PackagePath": "build\\FurnitureStore.Client.Admin.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FurnitureStore.Client.Admin.props",
+      "PackagePath": "buildMultiTargeting\\FurnitureStore.Client.Admin.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FurnitureStore.Client.Admin.props",
+      "PackagePath": "buildTransitive\\FurnitureStore.Client.Admin.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

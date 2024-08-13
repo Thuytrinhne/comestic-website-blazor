@@ -1,0 +1,109 @@
+@* @page "/search/{keyword}"
+@using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Client.Services.IService
+@using FurnitureStore.Shared.DTOs
+@inject IProductService ProductServiceDI
+@layout MainLayout
+
+
+<div class="body-contain">
+	<div class="path grid">
+		<a href="">Home</a>
+		<span>|</span>
+		<a href="">Lighting</a>
+		<span>|</span>
+		<a class="path__current" href="">Floor Lamps</a>
+	</div>
+	<!-- Search result  -->
+	<div class="latest-products grid">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-heading">
+						<h2 class="related-list-titile">
+							<span class="material-symbols-outlined">
+								lightbulb
+							</span>
+							Search results for keyword <span>@keyword</span>
+						</h2>
+					</div>
+				</div>
+				<section>
+					<div class="text-center">
+
+						<!-- Product -->
+						@if (listProducts != null)
+						{
+							@foreach (var item in listProducts)
+							{
+								<div class="col-lg-3 col-md-6 mb-4">
+									<div class="card">
+										<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+										data-mdb-ripple-color="light">
+											<img src="@item.FeaturedImage"
+											class="w-100" />
+											<a href="#!">
+												<div class="mask">
+													<div class="d-flex justify-content-start align-items-end h-100">
+														<h5><span class="badge bg-dark ms-2">NEW</span></h5>
+													</div>
+												</div>
+												<div class="hover-overlay">
+													<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+												</div>
+											</a>
+										</div>
+										<div class="card-body">
+											<a href="" class="text-reset">
+												<h5 class="card-title mb-2">@item.Name</h5>
+											</a>
+											@if (item.VariationDetail.Id != null)
+											{
+												<h6 class="mb-3 price">from @(item.RegularPrice.ToString("C"))</h6>
+											}
+											else
+											{
+												@if (item.RegularPrice > item.SalePrice)
+												{
+													<h6 class="mb-3 price"> @(item.RegularPrice.ToString("C"))<span class="salesprice">@(item.SalePrice.ToString("C"))</span></h6>
+												}
+												else
+												{
+													<h6 class="mb-3 price"> @(item.RegularPrice.ToString("C"))</h6>
+												}
+
+
+											}
+										</div>
+									</div>
+								</div>
+							}
+
+						
+						}
+						else
+						{
+						<h2>No result</h2>
+						}
+
+					</div>
+				</section>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+@code {
+	[Parameter]
+	public string? keyword { get; set; }
+	private IEnumerable<ProductDTO>? listProducts;
+
+	protected override async Task OnInitializedAsync()
+	{
+		listProducts = await  ProductServiceDI.SearchProductByKeyword(keyword);
+	}
+	
+}
+ *@

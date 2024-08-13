@@ -1,0 +1,364 @@
+.selection:not(.selection_list) {
+    display: none;
+}
+
+
+
+.product_header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+}
+
+.header_title {
+    align-items: center;
+    text-align: center;
+    color: #e05994;
+    margin: 0 0 0 20px;
+    font-weight: bold;
+}
+
+.header_infor {
+    display: flex;
+    align-items: center;
+}
+
+.product_selection {
+    display: grid;
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    width: 50%;
+    text-align: center;
+}
+
+    .product_selection button {
+        text-decoration: none;
+        font-weight: bold;
+        color: #e05994;
+        background: #ffffff;
+        border: transparent;
+    }
+
+        .product_selection button:hover {
+            color: #183a5c;
+            background-color: transparent;
+            transform: scale(1.2);
+        }
+
+.selection_list {
+    display: grid;
+    width: 107%;
+    height: auto;
+    background: #ffffff;
+    margin: 10px 60px 0px 20px;
+    padding: 1rem;
+    border-radius: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+    .selection_list img {
+        width: 200px;
+    }
+
+    .selection_list > nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+        border: 3px solid #f1f1f1;
+        margin: 5px;
+        border-radius: 10px;
+    }
+
+.product_paginate {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(50%,50%);
+}
+
+.selection_list > nav p {
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+}
+
+#old_price {
+    text-decoration: line-through;
+    font-size: 16px;
+    color: #bebebe;
+}
+
+#discount_price {
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+}
+
+.sku_code span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.selection_list > nav button {
+    font-size: 14px;
+    width: 70px;
+    white-space: nowrap;
+    border-radius: 10px;
+    margin: 0px 10px 0px 10px;
+    border: 1px solid #cccccc;
+}
+
+.Edit:hover {
+    background: #e05994;
+    transform: scale(1.2);
+}
+
+.Delete {
+    color: red
+}
+
+    .Delete:hover {
+        background: red;
+        transform: scale(1.2);
+        color: white;
+    }
+.product_1 {
+    width: 95%;
+}
+
+
+
+/* Add */
+
+.selection_add {
+    display: grid;
+    width: auto;
+    height: auto;
+    background: #ffffff;
+    margin: 10px 60px 0px 20px;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: start;
+    font-size: 1.5em;
+    justify-content: center;
+}
+
+.imageAdd img {
+    width: 100px;
+}
+
+.addCard {
+    border: 3px solid #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nameAdd {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+
+    .nameAdd input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        margin-left: 15px;
+    }
+
+        .nameAdd input:hover {
+            transform: scale(1.1);
+        }
+
+.imageAdd {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+    .imageAdd img {
+        width: 50px;
+        margin-left: 16px;
+    }
+
+.priceAdd {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+
+
+    .priceAdd input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        margin-left: 15px;
+    }
+
+        .priceAdd input:hover {
+            transform: scale(1.1);
+        }
+
+.amountAdd {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+    .amountAdd input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        margin-left: 15px;
+    }
+
+        .amountAdd input:hover {
+            transform: scale(1.1);
+        }
+
+.tag {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+    .tag select {
+        background: transparent;
+        border: none;
+        outline: none;
+        margin-left: 15px;
+    }
+
+
+.confirmAdd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .confirmAdd button {
+        margin: 30px;
+        font-weight: bold;
+        background: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+        .confirmAdd button:hover {
+            background-color: #39f205;
+            transform: scale(1.2);
+            color: #ffffff;
+        }
+
+.rangeCost {
+    display: flex;
+    padding: 0 65px 0 45px;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.sliderValue {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+    .sliderValue span {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px;
+    }
+
+#span_sliderValue {
+    font-size: 18px;
+    color: #f78da7;
+}
+
+
+
+.rangeCost .field {
+    display: flex;
+    background-color: #f78da7;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+    .rangeCost .field .value {
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .rangeCost .field input {
+        height: 3px;
+        width: 100%;
+        background: #ddd;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+    }
+
+        .rangeCost .field input:hover {
+            transform: none;
+        }
+
+.tag button {
+    font-size: 25px;
+    border: none;
+    font-weight: 700;
+    color: #e05994;
+}
+
+    .tag button:hover {
+        transform: scale(1.1);
+        color: rgb(31, 241, 31);
+    }
+
+.Add {
+    text-decoration: none;
+    font-size: 13px;
+    color: black;
+    background-color: #ddd;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.table_img-wrapper {
+    padding: 5px;
+}
+
+.table_img {
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+}
+    .Edit-Delete
+
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

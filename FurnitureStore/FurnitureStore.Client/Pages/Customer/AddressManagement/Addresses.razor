@@ -1,0 +1,145 @@
+@page "/user/addresses"
+@using FurnitureStore.Client.Helpers
+@using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Client.Services
+@using FurnitureStore.Client.Services.IService
+@using FurnitureStore.Shared.DTOs
+@layout ManagementLayout
+@inject IUserService _userService
+@inject CustomAuthenticationStateProvider _authStateProvider
+@inject NavigationManager navManager
+@inject NotificationService _notificationService
+
+
+@* @if (session ('addAddressSuccess'))
+            
+                <script>
+                     Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: '{{session('addAddressSuccess')}}',
+                showConfirmButton: false,
+                timer: 2000
+                })
+                </script>
+            
+@endif
+@if (session ('deleteAddressSuccess'))
+            
+                <script>
+                     Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: '{{session('deleteAddressSuccess')}}',
+                showConfirmButton: false,
+                timer: 2000
+                })
+                </script>
+            
+@endif
+ *@
+
+<div class="body-user-display-addressUser">
+                <div class="body-user-display-header-address">
+                  <div class="body-user-display-title1 body-user-display-title3">Sổ địa chỉ</div>
+		@if (UserAddresses is not null && UserAddresses.Count() > 0)
+		{
+			bool skipFirst = true;
+			<div class="body-user-display-listAddress">
+				<!-- address default  -->
+                    <div class="body-user-display-listAddress-border">
+                   
+                      <div class="body-user-display-listItem body-user-display-listItem-main">
+                        <div class="body-user-display-address-infor" value="{{$addressDefault->id}}">
+							<strong>@UserAddresses[0].Name</strong>- @UserAddresses[0].Phone
+                        </div>
+                      
+                        <div class="body-user-display-address-detail">
+							@(UserAddresses[0].Province + ", " + UserAddresses[0].District + ", " + UserAddresses[0].Ward + ", " + UserAddresses[0].DetailAddress)
+						</div>
+                        <span class="body-user-display-address-edit">
+                          <a class="body-user-display-address-link" href="{{route('front.edit-address', ['id' => $addressDefault->id])}}">Chỉnh sửa
+                          </a>
+                        </span>
+                      </div>
+                    </div> 
+                    <!-- address not default -->
+				
+				@foreach (var address in UserAddresses)
+				{
+					if (skipFirst)
+					{
+						skipFirst = false;
+						continue; // Skip the first item
+					}
+                    <div class="body-user-display-listAddress-border">
+                      <div class="body-user-display-listItem">
+                        <div class="body-user-display-address-infor" value= "{{$item->id}}">
+								<strong>@address.Name</strong>- @address.Phone
+                        </div>
+                        
+                        <div class="body-user-display-address-detail">
+								@(address.Province + ", " + address.District + ", " + address.Ward + ", " + address.DetailAddress)
+
+                        </div>
+                        <span class="body-user-display-address-edit">
+                          <a class="body-user-display-address-link" href="{{route('front.edit-address', ['id' => $item->id])}}">Chỉnh sửa
+                            
+                          </a>
+
+								<a href="#"
+								   @onclick="@(e => deleteAddress(address.Id))"
+								   @onclick:preventDefault="preventDefault">
+									Xóa
+									<img src="https://hasaki.vn/images/graphics/icon_delete.gif">
+							</a>
+                        </span>
+                      </div>
+                    </div>
+                    
+					}
+                    </div>
+
+		}
+
+                  </div>
+                </div>
+                <div class="body-user-display-footer">
+                  <div>Bạn muốn giao hàng đến địa chỉ khác?</div>
+
+					<button class="body-footer-seemore btn-red" @onclick="addAddressClick">Thêm địa chỉ mới</button>
+				
+                </div>
+              
+            
+@code{
+	bool preventDefault = true;
+
+	public List<UserAddressDTO> UserAddresses  { get; set; }
+
+	protected override async Task OnInitializedAsync()
+	{
+		var addresses = await _userService.GetAllUserAddress(_authStateProvider.CurrentUser.Id);
+		UserAddresses = addresses.OrderByDescending(x => x.Default).ToList();
+	}
+	void addAddressClick ()
+	{
+		navManager.NavigateTo("/user/addresses/add");
+	}
+	private async Task  deleteAddress(Guid UserAddressId)
+	{
+		var identified = await _notificationService.DisplayAreUSureMesssage("Bạn có chắc sẽ xóa địa chỉ này không ?");
+		if (identified)
+		{
+			var result = await _userService.DeleteUserAddress(UserAddressId, _authStateProvider.CurrentUser.Id);
+			if (result)
+			{
+				await _notificationService.DisplaySuccessMessage("Xóa địa chỉ thành công !");
+			}
+			else
+			{
+				await _notificationService.DisplayErrorMessage("Đã có lỗi xảy ra, bạn vui lòng thử lại nhé ! ");
+			}
+		}
+	}
+}

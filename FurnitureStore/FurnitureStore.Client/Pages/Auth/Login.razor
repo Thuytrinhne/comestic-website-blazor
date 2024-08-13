@@ -1,0 +1,69 @@
+@page "/login"
+@using FurnitureStore.Client.Layout.Auth
+@using FurnitureStore.Client.Services
+@using FurnitureStore.Client.Services.IService
+@inject NavigationManager navManager
+@layout AuthLayout
+@inject IAuthService authService
+@inject CustomAuthenticationStateProvider _authStateProvider
+ 
+
+
+   <div class="signin">
+        <!-- ================ signin header ================ -->
+        <div class="signin-header-container">
+            <div class="signin_header">
+                <div class="signin_logocontainer" >
+                    <a href="" ><img src="./Assets/Images/hippo-logo.png" alt="" ></a>       
+                </div>
+                <a href="" >Bạn cần giúp đỡ?</a>
+            </div>
+        </div>
+        <!-- ================ signin body ================ -->
+        <div class="signin_body">
+		<img src="https://raw.githubusercontent.com/Thuytrinhne/Sell-Accessories-E-commerce-Website/main/z5609325599402_9366fd626dc74960430ac0525fcffa03.jpg" alt="">
+
+            <div class="signin_body-form" >
+                <div class="sign_body-form-container">
+                    <h1 >Đăng nhập</h1>
+                   
+                    <div class="signin_body-input">
+                        <label for="">Tên tài khoản hoặc địa chỉ email</label>  <br>
+                        <input @bind="Email" name="email" type="text" placeholder="Số diện thoại hoặc email"><br>
+                        <label for="">Mật khẩu</label><br>
+						<input @bind="Password" name="password" type="password" placeholder="Mật khẩu">
+                    </div>
+
+                    <input type="checkbox" name="remember_password" id="">
+                    Ghi nhớ mật khẩu<br>
+                
+
+                    <div class="loginandremember">
+                        <button type="submit" class="signin_btn" @onclick="sigInOnclick">Đăng nhập</button><br>
+                        <a class="forgot-pass" href="{{route('forgot-pass')}}">Quên mật khẩu?</a><br>
+                    </div>
+                    
+                    <div class="signin-newbie">
+                        <p>Bạn mới biết đến T&P? <a href="{{route('signup')}}">Đăng ký</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	@code
+{
+	private string Email { get; set; }
+	private string Password { get; set; }
+
+	async Task   sigInOnclick()
+	{
+		Console.WriteLine(Email, Password);
+		if (await _authStateProvider.LoginAsync(Email, Password))
+		{
+			navManager.NavigateTo("/");
+		}
+
+	}
+
+
+	}

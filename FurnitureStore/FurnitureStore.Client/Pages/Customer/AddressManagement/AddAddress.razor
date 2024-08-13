@@ -1,0 +1,175 @@
+@page "/user/addresses/add"
+@using FurnitureStore.Client.Helpers
+@using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Client.Services
+@using FurnitureStore.Client.Services.IService
+@using FurnitureStore.Shared.DTOs
+@inject LocationService LocationService
+@inject IUserService _userService
+@inject CustomAuthenticationStateProvider _authStateProvider
+@inject NotificationService _notificationService
+
+
+@layout ManagementLayout
+
+<div class="body-user-display-myaccount">
+    <div class="body-user-display-header1">
+        <div class="body-user-display-title1">Thêm Địa Chỉ Mới</div>
+    </div>
+    <hr class="body-user-display-line">
+    <div class="body-user-display-container1 body-user-display-container2">
+        <EditForm Model="@addressModel" OnValidSubmit="HandleValidSubmit">
+            <div class="add-address-container">
+                <div class="add-address-section1">
+                    <table class="body-user-display-tbl">
+                        <tr class="body-user-display-tr">
+                            <td class="body-user-display-td-label">
+                                <label for="text">Tên</label>
+                            </td>
+                            <td class="body-user-display-td-input">
+                                <InputText @bind-Value="addressModel.Name" class="body-user-display-input" />
+                            </td>
+                        </tr>
+                        <tr class="body-user-display-tr">
+                            <td class="body-user-display-td-label">
+                                <label for="text">Số điện thoại</label>
+                            </td>
+                            <td class="body-user-display-td-input">
+                                <InputText @bind-Value="addressModel.Phone" class="body-user-display-input" />
+                            </td>
+                        </tr>
+                    </table>
+                    <p>Hasaki sẽ liên hệ số điện thoại này để giao hàng đến bạn và kiểm tra tình trạng đơn hàng, đổi trả hàng khi cần.</p>
+                </div>
+                <div>
+                    <table class="body-user-display-tbl">
+                        <tr class="body-user-display-tr">
+                            <td class="body-user-display-td-label">
+                                <label for="text">Tỉnh/ Thành phố</label>
+                            </td>
+                            <td class="body-user-display-td-input">
+                                <select id="city-select" class="body-user-display-input"  @onchange="OnProvinceChange" >
+                                    <option value="">Chọn khu vực</option>
+                                    @foreach (var province in Provinces)
+                                    {
+                                        <option value="@province.ProvinceID">@province.ProvinceName</option>
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="body-user-display-tr">
+                            <td class="body-user-display-td-label">
+                                <label for="text">Quận/ Huyện</label>
+                            </td>
+                            <td class="body-user-display-td-input">
+                                <select id="district-select" class="body-user-display-input" @onchange="OnDistrictChange">
+                                    <option value="">Chọn khu vực</option>
+                                    @foreach (var district in Districts)
+                                    {
+                                        <option value="@district.DistrictID">@district.DistrictName</option>
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="body-user-display-tr">
+                            <td class="body-user-display-td-label">
+                                <label for="text">Phường/ Xã</label>
+                            </td>
+                            <td class="body-user-display-td-input">
+								<select id="ward-select" class="body-user-display-input" @onchange="OnWardChange">
+                                    <option value="">Chọn khu vực</option>
+                                    @foreach (var ward in Wards)
+                                    {
+										<option value="@ward.WardID">@ward.WardName</option>
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="body-user-display-tr">
+                            <td class="body-user-display-td-label">
+                                <label for="text">Địa chỉ nhận hàng</label>
+                            </td>
+                            <td class="body-user-display-td-input">
+                                <InputText @bind-Value="addressModel.DetailAddress" class="body-user-display-input" />
+                            </td>
+                        </tr>
+                    </table>
+					<input class="checkbox-defaultAddress" type="checkbox" @onchange="UpdateDefaultAddress" checked="@addressModel.Default == 1" />
+					<span class="checkbox-defaultAddress">Đặt làm địa chỉ mặc định</span>
+                </div>
+            </div>
+            <div class="btnChangeContainer">
+                <button type="submit" class="body-footer-seemore btn-red btn-bottom">LƯU THAY ĐỔI</button>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+	private UserAddressDTO addressModel = new UserAddressDTO();
+	private List<Province> Provinces = new List<Province>();
+	private List<District> Districts = new List<District>();
+	private List<Ward> Wards = new List<Ward>();
+
+	protected override async Task OnInitializedAsync()
+	{
+		await LoadProvinces();
+	}
+
+	private async Task LoadProvinces()
+	{
+		Provinces = await LocationService.GetProvinces();
+	}
+
+	private async Task OnProvinceChange(ChangeEventArgs e)
+	{
+		var selectedValue = e.Value?.ToString();
+		if (!string.IsNullOrEmpty(selectedValue))
+		{
+
+			Districts = await LocationService.GetDistricts(selectedValue);
+			Wards.Clear();  // Clear wards when a new province is selected
+
+			addressModel.Province = Provinces.FirstOrDefault(p => p.ProvinceID == selectedValue).ProvinceName;
+			addressModel.District = string.Empty;
+			addressModel.Ward = string.Empty;
+		}
+	}
+
+	private async Task OnDistrictChange(ChangeEventArgs e)
+	{
+		var selectedValue = e.Value?.ToString();
+		if (!string.IsNullOrEmpty(selectedValue))
+		{
+			Wards = await LocationService.GetWards(selectedValue);
+			addressModel.District = Districts.FirstOrDefault(p => p.DistrictID == selectedValue).DistrictName;
+			addressModel.Ward = string.Empty;
+		}
+	}
+
+	private void OnWardChange(ChangeEventArgs e)
+	{
+		var selectedValue = e.Value?.ToString();
+		if (!string.IsNullOrEmpty(selectedValue))
+		{
+			addressModel.Ward = Wards.FirstOrDefault(p => p.WardID == selectedValue).WardName;
+		}
+	}
+	private void UpdateDefaultAddress(ChangeEventArgs e)
+	{
+		addressModel.Default = ((bool)e.Value) ? 1 : 0;
+	}
+	private async void HandleValidSubmit()
+	{
+		// Handle form submission here
+		var result = await _userService.AddUserAddress(addressModel, _authStateProvider.CurrentUser.Id);
+		if (result)
+		{
+			await _notificationService.DisplaySuccessMessage("Thêm địa chỉ thành công !");
+		}
+		else
+		{
+			await _notificationService.DisplayErrorMessage("Đã có lỗi xảy ra, bạn vui lòng thử lại nhé ! ");
+		}
+	}
+}

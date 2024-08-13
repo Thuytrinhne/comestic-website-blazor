@@ -1,0 +1,195 @@
+@page "/checkout"
+@using FurnitureStore.Client.Helpers
+@using FurnitureStore.Client.IServices
+@using FurnitureStore.Client.Services
+@using FurnitureStore.Client.Services.IService
+@using FurnitureStore.Client.Shared.Customer
+@using FurnitureStore.Shared.Additional
+@using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Shared.DTOs
+@using Microsoft.JSInterop
+@inject HttpClient Http
+@inject IJSRuntime JavaScript
+@inject IProductService ProductServiceDI
+@inject IOrderService OrderService
+@inject IBasketService BasketServiceDI
+@inject IUserService UserService 
+@inject CustomAuthenticationStateProvider _authStateProvider
+@inject NotificationService NotificationService
+@inject NavigationManager navManager
+
+
+@layout MainLayout
+
+<PageTitle>Home</PageTitle>
+
+
+<div class="checkout-main">
+    <div class="checkout">
+        <div class="checkout_container">
+            <div class="backhome" style="font-size: 12px;">
+                <a href="">HOME</a>
+                /
+                <a href="">CHECKOUT</a>
+            </div>
+            <h1>CHECKOUT</h1>
+        </div>
+    </div>
+
+    <div class="checkout_detail">
+        <div class="payment_info">
+            <div class="location-list_containerPlus">
+                <div class="location-list_container">
+                    <div class="order-info">
+                        <h1>Thông tin nhận hàng</h1>
+                    </div>
+                    <!-- =============  location list  ============ -->
+                    <div class="location-list">
+                        <div class="location-info">
+                            <div class="location-tick">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="location-detailPlus">
+                                <div class="location-detail">
+									<strong>@DefaultAddress.Name </strong>
+									- @DefaultAddress.Phone
+                                </div>
+                                <div class="area">
+									@DefaultAddress.Province, @DefaultAddress.District, @DefaultAddress.Ward, @DefaultAddress.DetailAddress 
+                                </div>
+                            </div>
+                            <a href="{{ route('choose-location-checkout', ['id' => $defaultAddress->id]) }}">Thay đổi</a>
+                        </div>
+                         
+                            <input style="display: none" name="idUserAddress" value="{{ $defaultAddress->id }}">
+                            <div class="info_input">
+                                <label for="">GHI CHÚ ĐƠN HÀNG</label><br>
+							<textarea name="order_note" id="" cols="30" rows="10" placeholder="Ghi chú vào đây..." @bind=BasketCheckoutDTO.Note></textarea>
+                            </div>
+                        
+                    </div>
+                    <!-- =============  end list  ============ -->
+                </div>
+            </div>
+
+            <div class="payment_total">
+                <div class="payment_total_container">
+                    <div class="payment_preview">
+                        <h3>Sản phẩm</h3>
+                        <h3>Tạm tính</h3>
+                        <!-- =================  product list  =================== -->
+                       @if (@Cart is not null)
+						{
+							@foreach (var item in @Cart.Items)
+							{
+							<input style="display: none" name="idCart" value="{{ $item->cart_id }}">
+						
+								<div class="product_list">
+									<div class="product_name_container">
+										<label class="product_name">
+											<input type="text" name="name_product" value="@item.ProductName" disabled>
+											<span>x</span>
+											<input type="number" name="quantity" value="@item.Quantity" disabled>
+										</label>
+										<label class="variation">
+											<span>/ @item.Price</span>
+											<input type="text" name="variation_value" value=" " disabled>
+										</label>
+									</div>
+									<p>
+										@*  @if($item->variation_id == 1)
+                                    {{ $item->name_color }}
+                                @else
+                                    {{ $item->variation_value }}
+                                @endif *@
+									</p>
+								</div>
+							}
+
+						}
+						<!-- =================  product list  =================== -->
+                        <label class="total_cart">
+                            <h3>Tạm tính</h3>
+							<input value="@Cart.TotalPrice" disabled> đ
+                        </label>
+                        <h3>Giao hàng</h3>
+                        <p>ĐỒNG GIÁ: 0 đ</p>
+                        <label for="total_price" style="display: flex">
+                            <h3>Tổng</h3>
+							<input class="total_price" type="text" name="total_price" value="@Cart.TotalPrice" style="background-color: transparent" readonly> đ
+                        </label>
+						<label class="payment_methods">
+							<h2>Phương thức thanh toán</h2>
+							<label class="methods">
+								<label class="pick_methods">
+									<input type="radio" name="method_payment" value="0" @onchange="UpdatePaymentMethod">Thanh toán VNPAY<br>
+								@* 	<p>description</p> *@
+								</label>
+								<label class="pick_methods">
+									<input type="radio" name="method_payment" value="1" @onchange="UpdatePaymentMethod"> Thanh toán tiền mặt
+								@* 	<p>description</p> *@
+								</label>
+							</label>
+						</label>
+                    @*     <p class="privacy">privacy</p> *@
+                        <button  class="order_btn" name="redirect" @onclick="checkoutClick">Đặt hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@code{
+	public ShoppingCart Cart { get; set; }
+	public UserAddressDTO DefaultAddress { get; set; }
+	public BasketCheckoutDTO BasketCheckoutDTO = new();
+	protected override async Task OnInitializedAsync()
+	{
+		checkCloseCart();
+		Cart = await BasketServiceDI.GetCartByUsername(_authStateProvider.CurrentUser.Id);
+		DefaultAddress = await UserService.GetDefaultUserAddress(_authStateProvider.CurrentUser.Id);
+	}
+	private void  checkCloseCart()
+	{
+		if (BasketServiceDI.ShowCart)
+		BasketServiceDI.ShowCart = false;
+	}
+	private async Task checkoutClick()
+	{
+		var idenfified =await NotificationService.DisplayAreUSureMesssage("Bạn đã kiểm tra lại kỹ thông tin chưa ?");
+		if (idenfified)
+		{
+			
+			BasketCheckoutDTO.CustomerId = _authStateProvider.CurrentUser.Id;
+			BasketCheckoutDTO.Phone = DefaultAddress.Phone;
+
+			BasketCheckoutDTO.CustomerName = DefaultAddress.Name;
+			BasketCheckoutDTO.Province = DefaultAddress.Province;
+			BasketCheckoutDTO.District = DefaultAddress.District;
+			BasketCheckoutDTO.Ward = DefaultAddress.Ward;
+			BasketCheckoutDTO.DetailAddress = DefaultAddress.DetailAddress;
+			BasketCheckoutDTO.TotalPrice = Cart.TotalPrice;
+
+			var result = await OrderService.AddOrderAsync(BasketCheckoutDTO, _authStateProvider.CurrentUser.Id);
+			if (result)
+			{
+				navManager.NavigateTo("/checkout/success");
+			}
+			else
+				await NotificationService.DisplayErrorMessage("Đã có lỗi xảy ra. Vui lòng thử lại sau ! ");
+		}
+	}
+	private void UpdatePaymentMethod(ChangeEventArgs e)
+	{
+		if (e.Value != null && int.TryParse(e.Value.ToString(), out int method))
+		{
+			BasketCheckoutDTO.PaymentMethod = method;
+		}
+	}
+}
+
+
+

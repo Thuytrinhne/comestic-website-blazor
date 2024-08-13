@@ -1,0 +1,198 @@
+/* ==================================  signup  ================================== */
+
+/* ================ signup header ================ */
+.signup a[b-vff4pf6ft4] {
+    text-decoration: none;
+    color: #e05994;
+}
+
+.signup_header[b-vff4pf6ft4] {
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 260px;
+}
+
+    .signup_header > a[b-vff4pf6ft4] {
+        color: #e05994;
+        font-size: 16px;
+    }
+
+/* ==============  body  ============== */
+.signup_body[b-vff4pf6ft4] {
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+    .signup_body > img[b-vff4pf6ft4] {
+        height: 470px;
+    }
+
+.signup_body-form[b-vff4pf6ft4] {
+    width: 450px;
+    font-size: 16px;
+    border-radius: 7px;
+    background-color: white;
+    width: 450px;
+    font-size: 16px;
+    border-radius: 7px;
+    background-color: white;
+}
+
+.signup_body-form-container[b-vff4pf6ft4] {
+    margin: 26px 42px;
+    margin-top: -20px;
+}
+
+    .signup_body-form-container > h2[b-vff4pf6ft4] {
+        margin-bottom: 18px;
+        font-size: 24px;
+    }
+
+.signup_logocontainer > a[b-vff4pf6ft4] {
+    height: 48px;
+}
+
+.verified[b-vff4pf6ft4] {
+    /* display: flex; */
+    position: relative;
+}
+
+    .verified a[b-vff4pf6ft4] {
+        position: absolute;
+        height: 40px;
+        width: 30% !important;
+        border-radius: 0 7px 7px 0;
+        right: 0;
+        top: 0px;
+        border: none;
+        color: white;
+        background-color: #e05994;
+        text-align: center;
+        padding-top: 6px;
+    }
+
+    .verified button:hover[b-vff4pf6ft4] {
+        background-color: #81d1e5;
+        transition: all 0.2s linear;
+    }
+
+.signup_body-input[b-vff4pf6ft4] {
+    height: 65px;
+}
+
+    .signup_body-input input[b-vff4pf6ft4] {
+        border: rgb(195, 191, 191) solid 1px;
+        padding: 7px 15px;
+        border-radius: 7px;
+    }
+
+.gender .gender-tick[b-vff4pf6ft4] {
+    display: inline-block;
+    margin-right: 18px;
+}
+
+.DayOfBirth[b-vff4pf6ft4] {
+    margin: 13px 0;
+}
+
+.policy[b-vff4pf6ft4] {
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.DayOfBirth select[b-vff4pf6ft4] {
+    border: rgb(195, 191, 191) solid 1px;
+    border-radius: 4px;
+    padding-right: 30px;
+    width: 32.5%;
+    /* display: inline; */
+    padding: 6px 12px;
+}
+
+.signup_body-input input[b-vff4pf6ft4] {
+    position: relative;
+}
+
+.signup_body-input input[b-vff4pf6ft4],
+.signup_body-input button[b-vff4pf6ft4] {
+    width: 100%;
+}
+
+.signup_btn[b-vff4pf6ft4] {
+    outline: none;
+    text-decoration: none;
+    position: relative;
+    color: var(--white-color);
+    font-size: 1.9rem;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    border-radius: 40px;
+    text-align: center;
+    border: solid 4px transparent;
+    padding: 12px 0;
+    cursor: pointer;
+    width: 60%;
+}
+
+    .signup_btn:hover[b-vff4pf6ft4] {
+        color: white;
+        background-color: #81d1e5;
+        transition: all 0.2s linear;
+    }
+
+    .signup_btn[b-vff4pf6ft4]::before {
+        border-radius: 40px;
+        display: block;
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        border: 2px dashed var(--white-color);
+    }
+
+.signup_button[b-vff4pf6ft4] {
+    text-align: center;
+}
+
+.signup_have-an-account[b-vff4pf6ft4] {
+    margin-top: 18px;
+    color: rgb(195, 191, 191);
+    text-align: center;
+}
+
+.signup_logocontainer img[b-vff4pf6ft4] {
+    height: 48px;
+}
+
+@media screen and (max-width: 430px) {
+    .signup_header[b-vff4pf6ft4] {
+        height: 60px;
+        /* margin: 0 2px; */
+        justify-content: center;
+    }
+
+        .signin_login-text[b-vff4pf6ft4],
+        .signup_header > a[b-vff4pf6ft4] {
+            display: none;
+        }
+}
+
+@media screen and (max-width: 820px) and (min-width: 431px) {
+    .signup_header[b-vff4pf6ft4] {
+        height: 60px;
+        margin: 0 200px;
+        justify-content: center;
+    }
+
+        .signin_login-text[b-vff4pf6ft4],
+        .signup_header > a[b-vff4pf6ft4] {
+            display: none;
+        }
+}

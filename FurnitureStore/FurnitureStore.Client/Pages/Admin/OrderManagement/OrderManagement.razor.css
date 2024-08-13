@@ -1,0 +1,103 @@
+.order_header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+}
+
+.order_list {
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+}
+
+.filter_list {
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .filter_list input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-bottom: 1px solid #183a5c;
+    }
+
+        .filter_list input:hover {
+            transform: scale(1.1);
+        }
+
+    .filter_list button {
+        border-radius: 5px;
+    }
+
+        .filter_list button:hover {
+            background-color: #f78da7;
+            transform: scale(1.1);
+            color: white;
+            font-weight: bold;
+        }
+
+.content_order {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    font-size: 1.2em;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+    .content_order thead tr {
+        background-color: #f78da7;
+        color: #183a5c;
+        font-weight: bold;
+        height: 50px;
+    }
+
+    .content_order th,
+    .content_order td {
+        padding: 12px 15px;
+    }
+
+    .content_order tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+        .content_order tbody tr:last-of-type {
+            border-bottom: 2px solid #f78da7;
+        }
+
+        .content_order tbody tr:hover {
+            background-color: #ddddddec;
+        }
+
+        .content_order tbody tr button {
+            border-radius: 5px;
+        }
+
+            .content_order tbody tr button:hover {
+                background-color: #f78da7;
+                transform: scale(1.1);
+                color: white;
+                font-weight: bold;
+            }
+
+.filter_list form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

@@ -1,0 +1,280 @@
+@* @page "/product/detail/{ProductId}"
+@using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Client.Services.IService
+@using FurnitureStore.Shared
+@using FurnitureStore.Shared.DTOs
+@using Microsoft.JSInterop
+@inject NavigationManager navManager
+@inject IProductService ProductServiceDI
+@inject IJSRuntime JavaScript
+
+
+@layout MainLayout
+<div class="body-contain">
+	<div class="path grid">
+		<a href="">Home</a>
+		<span>|</span>
+		<a href="">Lighting</a>
+		<span>|</span>
+		<a class="path__current" href="">Floor Lamps</a>
+	</div>
+	@if (product != null)
+	{
+		<div class="detail-product">
+			<div class="detail-product_contain grid">
+				<div class="detail-img-section">
+					<div class="list-product-general">
+						
+						@if (variationList != null)
+						{
+							@foreach (var item in variationList)
+							{
+								@foreach (var imgList in item.ImagesUrl)
+								{
+									<div class="list-product-item">
+										<img src="@imgList" alt="">
+									</div>
+								}
+							}
+						}
+						else
+						{
+							@foreach (var imgList in product.ImagesUrl)
+							{
+							<div class="list-product-item">
+									<img src="@imgList" alt="">
+							</div>
+							}
+						}
+					</div>
+					<div class="display-img">
+						<div>
+							<img class="display-img-main" src="@product.FeaturedImage" alt="">
+
+						</div>
+						<button class="round-button round-button--left">
+							<span class="material-symbols-outlined">
+								arrow_back_ios
+							</span>
+						</button>
+						<button class="round-button round-button--right">
+							<span class="material-symbols-outlined">
+								arrow_forward_ios
+							</span>
+						</button>
+					</div>
+				</div>
+				<div class="detail-descript-section">
+					<div class="detail-descript-block">
+						<h3>@product.Name</h3>
+					</div>
+										
+												@if (@product.RegularPrice > @product.SalePrice)
+												{
+													<div class="detail-descript-block detail-product__price"><span class="salesprice">@(product.SalePrice.ToString("C"))</span> @(product.RegularPrice.ToString("C"))</div>
+												}
+												else
+												{
+													<div class="detail-descript-block detail-product__price"> @(product.RegularPrice.ToString("C"))</div>
+												}
+
+
+											
+					
+						@if (variationList != null)
+					{
+						<div class="detail-descript-block detail-product__price">
+							<label class="detail-color-img">Color | <span>@product.VariationDetail.Value</span></label>
+							<div class="color-option-container">
+
+								@for (int i = 0; i<variationList.Count();i++)
+								{
+									 int index = i;
+									<div class="color-option" @onclick="@(e => colorClick(index))">
+										<input type="radio" name="color">
+										<label	class="detail_color-img"
+										style="
+									background-image:url(@variationList.ElementAt(i).VariationDetail.ImageUrl);
+										"></label	backgroud>
+									</div>
+
+								}
+
+
+							</div>
+
+						</div>
+					}
+					<div class="detail-descript-block detail-product__quantity">
+						<label for="">Quantity</label>
+						<div class="cart-product-updown">
+							<button class="cart-product-updown-link" @onclick="decreaseQuantityBtn">-</button>
+							<input class="cart-product-quantity" type="" value="@quantity" @onchange="changeQuantityInput">
+							<button class="cart-product-updown-link" @onclick="increaseQuantityBtn">+</button>
+						</div>
+					</div>
+					<div class="detail-descript-block">
+						<a class="app-btn" @onclick="@(e => addToCart(product.ProductId))">Add to cart</a>
+						<a class="app-btn app-btn--payment" href="">Buy with VN Pay</a>
+					</div>
+					<div class="detail-descript-block detail-product__description">
+						<button class="description-header">
+							<div>Product Description</div>
+							<span class="material-symbols-outlined">
+								add
+							</span>
+						</button>
+
+						<div class="detail-product-description-text">
+							<p>
+								@product.Description
+							</p>
+						</div>
+					</div>
+					<div class="detail-descript-block detail-product__description">
+						<button class="description-header">
+							<div>Product Details</div>
+							<span class="material-symbols-outlined">
+								add
+							</span>
+						</button>
+
+						<div class="detail-product-description-text">
+							<p>
+								<span>Grams: @product.Grams</span>
+
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+</div>
+<!-- You also may like  -->
+<div class="latest-products grid">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="section-heading">
+					<h2 class="related-list-titile">You also may like</h2>
+				</div>
+			</div>
+			<section>
+				<div class="text-center">
+						@if (relatedProducts != null)
+					{
+						@foreach (var item in relatedProducts)
+						{
+							<!-- Product -->
+							<div class="col-lg-3 col-md-6 mb-4">
+								<div class="card" @onclick="@(e => productClick(@item.ProductId))">
+									<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+									data-mdb-ripple-color="light">
+										<img src="@item.FeaturedImage"
+										class="w-100" />
+										<a>
+											<div class="mask">
+												<div class="d-flex justify-content-start align-items-end h-100">
+													<h5><span class="badge bg-dark ms-2">NEW</span></h5>
+												</div>
+											</div>
+											<div class="hover-overlay">
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+											</div>
+										</a>
+									</div>
+									<div class="card-body">
+										<a href="" class="text-reset">
+											<h5 class="card-title mb-2">@item.Name</h5>
+										</a>
+										
+											@if(item.VariationDetail.Id!=null)
+											{
+												<h6 class="mb-3 price">from @(item.RegularPrice.ToString("C"))</h6>
+											}
+											else
+											{
+												@if (item.RegularPrice > item.SalePrice)
+												{
+													<h6 class="mb-3 price"> @(item.RegularPrice.ToString("C"))<span class="salesprice">@(item.SalePrice.ToString("C"))</span></h6>
+												}
+												else
+												{
+													<h6 class="mb-3 price"> @(item.RegularPrice.ToString("C"))</h6>
+												}
+
+
+											}
+									</div>
+								</div>
+							</div>
+						}
+
+					}
+
+				</div>
+			</section>
+
+		</div>
+	</div>
+</div>
+
+@code {
+	[Parameter]
+	public string ? ProductId { get; set; }
+	private IEnumerable<ProductDTO>? variationList;
+	private ProductDTO ?product;
+	private IEnumerable<ProductDTO>? relatedProducts; 
+	// hình màu giá 
+	private int quantity = 1;
+	protected override async Task OnInitializedAsync()
+	{
+		if (ProductId != null)
+		{
+			product = await ProductServiceDI.GetProductById(ProductId);
+			if (product.VariationDetail.Id != null)
+				variationList = await ProductServiceDI.GetProductsByVariationId(product.VariationDetail.Id);
+            relatedProducts=  await ProductServiceDI.GetProductsByCategoryId(product.CategoryId);
+		}
+
+	}
+	private void increaseQuantityBtn()
+	{
+		++quantity;
+	}
+	private void decreaseQuantityBtn()
+	{
+		if(quantity>1)
+			--quantity;
+	}
+	private void changeQuantityInput(ChangeEventArgs e)
+	{
+		string temp= e.Value.ToString().Trim();
+		if (temp.Length != 0)
+		{
+			int kq;
+			if( int.TryParse(e.Value.ToString(), out kq) && kq>0)
+			{
+				quantity = kq;
+				return;
+			}
+		}
+		--quantity;
+		quantity++;
+
+	}
+	private async Task addToCart(string productId)
+	{
+		await JavaScript.InvokeVoidAsync("storeIdProductIntoCookie", productId, quantity);
+	}
+	private void colorClick(int indexProduct)
+	{
+		product = variationList.ElementAt(indexProduct);
+	}
+	void productClick(string idProduct)
+	{
+		navManager.NavigateTo("/product/detail" + "/" + idProduct);
+	}
+}
+ *@

@@ -1,0 +1,46 @@
+.row--fluid {
+    display: block;
+    width: 100%;
+    height: 36.888px;
+}
+
+.span16 {
+    box-sizing: border-box;
+}
+
+.breadcrumbs {
+    margin-left: 20px;
+    display: block;
+    padding-bottom: 10px;
+}
+
+
+a.breadcrumbs__a {
+    color: rgb(189, 189, 189);
+    text-decoration: solid;
+    font-size: 14px;
+    display: inline-block;
+}
+
+    a.breadcrumbs__a:hover {
+        color: #e05994;
+        text-decoration: underline;
+    }
+
+a.breadcrumbs__a--active {
+    color: #333;
+    text-decoration: bold;
+}
+
+
+.breadcrumbs__slash {
+    display: inline-block;
+    font-size: 15px;
+    margin: 0 5px;
+    padding: 0;
+    color: rgb(189, 189, 189);
+}
+
+.body {
+    background-color: white;
+}

@@ -1,0 +1,228 @@
+@using FurnitureStore.Client.Services
+@using FurnitureStore.Client.Services.IService
+@using FurnitureStore.Shared.DTOs
+@inject NavigationManager navManager
+@inject IBasketService BasketServiceDI
+@inject CustomAuthenticationStateProvider _authStateProvider
+
+
+
+<div class="modal-custom modal-custom-cart" style="@(BasketServiceDI.ShowCart ? "display: block !important;" : "display: none  !important;")">
+	<div class="modal__overlay"></div>
+	<div class="modal__body modal__body--border">
+		<div class="cart">
+			<div class="cart_container">
+				@if (cart is not null)
+				{
+					<div class="product_container">
+						<!-- ===============   product box  =============== -->
+
+						@foreach (var item in cart.Items)
+						{
+							<div class="product_box">
+								<img src="https://s1.bloganchoi.com/wp-content/uploads/2018/04/3ce-vo-son.jpg" alt="" style="width: 60px; height: auto;">
+								<div class="product_info">
+									<p class="product_name">@item.ProductName</p>
+									<dl class="variation">
+										<dt class="variation_color">Loại: </dt>
+										<dd class="variation_color">
+											<p>@item.Tags</p>
+										</dd>
+									</dl>
+									<p class="product_quantity">@item.Price</p>
+								</div>
+
+								<div class="buy-amount_container">
+									<div class="buy-amount">
+										<button @onclick="@(e => decreaseQuantityBtn(@item.ProductId, @item.Quantity))">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+											</svg>
+										</button >
+										<input type="text" name="" id="" value="@item.Quantity" @onchange="@(e => changeQuantityInput(e,@item.ProductId))">
+										<button @onclick="@(e => increaseQuantityBtn(@item.ProductId, @item.Quantity))">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+											</svg>
+										</button>
+									</div>
+								</div>
+
+								<div class="cancel_button">
+									<a class="cancel_btn" href="#" @onclick="@(e => deleteCartIem(item.ProductId))" @onclick:preventDefault="preventDefault">Xóa</a><br>
+								</div>
+							</div>
+						}
+
+					</div>
+
+					<div class="payment_container" style="display: inline;">
+						<div class="total">
+							<p>Tổng tiền</p>
+							
+								<p style="text-align:end;">@cart.TotalPrice ₫ </p>
+							
+						</div>
+
+						<div class="pay_button">
+							<a class="pay_btn" href="#" @onclick="@(e => checkoutClick())" @onclick:preventDefault="preventDefault">Thanh toán</a><br>
+						</div>
+					</div>
+
+				}
+				else if(_authStateProvider.CurrentUser is not null )
+				{
+					<h5>Giỏ hàng của bạn chưa có gì cả ! Tiếp tục mua sắm cùng HASAKI nhé ! </h5>
+
+				}
+				else
+				{
+					<h5>Vui lòng đăng  nhập hoặc tạo tài khoản để trải nghiệm cart của chúng tôi ! </h5>
+				}
+
+			</div>
+			<button class="modal__btn-close" @onclick="closeCart">
+				X
+			</button>
+		</div>
+	</div>
+</div>
+
+@code
+{
+	public void Dispose()
+	{
+		BasketServiceDI.OnChange -= StateHasChanged;
+		BasketServiceDI.OnShowCartChanged -= LoadCartFromDb; // Hủy đăng ký sự kiện
+	}
+
+	bool preventDefault = true;
+
+	public ShoppingCart cart { get; set; }
+
+	[Parameter]
+	public EventCallback<ShoppingCart> CurrentCartValueChanged { get; set; }
+
+	protected override async Task OnInitializedAsync()
+	{
+		BasketServiceDI.OnChange += StateHasChanged;
+		BasketServiceDI.OnShowCartChanged += LoadCartFromDb; // Đăng ký sự kiện
+		LoadCartFromDb();
+	}
+	private async void LoadCartFromDb()
+	{
+		cart = await BasketServiceDI.GetCartByUsername(_authStateProvider.CurrentUser.Id);
+		await CurrentCartValueChanged.InvokeAsync(cart);
+		StateHasChanged();
+	}
+
+
+	private async Task changeQuantityInput(ChangeEventArgs e, Guid productId)
+	{
+		string temp = e.Value.ToString().Trim();	
+		int newQuantity;
+		if (int.TryParse(e.Value.ToString(), out newQuantity))
+		{
+			var choosenItem = cart.Items.Find(p => p.ProductId == productId);
+			var currentQuantity = choosenItem.Quantity;
+			if (checkQuantityBeforeStore(newQuantity, currentQuantity))
+			{
+				var newCart = prepareCartToStore(choosenItem, newQuantity);
+
+
+				if (await BasketServiceDI.StoreShoppingCart(newCart))
+				{
+					choosenItem.Quantity = newQuantity;
+					await CurrentCartValueChanged.InvokeAsync(cart);
+					return;
+				}
+			}
+		}
+
+		cart = await BasketServiceDI.GetCartByUsername(_authStateProvider.CurrentUser.Id);
+		await CurrentCartValueChanged.InvokeAsync(cart);
+	}
+
+	private ShoppingCart prepareCartToStore(ShoppingCartItem choosenItem, int newQuantity )
+	{
+		ShoppingCart newCart = new ShoppingCart();
+		ShoppingCartItem newCartItem = new ShoppingCartItem
+			{
+				ProductId = choosenItem.ProductId,
+				ProductName = choosenItem.ProductName,
+				Tags = choosenItem.Tags,
+				Quantity = (newQuantity - choosenItem.Quantity), // Adjust quantity as needed
+				Price = choosenItem.Price
+			};
+
+		newCart.UserId = _authStateProvider.CurrentUser.Id;
+		newCart.Items.Add(newCartItem);
+		return newCart;
+	}
+
+	private bool checkQuantityBeforeStore(int newQuantity, int currentQuantity)
+	{
+		if (newQuantity > 0)
+		{	
+			if (currentQuantity + newQuantity > 0)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	private async Task increaseQuantityBtn(Guid productId, int quantity)
+	{
+		if (quantity > 1)
+		{
+			var choosenItem = cart.Items.Find(p => p.ProductId == productId);
+			var newCart = prepareCartToStore(choosenItem, choosenItem.Quantity+1);
+
+
+				if (await BasketServiceDI.StoreShoppingCart(newCart))
+				{
+					choosenItem.Quantity = choosenItem.Quantity + 1;
+					await CurrentCartValueChanged.InvokeAsync(cart);
+					return;
+				} 
+
+		}
+	}
+	private async Task decreaseQuantityBtn(Guid productId, int quantity)
+	{
+		if (quantity > 1)
+		{
+			var choosenItem = cart.Items.Find(p => p.ProductId == productId);
+			var newCart = prepareCartToStore(choosenItem, choosenItem.Quantity - 1);
+
+
+			if (await BasketServiceDI.StoreShoppingCart(newCart))
+			{
+				choosenItem.Quantity = choosenItem.Quantity - 1;
+				await CurrentCartValueChanged.InvokeAsync(cart);
+				return;
+			}
+
+		}
+	}
+	void checkoutClick()
+	{
+		navManager.NavigateTo("/checkout");
+	}
+	void closeCart()
+	{
+		BasketServiceDI.ShowCart = false;
+	}
+	private async Task  deleteCartIem(Guid productId)
+	{
+		var choosenItem = cart.Items.Find(p => p.ProductId == productId);
+		var newCart = prepareCartToStore(choosenItem, 0);
+		if (await BasketServiceDI.StoreShoppingCart(newCart))
+		{
+			cart.Items.Remove(choosenItem);
+			await CurrentCartValueChanged.InvokeAsync(cart);
+			return;
+		}
+	}
+}
+

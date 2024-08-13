@@ -1,0 +1,183 @@
+.cart p[b-x66fhrtvbm],
+.cart dl[b-x66fhrtvbm] {
+    margin: 0;
+}
+
+.modal-custom-cart[b-x66fhrtvbm] {
+    display: none;
+    background-color: white !important;
+}
+
+.cart[b-x66fhrtvbm] {
+    /* background-color: ; */
+    width: 100vw;
+    height: 100vh;
+    position:relative;
+}
+
+.cart_container[b-x66fhrtvbm] {
+    margin: 48px 33%;
+}
+
+.product_container[b-x66fhrtvbm] {
+    height: 500px;
+    border-bottom: #e4e4e4 solid 1px;
+}
+
+/* ===========  product box  =========== */
+.product_box[b-x66fhrtvbm] {
+    display: grid;
+    grid-template-columns: 15% 53% 25% 6%;
+    border-bottom: #c7c7c7 dashed 1px;
+    padding: 16px 0;
+}
+
+    .product_box .product_name[b-x66fhrtvbm] {
+        font-size: 14px;
+        color: #333333;
+    }
+
+.variation dt[b-x66fhrtvbm],
+.variation dd[b-x66fhrtvbm] {
+    display: inline-block;
+    color: #777;
+}
+
+.cancel_btn[b-x66fhrtvbm] {
+    border-radius: 50%;
+    border: none;
+    height: 32px;
+    width: 32px;
+    line-height: 60px;
+}
+
+    .cancel_btn img[b-x66fhrtvbm] {
+        height: 32px;
+        width: 32px;
+    }
+
+/* ===========  product box  =========== */
+
+.total[b-x66fhrtvbm] {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 12px 0 36px 0;
+}
+
+    .total p[b-x66fhrtvbm] {
+        font-size: 17px;
+        color: #777;
+    }
+
+.pay_btn[b-x66fhrtvbm] {
+    outline: none;
+    text-decoration: none;
+    position: relative;
+    color: var(--white-color);
+    font-size: 1.9rem;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    border-radius: 400px;
+    text-align: center;
+    border: solid 4px transparent;
+    padding: 8px 17px;
+    cursor: pointer;
+    padding: 20px 64px;
+}
+
+    .pay_btn:hover[b-x66fhrtvbm] {
+        color: white;
+        background-color: #81d1e5;
+        transition: all 0.2s linear;
+    }
+
+    .pay_btn[b-x66fhrtvbm]::before {
+        border-radius: 40px;
+        display: block;
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        border: 2px dashed var(--white-color);
+    }
+
+.pay_button[b-x66fhrtvbm] {
+    text-align: center;
+}
+
+/* ===========  buy-amount  ============ */
+.buy-amount_container[b-x66fhrtvbm] {
+    display: inline-block;
+    position: relative;
+}
+
+.buy-amount button[b-x66fhrtvbm] {
+    height: var(--buy-Amount-Btn-size);
+    width: var(--buy-Amount-Btn-size);
+    border: #ececec solid 1px;
+    cursor: pointer;
+}
+
+    .buy-amount button:hover[b-x66fhrtvbm] {
+        background-color: #dedede;
+    }
+
+.buy-amount[b-x66fhrtvbm] {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+    .buy-amount button svg[b-x66fhrtvbm] {
+        color: #909090;
+    }
+
+    .buy-amount button:hover svg[b-x66fhrtvbm] {
+        color: #7e7e7e;
+    }
+
+    .buy-amount input[b-x66fhrtvbm] {
+        border: #ececec solid 1px;
+        width: 54px;
+        height: var(--buy-Amount-Btn-size);
+        padding: 0 5px;
+        text-align: center;
+        font-size: 14px;
+        outline: none;
+        color: #777;
+    }
+
+.modal__btn-close[b-x66fhrtvbm] {
+    position: absolute;
+    top: 0;
+    right: 41px;
+    font-size: 26PX;
+}
+/* iphone 14 promax */
+@media screen and (max-width: 430px) {
+    .product_container[b-x66fhrtvbm] {
+        height: 76vh;
+    }
+
+    .cart_container .product_box[b-x66fhrtvbm] {
+        justify-content: space-between;
+    }
+
+    .cart_container .product_info[b-x66fhrtvbm] {
+        flex-direction: column;
+        justify-content: start;
+    }
+}
+
+/* ipad air */
+@media screen and (max-width: 995px) and (min-width: 431px) {
+    .product_container[b-x66fhrtvbm] {
+        height: 79vh;
+    }
+}
+

@@ -1,0 +1,165 @@
+.user_infor img[b-60o1rvsdz5] {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.user_infor[b-60o1rvsdz5] {
+    position: relative;
+}
+
+.logout-link[b-60o1rvsdz5] {
+    text-decoration: none;
+}
+
+
+.dashboard_header[b-60o1rvsdz5] {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+}
+
+.logout[b-60o1rvsdz5] {
+    width: 150px;
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: -55%;
+    background-color: #ffffff;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+    .logout:hover[b-60o1rvsdz5] {
+        color: rgba(255, 0, 0, 0.61)
+    }
+
+    .logout ion-icon[b-60o1rvsdz5] {
+        margin-right: 15px;
+        font-size: 25px;
+    }
+
+    .logout.active[b-60o1rvsdz5] {
+        display: flex;
+    }
+
+.header_title[b-60o1rvsdz5] {
+    align-items: center;
+    text-align: center;
+    color: #e05994;
+    margin: 0 0 0 20px;
+    font-weight: bold;
+}
+
+.header_infor[b-60o1rvsdz5] {
+    display: flex;
+    align-items: center;
+}
+
+.search_box[b-60o1rvsdz5] {
+    background: #f1f1f1;
+    border-radius: 15px;
+    color: rgba(113, 99, 186, 255);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    margin-right: 25px;
+}
+
+    .search_box input[b-60o1rvsdz5] {
+        background: transparent;
+        border-color: transparent;
+        padding: 7px;
+        outline: none;
+    }
+
+.user_infor[b-60o1rvsdz5] {
+    padding: 5px;
+    background: #f1f1f1;
+    border-radius: 50%;
+}
+
+.search_box ion-icon[b-60o1rvsdz5] {
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    padding: 5px;
+}
+
+.search_box input:hover[b-60o1rvsdz5] {
+    transform: scale(1.1);
+    transition: all 0.2s;
+}
+
+.search_box ion-icon:hover[b-60o1rvsdz5] {
+    transform: scale(1.2);
+}
+
+/* CSS Main */
+
+.dashboard_main[b-60o1rvsdz5] {
+    justify-content: left;
+}
+
+.detail_content[b-60o1rvsdz5] {
+    display: flex;
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.detail_card[b-60o1rvsdz5] {
+    display: flex;
+    background: #f1f1f1;
+    font-size: 1.5em;
+    width: 350px;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    margin: 25px 60px 25px 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .detail_card ion-icon[b-60o1rvsdz5] {
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        background: orangered;
+        border-radius: 50%;
+        margin: 0px 10px 0 15px;
+    }
+
+.amount[b-60o1rvsdz5] {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.amount_title[b-60o1rvsdz5] {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.amount_value[b-60o1rvsdz5] {
+    font-size: 25px;
+}

@@ -1,0 +1,179 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = FurnitureStore.Client
+build_property.RootNamespace = FurnitureStore.Client
+build_property.ProjectDir = D:\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\comestic-website-blazor\FurnitureStore\FurnitureStore.Client
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Layout/Auth/AuthLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEF1dGhcQXV0aExheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Layout/Customer/ManagementLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEN1c3RvbWVyXE1hbmFnZW1lbnRMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/AddressManagement/Addresses.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcQWRkcmVzc01hbmFnZW1lbnRcQWRkcmVzc2VzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Shared/Customer/Header.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEN1c3RvbWVyXEhlYWRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Shared/Customer/HorizontalNav.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEN1c3RvbWVyXEhvcml6b250YWxOYXYucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Layout/Admin/AdminLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEFkbWluXEFkbWluTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-11g6qe3kd2
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Layout/Customer/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEN1c3RvbWVyXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-c8d5xc2cft
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Admin/CategoryManagement.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcnlNYW5hZ2VtZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-ji8zyjjwqd
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Admin/Dashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRGFzaGJvYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-60o1rvsdz5
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Admin/OrderManagement/DetailOrder.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZXJNYW5hZ2VtZW50XERldGFpbE9yZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-odd0bibokj
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Admin/OrderManagement/OrderManagement.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZXJNYW5hZ2VtZW50XE9yZGVyTWFuYWdlbWVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-psnda2szbh
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Admin/ProductManagement.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdE1hbmFnZW1lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-5xi91hugn8
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Admin/Report.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUmVwb3J0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-9jbj2ir8uo
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Admin/UserManagement.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlck1hbmFnZW1lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-91q0jdk4x6
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Auth/ForgotPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxGb3Jnb3RQYXNzd29yZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-82nlsqn7ho
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Auth/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-grcm0gz6zx
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Auth/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxSZWdpc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-vff4pf6ft4
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Auth/ResetPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxSZXNldFBhc3N3b3JkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-8tgayyymu3
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/AboutUs.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcQWJvdXRVcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-6qltuqvwbs
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/AccountManagement/Account.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcQWNjb3VudE1hbmFnZW1lbnRcQWNjb3VudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-vq6m3vjmtc
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/AddressManagement/AddAddress.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcQWRkcmVzc01hbmFnZW1lbnRcQWRkQWRkcmVzcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-9gp03mwxvz
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/Checkout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcQ2hlY2tvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-333zx3jtlq
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/CheckoutAddress/AddAddress.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcQ2hlY2tvdXRBZGRyZXNzXEFkZEFkZHJlc3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-7lc8t38ck6
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/CheckoutAddress/AddFirstAddress.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcQ2hlY2tvdXRBZGRyZXNzXEFkZEZpcnN0QWRkcmVzcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-5mi64rfxqp
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/CheckoutAddress/ListAddressForChoosing.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcQ2hlY2tvdXRBZGRyZXNzXExpc3RBZGRyZXNzRm9yQ2hvb3NpbmcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-wvgr4o1rvz
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/DetailProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcRGV0YWlsUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-3its07gq97
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/Filter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcRmlsdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-110pj2apzv
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-mkubsbol0q
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/NotFoundProducts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcTm90Rm91bmRQcm9kdWN0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-a651uetilz
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/OrderManagement/DetailHistoryOrder.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcT3JkZXJNYW5hZ2VtZW50XERldGFpbEhpc3RvcnlPcmRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-ful1zs9hcb
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/OrderManagement/HistoryOrder.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcT3JkZXJNYW5hZ2VtZW50XEhpc3RvcnlPcmRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-0n5vb3h2lq
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/OrderSuccess.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcT3JkZXJTdWNjZXNzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-h564l7tfkl
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/ProductDetail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcUHJvZHVjdERldGFpbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-aifdhz83ve
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Pages/Customer/SearchProducts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcU2VhcmNoUHJvZHVjdHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-yfulgyh60o
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Shared/Admin/AdminNavBar.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEFkbWluXEFkbWluTmF2QmFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-3rx47dg99l
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Shared/Customer/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEN1c3RvbWVyXENhcnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-x66fhrtvbm
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Shared/Customer/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEN1c3RvbWVyXEZvb3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-1ecrs26qsb
+
+[D:/comestic-website-blazor/FurnitureStore/FurnitureStore.Client/Shared/Customer/QuickView.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEN1c3RvbWVyXFF1aWNrVmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-063bxhpzrj

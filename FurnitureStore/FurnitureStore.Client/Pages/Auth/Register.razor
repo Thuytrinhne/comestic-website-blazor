@@ -1,0 +1,218 @@
+@page "/register"
+@using FurnitureStore.Client.Layout.Auth
+@using FurnitureStore.Client.Services.IService
+@layout AuthLayout
+@inject IAuthService authService
+
+
+        <div class="signup">
+        <!-- ================ signup header ================ -->
+        <div class="signup_header">
+            <div class="signup_logocontainer" >
+			<a href=""><img src="https://raw.githubusercontent.com/Thuytrinhne/Sell-Accessories-E-commerce-Website/main/z5609325599402_9366fd626dc74960430ac0525fcffa03.jpg" alt=""></a>
+                <h1 class="signin_login-text">Đăng ký</h1>
+
+            </div>
+            <a href="" >Bạn cần giúp đỡ?</a>
+        </div>
+        <!-- ================ signup body ================ -->
+        <div class="signup_body">
+            <img src="./Assets/Images/background-signup.jpg" alt="" >
+            <div class="signup_body-form" >
+                <div class="signup_body-form-container">
+                    <h2 >Đăng ký</h2>
+                    <form class="postUser" action="{{route('postUser')}}" method="POST">
+                      
+                            <div class="signup_body-input">
+@*                                 <label for="" style="margin-bottom: 6px;">Số điện thoại hoặc địa chỉ email</label>  <br> -->
+ *@                               
+                                <input @bind="Email" id="emailInput" name="email" type="text" placeholder="Số diện thoại hoặc email"><br>
+                                
+                              
+@*                                 <input id="emailInput" name="email" type="text" placeholder="Số diện thoại hoặc email" value="{{ old('email') }}"><br>
+ *@                             
+                            
+@*                                 <span class="msg-error">{{$message}}</span>
+ *@                               
+                            </div>
+                            
+                            <div class="signup_body-input verified">
+                                <!-- <label for="" style="margin-bottom: 6px;">Nhập mã xác thực</label>  <br> -->
+						<input name="otp" type="text" placeholder="Nhập mã xác thực 6 số" value=""><a @onclick="@(e => getOTP())" href="#" @onclick:preventDefault="preventDefault">Lấy mã</a><br>
+                            
+                              @*   <span class="msg-error">{{$message}}</span> *@
+                              
+                            </div>
+                    
+                    <script>
+                    function generateURL() {
+                        var email = document.getElementById("emailInput").value;
+                        var url = "{{ route('sendOTP', ['email' => '14']) }}";
+                        url = url.replace('14',email);
+                        window.location.href = url;
+                        }
+                   
+                        {
+                            var seconds = 30;
+                            var minutes = 1;
+
+                            var timer = setInterval(() => {
+
+                                if(minutes < 0){
+                                    $('.time').text('');
+                                    clearInterval(timer);
+                                }
+                                else{
+                                    let tempMinutes = minutes.toString().length > 1? minutes:'0'+minutes;
+                                    let tempSeconds = seconds.toString().length > 1? seconds:'0'+seconds;
+
+                                    $('.time').text(tempMinutes+':'+tempSeconds);
+                                }
+
+                                if(seconds <= 0){
+                                    minutes--;
+                                    seconds = 59;
+                                }
+
+                                seconds--;
+
+                            }, 1000);
+                        }
+                    </script>
+                                    
+                        <div class="signup_body-input">
+                            <!-- <label for="" style="margin-bottom: 6px;">Nhập mật khẩu</label>  <br> -->
+                            <input  name="password" type="password" placeholder="Nhập mật khẩu từ 6-32 kí tự" value="{{ old('password') }}"><br>
+                            @* @error('password')
+                                <span class="msg-error">{{$message}}</span>
+                             @enderror *@
+                        </div>
+
+                        <div class="signup_body-input">
+                            <!-- <label for="" style="margin-bottom: 6px;">Nhập mật khẩu</label>  <br> -->
+                            <input name="full_name" type="text" placeholder="Họ tên" value ="">
+                          @*   @error('full_name')
+                            <span class="msg-error">{{$message}}</span>
+                            @enderror *@
+                            <br>
+                        </div>
+
+                        <div class="gender">
+                            <div class="gender-tick" >
+                                <input style="margin-right: 5px;" name="sex" type="radio" value="0" {{ old('sex') == '0' ? 'checked' : '' }} />Nam
+                            </div>
+
+                            <div class="gender-tick" >
+                                <input style="margin-right: 5px;" name="sex" type="radio" value="1" {{ old('sex') == '1' ? 'checked' : '' }} />Nữ
+                            </div>
+
+                            <div class="gender-tick" >
+                                <input style="margin-right: 5px;" name="sex" type="radio" value="2" {{ old('sex') == '2' ? 'checked' : '' }}/>Khác
+                            </div>
+
+                          @*   @error('gender')
+                            <br>
+                            <span class="msg-error">{{$message}}</span>
+                            @enderror *@
+                        </div>
+
+					<div class="DayOfBirth">
+						<select @bind="SelectedDay" id="DD">
+							<option value="">Ngày</option>
+							@for (int day = 1; day <= 31; day++)
+							{
+								<option value="@day" selected="@(day == SelectedDay)">@day</option>
+							}
+						</select>
+
+						<select @bind="SelectedMonth" id="MM">
+							<option value="">Tháng</option>
+							@for (int month = 1; month <= 12; month++)
+							{
+								<option value="@month" selected="@(month == SelectedMonth)">@month</option>
+							}
+						</select>
+
+						<select @bind="SelectedYear" id="YY">
+							<option value="">Năm</option>
+							@for (int year = 1950; year <= DateTime.Now.Year; year++)
+							{
+								<option value="@year" selected="@(year == SelectedYear)">@year</option>
+							}
+						</select>
+
+						@if (!string.IsNullOrEmpty(ErrorMessage))
+						{
+							<br>
+							<span class="msg-error">@ErrorMessage</span>
+						}
+					</div>
+
+                        <div class="policy">
+                            <input type="checkbox" name="policy" id="policy"  {{ old('policy') ? 'checked' : ''}} > 
+                            Tôi đã đọc và đồng ý với <a href="">Điều kiện giao dịch chung</a> 
+                            và <a href="">Chính sách bảo mật thông tin</a> của T&P 
+        
+                          @*   @error('policy')
+                            <br>
+                            <span class="msg-error">{{$message}}</span>
+                            @enderror *@
+                        </div>
+                      
+                        <div class="signup_button">
+                            <button type="submit" class="signup_btn" onclick="sigUpOnclick()">Đăng ký</button><br>
+                        </div>
+                    </form>
+                       
+                    <div class="signup_have-an-account">
+                        <p>Bạn đã có tài khoản? <a href="{{route('login')}}">Đăng nhập</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+@code{
+	bool preventDefault = true;
+	private int? SelectedDay { get; set; }
+	private int? SelectedMonth { get; set; }
+	private int? SelectedYear { get; set; }
+	private string? Email { get; set; }
+
+	private string ErrorMessage { get; set; }
+
+	protected override void OnInitialized()
+	{
+		// Initialization logic if needed
+	}
+
+	// Optional: Method to handle form submission or validation
+	private void Validate()
+	{
+		if (!SelectedDay.HasValue || !SelectedMonth.HasValue || !SelectedYear.HasValue)
+		{
+			ErrorMessage = "Please select a valid date of birth.";
+		}
+		else
+		{
+			ErrorMessage = string.Empty;
+			// Process the selected date of birth
+		}
+	}
+	private async  Task getOTP()
+	{
+		if(!string.IsNullOrEmpty(Email))
+		{
+			var result = await authService.SendOTP(Email);
+			if(result == true)
+			{
+
+			}
+			else
+			{
+				
+			}
+		}
+	}
+}
+

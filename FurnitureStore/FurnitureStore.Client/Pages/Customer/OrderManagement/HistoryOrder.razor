@@ -1,0 +1,147 @@
+@page "/user/history-orders"
+@using FurnitureStore.Client.Helpers
+@using FurnitureStore.Client.IServices
+@using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Client.Services
+@using FurnitureStore.Shared.Enums
+@using Ordering.Application.Dtos
+@inject IOrderService OrderService
+@inject CustomAuthenticationStateProvider _authStateProvider
+@inject NotificationService NotiService
+
+@layout ManagementLayout
+
+
+<div class="body-user-display-myaccount">
+                <div class="body-user-display-header">
+                    <a href="{{ route('.front.customer.history-orders')}}" class="body-footer-seemore body-footer-seemore-Active">Tất cả</a>
+                    <a href="{{ route('filter.history-order', 1) }}" class="body-footer-seemore">Mới đặt</a>
+                    <a href="{{ route('filter.history-order', 2) }}" class="body-footer-seemore">Đã xử lý</a>
+                    <a href="{{ route('filter.history-order', 3) }}" class="body-footer-seemore">Đã thanh toán</a>
+                    <a href="{{ route('filter.history-order', 4) }}" class="body-footer-seemore">Đã hủy</a>
+
+                </div>
+                <hr class="body-user-display-line">
+                <div class="body-user-display-container">
+                    <div class="item_order grid">
+			@if (HistoryOrders is not null && HistoryOrders.Count() > 0)
+			{
+				@foreach (var order in HistoryOrders)
+				{
+					<div class="item_order-title">
+						<a class="item_order-title-link" href="">
+
+							<div>
+								Mã đơn hàng:
+								<span>@order.Id</span> | Đặt ngày:
+								<span>@order.DateOrder</span>
+								| Thanh toán:
+								@if (@order.Payment.PaymentMethod == 1)
+								{
+									<span>Tiền mặt</span>
+								}else
+								{
+									<span>VNPAY</span>
+
+								}
+
+							</div>
+							<div class="item_order-status">
+								<span class="item_order-status">
+									@switch (@order.Status)
+									{
+
+										case OrderStatus.Pending:
+											<p>Chờ xác nhận</p>
+											break;
+										case OrderStatus.Shipping:
+											<p>Đang vận chuyển</p>
+											break;
+										case OrderStatus.Completed:
+											<p>Thành công</p>
+											break;
+										case OrderStatus.Cancelled:
+											<p>Đã hủy</p>
+											break;
+										default:
+											<p>Không hợp lệ</p>
+											break;
+									}
+									                              
+								</span>
+								<a style="" href="@("/user/detail-order/"+order.Id)">Xem chi tiết</a>
+							</div>
+
+						</a>
+
+					</div>
+					<div class="item_order-list">
+						@foreach(var item in @order.OrderItems)
+						{
+						<div class="item_order-detail">
+							<div class="item_order-infor">
+								<img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTaaqE97x0BKbCiJAUeWROV61UaMnaWBKt5TrHD0taxr6j6XA4fDcaHYuXZYC_J_FbC9vVGPVYVcuYPdeot_0wV63JU6VOq3d4l_3FyvU5mOM5puaVG2S_ufYVEiQ&usqp=CAc" alt="">
+								<div>
+									<strong class="item_order-infor-name">Nước tẩy trang dịu nhẹ</strong>
+									<div class="item_order-infor-sort">
+										Phân loại hàng: 500ml
+										@*  @if($product->variation_id == 1)
+
+                                        {{$product->name_color }}
+
+                                      @else 
+                                        {{$product->variation_value }}
+
+                                      @endif *@
+									</div>
+										<div class="item_order-infor-sort">x @item.Quantity</div>
+								</div>
+							</div>
+							<div class="item_order-price">
+									@item.Price
+							</div>
+						</div>
+						}
+					</div>
+
+					<div class="item_order-btn">
+						@if (@order.Status == OrderStatus.Pending)
+						{
+							<a href="#"
+							   @onclick="@(e => cancelOrder(@order.Id))" @onclick:preventDefault="preventDefault"
+							   class="body-footer-seemore body-footer-delete">Hủy đơn</a>
+						}
+						@if (@order.Status == OrderStatus.Completed)
+						{
+							<a href="{{ route('re-checkout',[$item[0]->cart_id])}}" class="body-footer-seemore body-footer-reorder">Mua lại</a>
+						}
+				</div>
+				}
+			}
+		</div>
+                  </div>
+                </div>
+            
+@code{
+	bool preventDefault = true;
+
+	public IEnumerable<OrderDto> HistoryOrders { get; set; } 
+	protected override async Task OnInitializedAsync()
+	{
+		HistoryOrders = await OrderService.GetOrderByCustomerIdAsync(_authStateProvider.CurrentUser.Id);
+
+	}
+	public async  Task cancelOrder(Guid OrderId)
+	{
+		var identified = await NotiService.DisplayAreUSureMesssage("Bạn có chắc muốn hủy đơn hàng này không ??? ");
+		if (identified)
+		{
+			bool result = await OrderService.UpdateOrderStatusAsync(OrderId, OrderStatus.Cancelled);
+			if (result)
+			{
+				await NotiService.DisplaySuccessMessage("Hủy đơn hàng thành công");
+				await OnInitializedAsync();
+			}
+		}
+	}
+}

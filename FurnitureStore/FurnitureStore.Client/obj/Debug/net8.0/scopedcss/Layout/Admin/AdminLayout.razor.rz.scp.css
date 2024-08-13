@@ -1,0 +1,50 @@
+html[b-11g6qe3kd2], body[b-11g6qe3kd2] {
+    width: 100%;
+    position: relative;
+}
+
+.create_account .card[b-11g6qe3kd2] {
+    position: absolute;
+    width: 82%;
+    margin-top: 10px;
+    line-height: 1.7;
+}
+
+.create_account .form-group[b-11g6qe3kd2] {
+    margin: 10px 0;
+    margin-right: 30px;
+    font-size: 16px;
+}
+
+.create_account input[b-11g6qe3kd2] {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.create_account button[b-11g6qe3kd2] {
+    padding: 6px 20px;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.account_management .btn-primary[b-11g6qe3kd2] {
+    padding: 8px 18px;
+    font-size: 14px;
+    background-color: gainsboro;
+    outline: none;
+    color: black;
+    border: none;
+}
+
+.account_management .btn[b-11g6qe3kd2] {
+    padding: 8px 18px;
+}
+
+
+.container-fluid[b-11g6qe3kd2] {
+    background-color: #f2f1f6;
+}
+.col-lg-10[b-11g6qe3kd2]
+{
+    width:75% !important;
+}

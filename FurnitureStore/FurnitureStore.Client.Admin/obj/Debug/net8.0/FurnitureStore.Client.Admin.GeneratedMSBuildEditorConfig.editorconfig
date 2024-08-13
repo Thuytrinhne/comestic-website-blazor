@@ -1,0 +1,51 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = FurnitureStore.Client.Admin
+build_property.RootNamespace = FurnitureStore.Client.Admin
+build_property.ProjectDir = D:\HK6\FurnitureStore\FurnitureStore.Client.Admin\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\HK6\FurnitureStore\FurnitureStore.Client.Admin
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/HK6/FurnitureStore/FurnitureStore.Client.Admin/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK6/FurnitureStore/FurnitureStore.Client.Admin/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK6/FurnitureStore/FurnitureStore.Client.Admin/Pages/AdminPages/CategoryManagement.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYWdlc1xDYXRlZ29yeU1hbmFnZW1lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK6/FurnitureStore/FurnitureStore.Client.Admin/Pages/AdminPages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYWdlc1xMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK6/FurnitureStore/FurnitureStore.Client.Admin/Pages/AdminPages/OrderManagement.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYWdlc1xPcmRlck1hbmFnZW1lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK6/FurnitureStore/FurnitureStore.Client.Admin/Pages/AdminPages/ProductManagement.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYWdlc1xQcm9kdWN0TWFuYWdlbWVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK6/FurnitureStore/FurnitureStore.Client.Admin/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

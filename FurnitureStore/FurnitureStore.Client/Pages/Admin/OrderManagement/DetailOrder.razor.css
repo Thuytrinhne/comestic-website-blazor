@@ -1,0 +1,226 @@
+.containerDetail {
+    display: flex;
+    flex-direction: column;
+}
+
+.container_all {
+    display: flex;
+    gap: 30px;
+}
+
+.container_all-item1 {
+    flex: 7;
+}
+
+.container_all-item2 {
+    flex: 3;
+}
+
+    .container_all-item2 button {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+.change_status {
+    padding-bottom: 20px;
+}
+
+.note-order textarea {
+    width: 400px;
+}
+
+
+.progress {
+    padding: 20px 0;
+    height: 112px;
+    background: white;
+}
+
+.col {
+    display: inline-block;
+    padding: 10px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.title {
+    font-size: 1.3em;
+}
+
+.infor {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    border: 1px solid #bebebe;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+.details_product table {
+    width: 100%;
+}
+
+.details_product {
+    display: grid;
+    text-align: center;
+    border-bottom: 5px solid #e71f76;
+}
+
+.infor_product {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border: 1px solid #bebebe;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.row.totals_order {
+    display: grid;
+    justify-content: end;
+}
+
+.order_key span:last-child {
+    color: #e71f76;
+    font-weight: bold;
+}
+
+.infor_order button {
+    margin: 10px;
+    width: 150px;
+    height: 30px;
+    background-color: #e05994;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
+.location_delivery span {
+    color: #e71f76;
+    font-weight: bold;
+}
+
+.infor_payment span {
+    color: #e71f76;
+    font-weight: bold;
+}
+
+.details_header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border: 1px solid #bebebe;
+    background-color: #f37baf;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #fff;
+    height: 50px;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.infor_details_product {
+    display: flex;
+    text-align: start;
+}
+
+.brand_product {
+    font-weight: bold;
+}
+
+.image_product img {
+    height: 70px;
+    width: 77px;
+}
+
+.totals_order {
+    background-color: #f1f1f1;
+    border: 1px solid #bebebe;
+    font-size: 1.5rem;
+    gap: 15px;
+    padding: 20px;
+}
+
+    .totals_order span {
+        text-align: start;
+        margin: 50px;
+    }
+
+.order_prices span:first-child {
+    font-weight: bold;
+}
+
+.order_prices span:last-child {
+    color: red;
+    font-weight: bold;
+}
+
+.progress-lists {
+    display: flex;
+    justify-content: center;
+}
+
+    .progress-lists li {
+        list-style: none;
+        display: inline-block;
+        width: 20%;
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+        color: #bebebe;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+        .progress-lists li:before {
+            content: "\2713";
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: 2px solid #bebebe;
+            border-radius: 100%;
+            display: block;
+            text-align: center;
+            margin: 0 auto 10px auto;
+            background-color: #fff;
+            font-size: 2em;
+            color: #bebebe;
+        }
+
+        .progress-lists li:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #ddd;
+            top: 25px;
+            left: -50%;
+            z-index: -1;
+        }
+
+        .progress-lists li:first-child:after {
+            content: none;
+        }
+
+        .progress-lists li.active {
+            color: green;
+        }
+
+            .progress-lists li.active:before {
+                border-color: green;
+                color: green;
+            }
+
+            .progress-lists li.active + li:after {
+                background-color: green;
+            }
+
+.body-user-feature-item a {
+    all: unset;
+}
+
+.disable-btn {
+    background-color: rgba(255, 128, 135, 0.7);
+}

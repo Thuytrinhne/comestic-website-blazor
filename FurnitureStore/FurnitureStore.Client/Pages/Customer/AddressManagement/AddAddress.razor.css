@@ -1,0 +1,268 @@
+.body-user-display-container1 {
+    display: flex;
+}
+
+.body-user-flex {
+    display: flex;
+}
+
+.body-user {
+    margin-top: 10px;
+    display: flex;
+    padding-bottom: 70px;
+}
+
+.body-user-feature {
+    width: 200px;
+    margin-top: 20px;
+}
+
+.body-user-feature-header {
+    display: flex;
+}
+
+.body-user-infor {
+    font-size: 1.5rem;
+    margin-left: 15px;
+}
+
+.body-user-img {
+    height: 50px;
+}
+
+.body-user-infor-name {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.body-user-infor-link {
+    text-decoration: none;
+    color: #888;
+    font-weight: 400;
+    margin-right: 5px;
+}
+
+.body-user-infor-edit {
+    display: flex;
+    align-items: center;
+}
+
+.body-user-infor-icon {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #888;
+}
+
+.body-user-feature-footer {
+    margin-top: 45px;
+}
+
+.body-user-feature-item-icon {
+    font-size: 25px;
+}
+
+.body-user-feature-item-icon--blue {
+    color: #1655b7;
+}
+
+.body-user-feature-item-icon--blue2 {
+    color: #1359b1;
+}
+
+.body-user-feature-item-icon--orange {
+    color: #f74f2b;
+}
+
+.body-user-feature-item-icon--yellow {
+    color: #f0ab0b;
+}
+
+.body-user-feature-item {
+    font-size: 1.5rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.body-user-feature-item {
+    cursor: pointer;
+}
+
+    .body-user-feature-item a {
+        all: unset;
+    }
+
+    .body-user-feature-item + .body-user-feature-item {
+        margin-top: 17px;
+    }
+
+.body-user-feature-text:hover {
+    color: var(--primary-color);
+}
+
+.body-user-display {
+    margin-top: 30px;
+    margin-left: 27px;
+    background-color: white;
+    width: 1091px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.13);
+    padding: 12px 15px;
+}
+/* custom */
+.body-user-display-container {
+    display: flex;
+}
+
+.body-user-display-title1 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.body-user-display-title2 {
+    font-size: 1.4rem;
+    color: #555;
+    font-weight: 400;
+}
+
+.body-user-display-container {
+    padding-top: 30px;
+}
+
+.body-user-display-frm {
+    display: block;
+    flex-basis: 60%;
+}
+
+.body-user-display-line {
+    width: 100%;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.body-user-display-td-label {
+    text-align: right;
+    padding-bottom: 30px;
+    font-size: 1.4rem;
+    color: rgba(85, 85, 85, 0.8);
+}
+
+.body-user-display-td-input {
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+
+.body-user-display-input {
+    padding: 8px;
+    width: 400px;
+    font-size: 1.4rem;
+}
+
+.body-user-display-rdo {
+    width: 19px;
+    height: 19px;
+}
+
+.body-user-display-rdo-text {
+    margin-left: 5px;
+    font-size: 1.4rem;
+    margin-right: 20px;
+}
+
+.body-user-display-date {
+    padding: 8px;
+    width: 400px;
+    font-size: 1.4rem;
+}
+
+.body-user-display-legend {
+    color: red;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.body-user-display-btn {
+    position: relative;
+}
+
+.security-login__phone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .security-login__phone p {
+        margin: 0;
+        font-size: 1.4rem;
+    }
+
+    .security-login__phone img {
+        height: 20px;
+    }
+
+    .security-login__phone button {
+        height: 39px;
+        width: 120px;
+        font-size: 1.4rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
+        font-weight: 500;
+    }
+
+.security {
+    flex-basis: 40%;
+}
+
+.security-login__text {
+    margin-right: 110px;
+}
+
+.security-pass__text {
+    margin-right: 161px;
+}
+
+.security h2 {
+    font-weight: 500px;
+}
+
+.line {
+    border-right: solid 1px rgba(0, 0, 0, 0.3);
+    height: 100%;
+}
+.add-address-container {
+    display: flex;
+    gap: 36px;
+}
+
+    .add-address-container p {
+        margin-top: 12px;
+    }
+
+.body-user-display-frm {
+    flex-basis: auto;
+}
+
+    .body-user-display-frm p {
+        font-size: 1.4rem;
+        color: rgba(85, 85, 85, 0.9);
+    }
+
+.body-user-display-input {
+    width: 385px;
+}
+
+.add-address-section1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btnChangeContainer {
+    text-align: end;
+}
+
+.checkbox-defaultAddress {
+    font-size: 1.4rem;
+}

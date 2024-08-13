@@ -1,0 +1,163 @@
+@page "/admin/orders"
+@using FurnitureStore.Client.IServices
+@using FurnitureStore.Client.Layout.Admin
+@using FurnitureStore.Shared.Enums
+@using FurnitureStore.Shared.Responses
+@using Ordering.Application.Dtos
+@inject IOrderService OrderService
+@layout AdminLayout
+
+
+<div class="content order">
+                <div class="order_header">
+                    <div class="header_title">
+                        <span>Trang chính</span>
+                        <h1>Đơn hàng</h1>
+                    </div>
+
+                </div>
+                <div class="filter_list">
+                <form id ="formSort"action="{{ route('admin.order.filter') }}" method="GET" >
+
+                    <div>
+                        <label>Bắt đầu</label>
+                        <input id ="start-date" name="start-date" type="date" data-date="" data-date-format="DD MMMM YYYY" value="">
+                        <label>Đến</label>
+                        <input  id ="end-date"  name ="end-date" type="date" data-date="" data-date-format="DD MMMM YYYY" value="">
+                        <button onclick="filterByDate()">Tìm kiếm</button>
+                        
+                            <div class="rangeCost">
+                                <div class="sliderValue">
+                                    <span>Giá đơn hàng:</span>
+                                    <input type="number" name="price_filter" id="sortPrice" value="">
+                                    <span>₫</span>
+                                </div>
+                                
+                            
+                            </div>
+                            <button type="submit" style="display:none"/>
+                        
+                    </div>
+                        <div>
+							<select class="filter-sort__select"  @onchange="@OnStatusChanged">
+                          <option class="filter-sort__option" value="">Sort by</option>
+                          <option class="filter-sort__option" value="">Đơn hàng chờ xác nhận</option>
+							<option class="filter-sort__option" value="">Đơn hàng đang vận chuyển</option>
+						<option class="filter-sort__option" value="">Đơn hàng thành công</option>
+						<option class="filter-sort__option" value="">Đơn hàng đã hủy</option>
+                          </select>
+                        </div>
+                </form>
+                    
+                </div>
+                
+               
+              <div class="order_list">
+                    <table class="content_order">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã đơn hàng</th>
+                                <th>Mã người dùng</th>
+                                <th>Tên người nhận</th>
+								<th>SĐT</th>
+                                <th>Ngày đặt hàng</th>
+                                <th>Tổng Tiền</th>
+                                <th>Trạng thái</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+				@if (AllOrdersPagination.Data is not null && AllOrdersPagination.Data.Count() >0)
+				{
+					@foreach (var order in AllOrdersPagination.Data )
+					{
+						<tr>
+							<td>@(++STT)</td>
+							<td>@order.Id</td>
+							<td>@order.CustomerId</td>
+
+							<td>@order.ShippingAddress.CustomerName</td>
+							<td>@order.ShippingAddress.Phone</td>
+							<td>@order.DateOrder</td>
+							<td>@order.TotalPrice</td>							
+							<td>
+
+								@switch (@order.Status)
+								{
+
+									case OrderStatus.Pending:
+										<p>Chờ xác nhận</p>
+										break;
+									case OrderStatus.Shipping:
+										<p>Đang vận chuyển</p>
+										break;
+									case OrderStatus.Completed:
+										<p>Thành công</p>
+										break;
+									case OrderStatus.Cancelled:
+										<p>Đã hủy</p>
+										break;
+									default:
+										<p>Không hợp lệ</p>
+										break;
+								}
+							</td>
+							<td><a href="@("/admin/orders/detail/"+@order.Id)">Chi tiết</a></td>
+							</tr>
+						}
+				@* 	{{$order_list->links()}}  *@    
+                          }
+                            
+                        </tbody>
+                    </table>
+                   
+
+                </div>
+</div>
+@* <script>
+    
+    
+        $('#sortOptions').on('change', function() {
+                    
+            // Lấy tham chiếu đến form
+            var form = document.getElementById('formSort');
+
+            // Submit form
+            form.submit();
+        });
+        
+    
+            
+</script> *@
+
+
+@code{
+	public PaginationResult<OrderDto> AllOrdersPagination { get; set; } = default!;
+	[Parameter]
+	public EventCallback<PaginationResult<OrderDto>> CurrentOrdersValueChanged { get; set; }
+	public int STT = 0;
+	private OrderStatus? selectedStatus;
+
+
+	protected override async Task OnInitializedAsync()
+	{
+		AllOrdersPagination = await OrderService.GetAllOrdersAsync();
+	}
+	public async Task OnStatusChanged(ChangeEventArgs e)
+	{
+		if (Enum.TryParse<OrderStatus>(e.Value.ToString(), out var status))
+		{
+			selectedStatus = status;
+			await FilterOrdersByStatus();
+		}
+	}
+
+	private async Task FilterOrdersByStatus()
+	{
+		AllOrdersPagination = await OrderService.FindOrdersByStatusAsync(selectedStatus.Value);
+		await CurrentOrdersValueChanged.InvokeAsync(AllOrdersPagination);
+		StateHasChanged();
+	}
+}

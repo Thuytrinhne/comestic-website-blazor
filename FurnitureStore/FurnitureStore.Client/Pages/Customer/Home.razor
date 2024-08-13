@@ -1,0 +1,231 @@
+@page "/"
+@using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Client.Services
+@using FurnitureStore.Client.Services.IService
+@using FurnitureStore.Shared.DTOs
+@using FurnitureStore.Shared.Responses
+@inject NavigationManager navManager
+@inject IProductService ProductServiceDI
+@inject IBasketService BasketServiceDI
+
+
+@layout MainLayout
+
+
+
+
+<PageTitle>Home</PageTitle>
+
+
+
+<div class="body-main">
+
+  <div class="body-banner-container grid">
+    <div class="body-banner">
+      <div class="body-banner-item1">
+				<img class="body-banner-img" src="https://media.hcdn.vn/hsk/1717823409home7ngay.jpg" alt="">
+      </div>
+
+      <div class="body-banner-item2">
+				<img class="body-banner-img" src="https://media.hcdn.vn/hsk/1716978333nowfree-3-846x250.jpg" alt="">
+      </div>
+      <div class="body-banner-item3">
+				<img class="body-banner-img" src="https://media.hcdn.vn/hsk/1653555653banner-check-gia-web-v2-435x128.jpg" alt="">
+      </div>
+
+    </div>
+  </div>
+  <div class="body-wrapper grid">
+    <div class="body-title">
+      Sản phẩm mới
+    </div>
+
+    <div class="body-listProduct">
+      <!-- item -->
+			@foreach (var item in ProductDtos)
+			{
+				@foreach (var product in item.Products)
+				{
+
+      <div class="body-list__item">
+        <div>
+							<a class="body-item-link" href="#" @onclick="@(e => productClick(@product.Id, @product.Title))" @onclick:preventDefault="preventDefault">
+								<img class="body-item-img" src="@product.Image.ImageUrl" alt="{{$item->name_product}}">
+          </a>
+        </div>
+        <div class="body-item-des">
+          <a class="body-item-link" href="#">
+								@product.Name
+							</a>
+          <div class="body-item-price">
+            <span>@product.Price₫</span>
+
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="element">
+            <div class="content">
+              <div class="body-item-links">
+
+                <a href="" class="body-links-detail">
+                  <div class="body-circle body-circle--red">
+                    <span class="material-symbols-outlined body-icon-white">
+                      local_mall
+                    </span>
+                  </div>
+                </a>
+
+                <span href="" class="body-links-detail">
+                  <div class="body-circle">
+                    <button class="material-symbols-outlined body-icon-black body-icon-black--large" id="quickview" style="backgroud:none; border:none" data-product-id="{{ $item->id }}">
+                      visibility
+                    </button>
+                  </div>
+                </span>
+
+                <a onclick="addToWishlistClick({{$item->id}}, event, )" href="#" class="body-links-detail">
+                  <div class="body-circle">
+                    <i class="fa-regular fa-heart body-icon-black"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   }
+   }
+    </div>
+
+  </div>
+  <div class="body-footer">
+    <a href="{{ route('products.search') }}" class="body-footer-seemore">Xem tất cả</a>
+  </div>
+
+  <div class="body-catogory grid" style="overflow: hidden">
+    <div class="body-category-list" id="slider-container">
+    @*   @foreach($categories as $item) *@
+      <div class="body-category-item">
+        <a href="{{ route('get.products.by.category',[$item->id]) }}" class="body-category-link">
+					<img src="https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-422209392-1695118797_img_358x358_843626_fit_center.jpg" alt="" class="body-category-img">
+          <h3 class="body-category-name">SON MÔI</h3>
+        </a>
+      </div>
+			<div class="body-category-item">
+				<a href="{{ route('get.products.by.category',[$item->id]) }}" class="body-category-link">
+					<img src="https://media.hasaki.vn/wysiwyg/minhchau/sua-rua-mat-senka-danh-cho-da-mun-100g-4-1.jpg" alt="" class="body-category-img">
+					<h3 class="body-category-name">SỮA RỬA MẶT</h3>
+				</a>
+			</div>
+			<div class="body-category-item">
+        <a href="{{ route('get.products.by.category',[$item->id]) }}" class="body-category-link">
+					<img src="https://media.hcdn.vn/wysiwyg/HaNguyen2/nuoc-tay-trang-simple-lam-sach-trang-diem-va-cap-am-400ml-2.jpg" alt="" class="body-category-img">
+          <h3 class="body-category-name">NƯỚC TẨY TRANG</h3>
+        </a>
+      </div>
+			<div class="body-category-item">
+				<a href="{{ route('get.products.by.category',[$item->id]) }}" class="body-category-link">
+					<img src="https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-bong-tay-trang-hotosu-cao-cap-150-mieng-1684466443.jpg" alt="" class="body-category-img">
+					<h3 class="body-category-name">BÔNG TẨY TRANG</h3>
+				</a>
+			</div>
+
+			<div class="body-category-item">
+				<a href="{{ route('get.products.by.category',[$item->id]) }}" class="body-category-link">
+					<img src="https://media.hcdn.vn/wysiwyg/Chau/sua-chong-nang-sunplay-skin-aqua-duong-da-sang-min-5.jpg" alt="" class="body-category-img">
+					<h3 class="body-category-name">KEM CHỐNG NẮNG</h3>
+				</a>
+			</div>
+ @*      @endforeach *@
+    </div>
+    <div class="body-category-nav">
+      <button class="body-nav-btn" type="button" onclick="prevSlide()">
+        <i class="fa-solid fa-angle-left body-nav-icon"></i>
+      </button>
+      <button class="body-nav-btn body-nav-btn-right" type="button" onclick="nextSlide()">
+        <i class="fa-solid fa-angle-right body-nav-icon btn-left"></i>
+      </button>
+    </div>
+  </div>
+  
+</div>
+
+@* 
+      <script>
+        function addToWishlistClick(id, event)
+        {
+          event.preventDefault(); // Ngăn chặn sự kiện mặc định của thẻ a
+         
+          var url = "{{ route('wishlist.add') }}";
+
+          var form = document.createElement('form');
+          form.method = 'POST';
+          form.action = url;
+          // truyền token
+          var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+          var csrfInput = document.createElement('input');
+          csrfInput.type = 'hidden';
+          csrfInput.name = '_token';
+          csrfInput.value = csrfToken;
+        
+          form.appendChild(csrfInput);
+          document.body.appendChild(form);
+          // truyền product id 
+          var ProductIdInput = document.createElement('input');
+          ProductIdInput.type = 'hidden';
+          ProductIdInput.name = 'productId';
+          ProductIdInput.value = id;
+        
+          form.appendChild(ProductIdInput);
+          document.body.appendChild(form);
+          
+          form.submit();
+        }
+      </script>
+
+  <script>
+      let currentPosition = 0;
+      const itemWidth = document.querySelector('.body-category-item').offsetWidth + 20; // Including margin
+      const container = document.getElementById('slider-container');
+
+      function nextSlide() {
+          if (currentPosition > -(container.scrollWidth - container.offsetWidth)) {
+              currentPosition -= itemWidth;
+              container.style.transform = 'translateX(' + currentPosition + 'px)';
+          }
+      }
+
+      function prevSlide() {
+          if (currentPosition < 0) {
+              currentPosition += itemWidth;
+              container.style.transform = 'translateX(' + currentPosition + 'px)';
+          }
+      }
+  </script> *@
+
+    <!-- modal quickview-->  
+@* @section ('quick-view')
+    @include('shared.front.quick-view')
+@endsection *@
+
+@code
+{
+	bool preventDefault = true;
+
+	public List<GroupedProducts> ProductDtos { get; set; }
+
+	protected override async Task OnInitializedAsync()
+	{
+		var latestProducts = await ProductServiceDI.GetLatestProducts(0,20);
+		ProductDtos = latestProducts.ProductDtos;
+	}
+
+	public void productClick( Guid idProduct, string title)
+	{
+		navManager.NavigateTo("/product-detail" + "/" + title + "/" + idProduct);
+	}
+	
+
+}
+

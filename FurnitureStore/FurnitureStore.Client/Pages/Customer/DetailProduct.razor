@@ -1,0 +1,316 @@
+@page "/product-detail/{Title}/{ProductId:guid}"
+
+@using CurrieTechnologies.Razor.SweetAlert2
+@using FurnitureStore.Client.Helpers
+@using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Client.Services
+@using FurnitureStore.Client.Services.IService
+@using FurnitureStore.Shared.DTOs
+@inject IProductService ProductServiceDI
+@inject IBasketService BasketServiceDI
+@inject NotificationService _notificationService
+@inject CustomAuthenticationStateProvider _authStateProvider
+
+@layout MainLayout
+
+<PageTitle>Home</PageTitle>
+
+
+<div class="container">
+
+  <!-- begin breadcrumbs -->
+  <div class="row">
+      <div class="span16">
+          <div class="breadcrumbs" >
+              <a href="" class="breadcrumbs__a">Trang chủ</a>
+              <spand class="breadcrumbs__slash" >/</spand>
+              <a href="" class="breadcrumbs__a">Shop </a>
+              <spand class="breadcrumbs__slash">/</spand>
+              <a href="{{ route('get.products.by.category',[$category->id]) }}" class="breadcrumbs__a">Danh mục</a>
+              <spand class="breadcrumbs__slash">/</spand>
+              <a href="" class="breadcrumbs__a breadcrumbs__a--active">@CurrentProduct.Name</a>
+          </div>
+      </div>
+  </div>
+  <!-- end breadcrumbs -->
+
+  <!-- beign content -->
+  <div class="container">
+      <div class="row" >
+
+          <!-- begin gallery -->
+          <div class="col-5 row-gallery" id="productImage">
+              <div class="row">
+					<img id="current-image" src="@CurrentProduct.Image.ImageUrl" alt="">
+              </div>
+				
+						<div class="row" >
+							@if (Products is not null)
+							{
+								@foreach (var item in Products)
+								{
+							<div class="col-2-4" @onclick="@(e => ImageClick(@item.Id))">
+								<img src="@item.Image.ImageUrl" alt="" id="image-thumbs">
+							</div>
+
+								}
+							}
+						</div>
+				
+			</div>
+          <!-- end gallery -->
+
+          <!-- beign info -->
+          <div class="col-7" >
+              <div class="row info-header">
+                  <h1 class="info-header__h1">
+						@CurrentProduct.Name
+                  </h1>
+              </div>
+
+              <div class="row info-price" id = "price">
+                  <div class="col-1 info-price--default">
+						<p> @CurrentProduct.Price</p>
+                  </div>
+					<div class="col-2 info-price--sale">@CurrentProduct.Price ₫ </div>
+                 
+                  <div class="col-7"></div>
+              </div>
+              
+              <div class="row info__color">
+					<h4> @CurrentProduct.Tags</h4>
+              </div>
+              <div class="row">  
+                @* @foreach($variation_value as $value) *@
+                <button  class="color-option" 
+                                    style=""
+                                    onclick="showProducts('{{$value->id}}')"> 
+       
+                </button>
+              @*   @endforeach *@
+              </div> 
+
+              <div class="input-group" style="margin: 20px">
+                <!-- <span class="input-group-btn">
+                    <button type="button" class="btn btn-danger btn-number" data-type="minus" data-field="quantity">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </span> -->
+				<span>Số lượng: </span>
+					<input type="number" name="quantity" id="input-number" min="1" max="10000"
+						   value="@Count" @onchange="changeNumericInput">
+                <!-- <span class="input-group-btn">
+                    <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quantity">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </span> -->
+            </div>
+
+              <div class="row info-category" style="margin-top: 20px;">
+                  <h4>Category: 
+                      <a href="" class="info-category-link">Tên danh mục</a>
+                  </h4>
+              </div>
+
+              <div class="row">
+                  <h4>SKU: N/A</h4>
+              </div>
+
+
+              <div class="row info-whistlist" style="margin: 20px 0px;">
+                  <div class="col-5 info-whistlist-wrapper">                 
+                      <button onclick="addToWishlistClick()" class="info-whistlist-btn" > 
+                        <i class="fa fa-heart" aria-hidden="true">  Add to whistlist</i>
+                      </button>
+                  </div>
+              </div>
+
+              <div class="row info-buy">           
+                  <div class="col-6 ">
+						<button @onclick="@(e => addToCart())" class="info-buy__btn">Thêm vào giỏ hàng</button>
+                  </div>
+                  <div class="col-6">
+                      <button class="info-buy__btn">Mua ngay sản phẩm</button>
+                  </div>
+              </div>
+
+          </div>                  
+          <!-- beign info -->
+
+
+          <!-- begin descipton -->
+           <div class="row tab" >
+              <ul class="tab-list">
+                  <li class="tab-item">
+                          <p class="tab-item__btn__p">
+                              Mô tả
+                          </p>
+                  </li>
+
+         
+                  
+              </ul>
+
+              <div class="tab-description">
+                  <div class="row ">
+                      <textarea name="description" 
+                      id="description" 
+                      cols="10" rows="5"
+                      style="font-size:20px;"
+                      disabled>
+					  @CurrentProduct.Description
+                      </textarea>
+                  </div>
+              </div>
+              
+           </div>
+          
+          <!-- end descipton -->
+           <div class="row product-related">
+              <h2 style="color:mediumvioletred;line-height: 60px;">
+                  Sản phẩm cùng mục - Related products
+              </h2>
+           </div>
+
+           <div class="row">
+            <div class="body-catogory grid">
+              <div class="body-category-list" style="margin:0;">
+
+           @*   @foreach($relatedProduct as $item) *@
+                    <div class="body-list__item" >
+                      <div>
+                            <a class="body-item-link" href="{{ route('products.show', ['id' => $item->id]) }}">
+                              <img class="body-item-img" src="{{$item->default_image}}" alt="{{$item->name_product}}">
+                            </a>
+                      </div> 
+                      <div class="body-item-des">
+                        <a class="body-item-link" href="#">
+                              {{$item->name_product}}</a>
+                        <div class="body-item-price">
+                          <span>{{$item->discount_price}}₫</span>
+                          
+                        </div>
+                      </div>
+      
+                      
+      
+                      <div class="container">
+                        <div class="element">
+                          <div class="content">
+                      <div class="body-item-links">
+            
+                          <a href="" class="body-links-detail">
+                            <div class="body-circle body-circle--red">
+                              <span class="material-symbols-outlined body-icon-white">
+                                local_mall
+                                </span>
+                              </div>   
+                            </a>  
+
+                            <span href="" class="body-links-detail">
+                              <div class="body-circle">
+                                <button class="material-symbols-outlined body-icon-black body-icon-black--large" 
+                                id="quickview" 
+                                style="backgroud:none; border:none"
+                                data-product-id="{{ $item->id }}">
+                                  visibility
+                                </button>    
+                              </div>   
+                            </span>  
+                            
+                              <a href="" class="body-links-detail">
+                                <div class="body-circle">
+                                  <i class="fa-regular fa-heart body-icon-black"></i>  
+                                </div>   
+                                </a>         
+                           </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+               @*      @endforeach *@
+
+              </div>
+              <!-- <div class="body-category-nav">
+                <button class="body-nav-btn" type="button">
+                  <i class="fa-solid fa-angle-left body-nav-icon"></i>
+                </button>
+                  <button class="body-nav-btn btn-left" type="button">
+                    <i class="fa-solid fa-angle-right body-nav-icon "></i>
+                  </button>
+              </div> -->
+        </div> 
+           </div>
+         
+  </div>
+  <!-- end content -->
+
+</div>
+</div>  
+
+@code{
+	[Parameter]
+	public Guid? ProductId { get; set; }
+	[Parameter]
+	public string? Title { get; set; }
+
+	public List<ProductDTO> ? Products { get; set; }
+	public ProductDTO CurrentProduct { get; set; }
+	public int Count = 1;
+
+	[Parameter]
+	public EventCallback<ProductDTO> CurrentProductValueChanged { get; set; }
+
+	protected override async Task OnInitializedAsync()
+	{
+		var result =  await ProductServiceDI.GetProductsByTitle(Title);
+		Products = result.ProductDtos.FirstOrDefault().Products;
+		CurrentProduct = Products.Where(p => p.Id == ProductId).FirstOrDefault();
+	}
+
+	async Task ImageClick(Guid idProduct)
+	{
+		CurrentProduct = Products.Where(p => p.Id == idProduct).FirstOrDefault();
+		await CurrentProductValueChanged.InvokeAsync(CurrentProduct);
+	}
+	async Task addToCart()
+	{
+		ShoppingCart newCart = new ShoppingCart();
+		ShoppingCartItem newCartItem = new ShoppingCartItem
+			{
+				ProductId = CurrentProduct.Id,
+				ProductName = CurrentProduct.Name,
+				Quantity = Count,
+				Tags = CurrentProduct.Tags,
+				Price = CurrentProduct.Price
+			};
+
+		newCart.UserId = _authStateProvider.CurrentUser.Id;
+		newCart.Items.Add(newCartItem);
+		var success = await BasketServiceDI.StoreShoppingCart(newCart);
+		if (success)
+		{
+			await _notificationService.DisplaySuccessMessage("Thêm sản phẩm vào giỏ hàng thành công ! ");
+
+			
+		}
+		else
+		{
+			await _notificationService.DisplaySuccessMessage("Đã có lỗi xảy ra, bạn vui lòng thử lại nhé ! ");
+
+		
+		}
+	}
+	private void changeNumericInput(ChangeEventArgs e)
+	{
+			string temp = e.Value.ToString().Trim();
+		
+			int kq;
+			if (int.TryParse(e.Value.ToString(), out kq) && kq > 0)
+			{
+				Count = kq;
+				return;
+			}
+			Count=1;
+	}
+}

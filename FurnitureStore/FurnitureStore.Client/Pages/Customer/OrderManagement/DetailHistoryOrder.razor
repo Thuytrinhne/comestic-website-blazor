@@ -1,0 +1,182 @@
+@page "/user/detail-order/{OrderId:guid}"
+@using FurnitureStore.Client.IServices
+@using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Client.Services
+@using FurnitureStore.Shared.Enums
+@using Ordering.Application.Dtos
+@inject IOrderService OrderService
+@inject CustomAuthenticationStateProvider _authStateProvider
+@layout ManagementLayout
+
+
+<div class="container">
+        <div class="row title">
+            <h1>Chi tiết đơn hàng</h1>
+        </div>
+        
+        <div class="row infor">
+            <div class="col infor_order">
+                <div class="row order_key">
+                    <span>Đơn hàng:</span>
+				<span> @Order.Id</span>
+                </div>
+                <div class="row order_date">
+                    <span>Ngày đặt: </span>
+				<span>@Order.DateOrder</span>
+                </div>
+			<div class="row order_confirm">
+				<button>
+			@switch (@Order.Status)
+			{
+				case OrderStatus.Pending:
+					<p>Chờ xác nhận</p>
+					break;
+				case OrderStatus.Shipping:
+					<p>Đang vận chuyển</p>
+					break;
+				case OrderStatus.Completed:
+					<p>Thành công</p>
+					break;
+				case OrderStatus.Cancelled:
+					<p>Đã hủy</p>
+					break;
+				default:
+					<p>Không hợp lệ</p>
+					break;
+			}
+				</button>
+                </div>
+            </div>
+            <div class="col location_delivery">
+                <span>Địa chỉ người nhận</span>
+				<p>@Order.ShippingAddress.CustomerName</p>
+				<p>Điện thoại: @Order.ShippingAddress.Phone</p>
+				<p>
+				@(Order.ShippingAddress.Province + "- " + Order.ShippingAddress.District + "- " + Order.ShippingAddress.Ward + "- " + Order.ShippingAddress.DetailAddress)
+                </p>
+            </div>
+            <div class="col infor_payment">
+                <span>Phương thức thanh toán</span>
+			@if (Order.Payment.PaymentMethod == 1)
+			{
+				<p>Thanh toán khi nhận hàng(COD)</p>
+			}
+			else
+			{
+				<p>Thanh toán VNPAY</p>
+
+			}
+                <span>Thông tin vận chuyển</span>
+                <p>Hasaki: OTK223391</p>
+                <span>Phương thức giao hàng</span>
+                <p>Giao hàng nhanh</p>
+            </div>
+        </div>
+
+		<div class="row progress">
+		<ul class="progress-lists">
+
+			@if (@Order.Status == OrderStatus.Pending)
+			{
+				<li class="active">Chờ xác nhận</li>
+				<li>Đang vận chuyển</li>
+				<li>Thành công</li>
+
+			}
+			else if (@Order.Status == OrderStatus.Shipping)
+			{
+				<li class="active">Chờ xác nhận</li>
+				<li class="active">Đang vận chuyển</li>
+				<li>Thành công</li>
+			}
+			else if (@Order.Status == OrderStatus.Completed)
+			{
+				<li class="active">Chờ xác nhận</li>
+				<li class="active">Đang vận chuyển</li>
+				<li class="active">Thành công</li>
+			}
+			else
+			{
+				<li>Chờ xác nhận</li>
+				<li>Đang vận chuyển</li>
+				<li>Thành công</li>
+			}
+		</ul>
+	</div>
+        
+        <div class="row details_product">
+            <div class="row details_header">
+                
+                <div class="col name_product">
+                    <span>Sản phẩm</span>
+                </div>
+                <div class="col cost_product">
+                    <span>Đơn giá</span>
+                </div>
+                <div class="col count_product">
+                    <span>Số lượng</span>
+                </div>
+                <div class="col totals_product">
+                    <span>Tạm tính</span>
+                </div>
+            </div>
+            @foreach(var item  in Order.OrderItems)
+			{
+            <div class="row infor_product">
+                <div class="col infor_details_product">
+                    <div class="col image_product">
+                        <img
+                            src="{{ $item->image }}">
+                    </div>
+                    <div class="col name_product">
+                        <div class="row brand_product">
+                            <span>{{ $item->name_product }}</span>
+                        </div>
+                        <div class="row name_brand_product">
+                            <span>{{ $item->description }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col cost_product">
+					<span>@item.Price</span>
+                </div>
+                <div class="col count_product">
+					<span>@item.Quantity</span>
+                </div>
+                <div class="col totals_product">
+					<span>@(item.Quantity * item.Price)</span>
+                </div>
+            </div>
+          }
+            
+
+            <div class="row totals_order">
+                <div class="order_temporary">
+                    <span>Tạm tính</span>
+				<span>@Order.TotalPrice đ</span>
+                </div>
+                <div class="order_delivery">
+                    <span>Phí vận chuyển</span>
+                    <span>0đ</span>
+                </div>
+                <div class="order_prices">
+                    <span>Tổng cộng</span>
+                    <span class="order_prices_text">@Order.TotalPrice đ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+             
+
+@code {
+	[Parameter]
+	public Guid OrderId { get; set; }
+	public OrderDto Order { get; set; } = default!;
+	protected override async Task OnInitializedAsync()
+	{
+		Order = await OrderService.GetOrderByIdAsync( OrderId);
+		
+	}
+
+}

@@ -1,0 +1,116 @@
+body[b-3rx47dg99l] {
+    background: #f1f1f1;
+}
+
+/* .content:not(.dashboard) {
+    display: none;
+} */
+
+.content[b-3rx47dg99l] {
+    margin-left: 10px;
+    height: 100%;
+}
+
+
+.list_choice a[b-3rx47dg99l] {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.list_choice[b-3rx47dg99l] {
+    margin: 30px;
+    justify-content: center;
+    text-align: start;
+    list-style-type: none;
+}
+
+.container_list[b-3rx47dg99l] {
+    background: #ffffff;
+    border-radius: 30px;
+    height: 410px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: auto !important;
+}
+
+.list_item a[b-3rx47dg99l] {
+    color: #183a5c;
+    width: auto;
+    white-space: nowrap;
+}
+
+    .list_item a:hover[b-3rx47dg99l] {
+        color: #f78da7;
+    }
+
+.container[b-3rx47dg99l] {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 0.2fr 1fr;
+    height: 100%;
+    max-width: 1930px;
+}
+
+body[b-3rx47dg99l] {
+    background: #f1f1f1;
+}
+
+/* .content:not(.dashboard) {
+    display: none;
+} */
+
+.content[b-3rx47dg99l] {
+    margin-left: 10px;
+    height: 100%;
+}
+
+
+.list_choice a[b-3rx47dg99l] {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.list_choice[b-3rx47dg99l] {
+    margin: 30px;
+    justify-content: center;
+    text-align: start;
+    list-style-type: none;
+}
+
+.container_list[b-3rx47dg99l] {
+    background: #ffffff;
+    border-radius: 30px;
+    height: 410px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+.list_item a[b-3rx47dg99l] {
+    color: #183a5c;
+    width: auto;
+    white-space: nowrap;
+}
+
+    .list_item a:hover[b-3rx47dg99l] {
+        color: #f78da7;
+    }
+
+.container[b-3rx47dg99l] {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 0.2fr 1fr;
+    height: 100%;
+    max-width: 1930px;
+}

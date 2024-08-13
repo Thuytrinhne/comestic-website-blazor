@@ -1,0 +1,200 @@
+@page "/admin/products"
+@using FurnitureStore.Client.Helpers
+@using FurnitureStore.Client.Layout.Admin
+@using FurnitureStore.Client.Services.IService
+@using FurnitureStore.Shared.DTOs
+@using FurnitureStore.Shared.Requests
+@using FurnitureStore.Shared.Responses
+@inject IProductService ProductServiceDI
+@layout AdminLayout
+@inject IJSRuntime JS
+@inject NotificationService  NotiService
+
+
+
+@* @error('msg')
+    <div class="alert alert-danger">
+        <h4 style="text-align: center;">{{$message}}</h4>
+    </div>
+    @enderror *@
+
+<div class="content product">
+                <div class="product_header">
+                    <div class="header_title">
+                        <span>Trang chính</span>
+                        <h1>Sản phẩm</h1>
+                    </div>
+                    <div class="header_infor">
+                        <form action="{{route('admin.product.search')}}" class="search_box">
+                            <ion-icon name="search-outline"></ion-icon>
+                            <input type="input" placeholder="Nhập tên sản phẩm" name="search">
+                            <button type="submit"> Tìm kiếm </button>
+                        </form>
+                    </div>
+                </div>
+
+	<div class="product_selection">
+		<button @onclick='() => ShowContent("list")' class="product_list">Danh sách sản phẩm</button>
+		<button @onclick='() => ShowContent("add")' class="product_add">Thêm sản phẩm</button>
+	</div>
+
+
+
+                <div class="row selection selection_list">
+                @foreach (var item in ProductDtos)
+				{
+					@foreach (var product in item.Products)
+					{
+                    <nav id="product_1" class="col-lg-2 col-md-5 col-sm-12 product product_1">
+                    <div class="row">
+						<img src="@product.Image.ImageUrl">
+                    </div>
+                    <div class="row">
+						<p> @product.Name </p>
+                    </div>
+                    <div class="row">
+						<textarea name="description" disabled style="width: 90%"> @product.Description </textarea>
+                    </div>
+                        <div class="row" style="border: 1px solid #f1f1f1;width: 90% ; margin: 10px;"></div>
+                        <div class="Edit-Delete">
+
+                            <a href="{{route('admin.product.item',[$item->id])}}">
+                                 <button class="Edit" >
+                                 <ion-icon name="add-circle-outline"></ion-icon>
+                                 Detail</button>
+                            </a>
+
+                            <a href="{{route('admin.product.edit',[$item->id])}}">
+                                <button class="Edit" >
+                                    <ion-icon name="pencil"></ion-icon>
+                                 Sửa</button>
+                            </a>
+
+                            <a href="{{route('admin.product.destroy',[$item->id])}}">
+                                <button class="Delete" >
+                                <ion-icon name="trash-bin"></ion-icon>
+                                 Xóa</button>
+                            </a>
+                        </div>
+                    </nav>
+	
+					}}
+                 
+                 @*    <div class="product_paginate">{{ $products->links() }}</div> *@
+                </div>
+               
+                        @* ADD PRODUCT SECTION  *@
+	<div class="selection selection_add"  id="addForm" >
+
+			<div class="addCard">
+				<div class="nameAdd">
+					<label>Tên sản phẩm: </label>
+				<input @bind="ProductToAdd.Name" type="text" placeholder="Tên sản phẩm" name="name_product">
+					@*   @error('name_product')
+					<span style="color:red;">{{$message}}</span>
+					@enderror *@
+				</div>
+			<div class="nameAdd">
+				<label>Title sản phẩm: </label>
+				<input @bind="ProductToAdd.Title" type="text" placeholder="Title sản phẩm" name="name_product">
+				@*   @error('name_product')
+				<span style="color:red;">{{$message}}</span>
+				@enderror *@
+			</div>
+			<div class="nameAdd">
+				<label>Giá sản phẩm: </label>
+				<input @bind="ProductToAdd.Price" type="text" placeholder="Giá sản phẩm" name="name_product">
+				@*   @error('name_product')
+				<span style="color:red;">{{$message}}</span>
+				@enderror *@
+			</div>
+				<div class="nameAdd">
+					<label name="description">Mô tả: </label>
+				<textarea @bind="ProductToAdd.Description" name="description" placeholder="Nhập mô tả" style="width: 100%"></textarea>
+
+				</div>
+			<div class="nameAdd">
+				<label name="description">Tag: </label>
+				<textarea @bind="ProductToAdd.Tags" name="description" placeholder="Nhập tag" style="width: 100%"></textarea>
+
+			</div>
+				<div class="tag">
+					<label>Thể loại</label>
+					<select name="category_id">
+						@*   @foreach($category as $cate) *@
+						<option value="{{ $cate->id }}">Nước tẩy trang</option>
+					<option value="{{ $cate->id }}">Bông tẩy trang</option>
+
+						@*    @endforeach *@
+					</select>
+				</div>
+
+				<div class="nameAdd">
+					<label name="default_image">Ảnh mặc định: </label>
+				<InputFile OnChange="LoadFiles" multiple />
+
+					@* @error('default_image')
+					<span style="color:red;">{{$message}}</span>
+					@enderror *@
+				</div>
+
+			<button @onclick="HandleAddProduct" class="confirmAdd">Thêm sản phẩm </button>
+
+
+		</div>
+		
+	</div>
+ </div>
+<script>
+	function showContent(section) {
+		document.querySelector('.selection_list').style.display = section === 'list' ? 'grid' : 'none';
+		document.querySelector('.selection_add').style.display = section === 'add' ? 'block' : 'none';
+	}
+</script>
+@code{
+	public List<GroupedProducts> ProductDtos { get; set; }
+	private CreateProductRequest ProductToAdd = new(); 
+	protected override async Task OnInitializedAsync()
+	{
+		var latestProducts = await ProductServiceDI.GetLatestProducts(0, 20);
+		ProductDtos = latestProducts.ProductDtos;
+	}
+
+	private async Task ShowContent(string section)
+	{
+		await JS.InvokeVoidAsync("showContent", section);
+	}
+	public void productClick(Guid idProduct, string title)
+	{
+		// navManager.NavigateTo("/product-detail" + "/" + title + "/" + idProduct);
+	}
+	private async void HandleAddProduct()
+	{
+		var identified = await NotiService.DisplayAreUSureMesssage("Bạn có chắc chắn muốn thêm sản phẩm không ?");
+		if (identified == true)
+		{
+			ProductToAdd.Title= ProductToAdd.Title.Trim();
+			ProductToAdd.Name= ProductToAdd.Name.Trim();
+			ProductToAdd.CategoryId = new Guid("008ed07c-a28a-4103-893f-abe095d822aa");
+			var result = await ProductServiceDI.CreateProductAsync(ProductToAdd);
+			if (result)
+			{
+
+				await NotiService.DisplaySuccessMessage("Thêm sản phẩm thành công");
+				await OnInitializedAsync();
+			}
+			else
+			{
+				await NotiService.DisplayErrorMessage("Đã có lỗi trong quá trình thêm. Vui lòng thử lại nhé ! ");
+
+			}
+		}
+	}
+
+
+	private async Task LoadFiles(InputFileChangeEventArgs e)
+	{
+		ProductToAdd.Image = e.File;
+	}
+
+}

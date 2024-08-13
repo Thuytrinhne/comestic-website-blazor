@@ -1,0 +1,347 @@
+.title_report {
+    display: flex;
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
+    color: #e05994;
+}
+
+.select_report {
+    display: grid;
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    width: 50%;
+    text-align: center;
+}
+
+.select_list {
+    display: grid;
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    width: 90%;
+    text-align: center;
+}
+
+    .select_list button {
+        text-decoration: none;
+        font-weight: bold;
+        color: #e05994;
+        background: #ffffff;
+        border: transparent;
+    }
+
+        .select_list button:hover {
+            color: #183a5c;
+            background-color: transparent;
+            transform: scale(1.2);
+        }
+
+        .select_list button:focus {
+            color: #183a5c;
+            background-color: transparent;
+            transform: scale(1.2);
+        }
+
+    .select_list button {
+        text-decoration: none;
+        font-weight: bold;
+        color: #e05994;
+        background: #ffffff;
+        border: transparent;
+    }
+
+.select_report button:hover {
+    color: #183a5c;
+    background-color: transparent;
+    transform: scale(1.2);
+}
+
+.search_order {
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+}
+
+    .search_order input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-bottom: 1px solid #183a5c;
+    }
+
+        .search_order input:hover {
+            transform: scale(1.1);
+        }
+
+    .search_order button {
+        margin: 0px 15px 0px 15px;
+        border-radius: 5px;
+        width: 100px;
+    }
+
+    .search_order select {
+        margin: 0px 15px 0px 15px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #dddddd;
+        width: 150px;
+    }
+
+        .search_order select:hover {
+            transform: scale(1.1);
+            transition: all 0.2s;
+        }
+
+    .search_order button:hover {
+        background-color: #f78da7;
+        transform: scale(1.1);
+        color: white;
+        font-weight: bold;
+    }
+
+.selection_order {
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.selection_product {
+    display: none;
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.content_report {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    font-size: 1.5em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+    .content_report thead tr {
+        background-color: #f78da7;
+        color: #183a5c;
+        font-weight: bold;
+        height: 50px;
+    }
+
+    .content_report th,
+    .content_report td {
+        padding: 12px 15px;
+    }
+
+    .content_report tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+        .content_report tbody tr:last-of-type {
+            border-bottom: 2px solid #f78da7;
+        }
+
+        .content_report tbody tr:hover {
+            background-color: #ddddddec;
+        }
+
+        .content_report tbody tr button {
+            border-radius: 5px;
+        }
+
+            .content_report tbody tr button:hover {
+                background-color: #f78da7;
+                transform: scale(1.1);
+                color: white;
+                font-weight: bold;
+            }
+
+.title_report {
+    display: flex;
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
+    color: #e05994;
+}
+
+.search_order {
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+    .search_order button {
+        margin: 0px 15px 0px 15px;
+        border-radius: 5px;
+        width: 100px;
+    }
+
+    .search_order select {
+        margin: 0px 15px 0px 15px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #000000;
+        width: 150px;
+    }
+
+    .search_order h2 {
+        color: #e05994;
+    }
+
+    .search_order select:hover {
+        transform: scale(1.1);
+        transition: all 0.2s;
+    }
+
+    .search_order button:hover {
+        background-color: #f78da7;
+        transform: scale(1.1);
+        color: white;
+        font-weight: bold;
+    }
+
+.table_report {
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.content_report {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    font-size: 1.5em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+    .content_report thead tr {
+        background-color: #f78da7;
+        color: #183a5c;
+        font-weight: bold;
+        height: 50px;
+    }
+
+    .content_report th,
+    .content_report td {
+        padding: 12px 15px;
+    }
+
+    .content_report tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+        .content_report tbody tr:last-of-type {
+            border-bottom: 2px solid #f78da7;
+        }
+
+        .content_report tbody tr:hover {
+            background-color: #ddddddec;
+        }
+
+        .content_report tbody tr button {
+            border-radius: 5px;
+        }
+
+            .content_report tbody tr button:hover {
+                background-color: #f78da7;
+                transform: scale(1.1);
+                color: white;
+                font-weight: bold;
+            }
+
+.search_product {
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+    .search_product button {
+        margin: 0px 15px 0px 15px;
+        border-radius: 5px;
+        width: 100px;
+    }
+
+    .search_product select {
+        margin: 0px 15px 0px 15px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #000000;
+        width: 150px;
+    }
+
+    .search_product h2 {
+        color: #e05994;
+    }
+
+    .search_product select:hover {
+        transform: scale(1.1);
+        transition: all 0.2s;
+    }
+
+    .search_product button:hover {
+        background-color: #f78da7;
+        transform: scale(1.1);
+        color: white;
+        font-weight: bold;
+    }
+
+.search_product {
+    margin: 10px 60px 0px 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5em;
+}
+
+    .search_product input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-bottom: 1px solid #183a5c;
+    }
+
+.select_report button {
+    color: #e05994;
+    background-color: white;
+    font-weight: bold;
+    background: #ffffff;
+    border: transparent;
+}

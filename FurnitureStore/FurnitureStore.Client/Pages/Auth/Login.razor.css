@@ -1,0 +1,164 @@
+/* ==================================  SIGNIN  ================================== */
+
+/* ================ signin header ================ */
+.signin a {
+    text-decoration: none;
+    color: #e05994;
+}
+
+.signin_header {
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 260px;
+}
+
+    .signin_header a {
+        font-size: 16px;
+    }
+
+.signin_login-text {
+    display: inline-block;
+    font-size: 28px;
+    margin-left: 32px;
+}
+
+/* ==============  body  ============== */
+.signin_body {
+    position: relative;
+    padding-bottom: 82px;
+}
+
+    .signin_body img {
+        height: 470px;
+        margin-left: 200px;
+        margin-top: 50px;
+    }
+
+.signin_body-form {
+    height: 440px;
+    width: 430px;
+    font-size: 16px;
+    border-radius: 7px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+}
+
+.sign_body-form-container {
+    margin: 28px 52px;
+}
+
+    .sign_body-form-container h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+.signin_logocontainer img {
+    height: 48px;
+}
+
+.signin_body-input input {
+    margin-bottom: 16px;
+    border: rgb(195, 191, 191) solid 1px;
+    padding: 10px 15px;
+    border-radius: 7px;
+}
+
+.signin_body-input input,
+.signin_body-input button {
+    width: 100%;
+}
+
+.signin_btn {
+    outline: none;
+    text-decoration: none;
+    position: relative;
+    color: var(--white-color);
+    font-size: 1.9rem;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    border-radius: 40px;
+    text-align: center;
+    border: solid 4px transparent;
+    padding: 10px 0;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.signin_body-form .forgot-pass {
+    margin-top: 12px;
+}
+
+.signin_btn:hover {
+    color: white;
+    background-color: #81d1e5;
+    transition: all 0.2s linear;
+}
+
+.signin_btn::before {
+    border-radius: 40px;
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    border: 2px dashed var(--white-color);
+}
+
+.signin-newbie p {
+    margin-top: 18px;
+    color: rgb(195, 191, 191);
+    text-align: center;
+}
+
+.signin_logocontainer img {
+    height: 48px;
+}
+
+/* ===================== FOOTER ====================== */
+@media screen and (max-width: 430px) {
+    .signin_header {
+        height: 60px;
+        /* margin: 0 2px; */
+        justify-content: center;
+    }
+
+        .signin_login-text,
+        .signin_header > a {
+            display: none;
+        }
+
+    .signin_body img {
+        width: 430px;
+    }
+}
+
+@media screen and (max-width: 820px) and (min-width: 431px) {
+    .signin_header {
+        height: 60px;
+        margin: 0 200px;
+        justify-content: center;
+    }
+
+        .signin_login-text,
+        .signin_header > a {
+            display: none;
+        }
+
+    .signin_body-form {
+        width: 40%;
+        right: 10%;
+    }
+
+    .sign_body-form-container {
+        margin: 28px 30px;
+    }
+}
