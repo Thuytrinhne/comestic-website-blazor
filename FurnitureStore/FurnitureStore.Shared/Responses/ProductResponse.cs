@@ -15,6 +15,11 @@ public class GroupedProducts
     [JsonProperty("title")]
     public string Title { get; set; }
     [JsonProperty("products")]
+    public List<ProductDTO> Products { get; set; }
+}
 
+public class ProductResponseById
+{
+    [JsonProperty("products")]
     public List<ProductDTO> Products { get; set; }
 }

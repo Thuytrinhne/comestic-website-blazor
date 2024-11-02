@@ -8,5 +8,7 @@ namespace FurnitureStore.Client.Services.IService
     {
         Task<bool> SendOTP (string email);
         Task<UserDTO> Login(string email, string password);
+        Task<bool> Register(RegisterDto User);
+
     }
 }

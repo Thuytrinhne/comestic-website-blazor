@@ -39,8 +39,11 @@
     <div class="checkout_detail">
         <div class="payment_info">
             <div class="location-list_containerPlus">
+                   @if (DefaultAddress is not null)
+                        {
                 <div class="location-list_container">
                     <div class="order-info">
+                     
                         <h1>Thông tin nhận hàng</h1>
                     </div>
                     <!-- =============  location list  ============ -->
@@ -69,7 +72,12 @@
                         
                     </div>
                     <!-- =============  end list  ============ -->
-                </div>
+                    </div>
+                }
+                else
+                {
+                    <a href="/checkout/add-address">Bạn chưa có địa chỉ giao hàng nào? Thêm địa chỉ</a>
+                }
             </div>
 
             <div class="payment_total">

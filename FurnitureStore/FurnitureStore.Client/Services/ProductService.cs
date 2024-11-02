@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Net.Mime;
 using System.Text;
 using System.Text.Json;
 using static System.Net.WebRequestMethods;
@@ -170,6 +171,22 @@ namespace FurnitureStore.Client.Services
             var response = await _httpClient.PostAsync(apiUrl, content);
 
             return response.IsSuccessStatusCode;
+        }
+
+        public async  Task<ProductResponseById> SearchProductByRangeIdAsync(List<Guid> idRange)
+        {
+            string apiUrl = $"{GlobalConfig.PRODUCT_BASE_URL}/search";
+            var response = await _httpClient.PostAsJsonAsync(apiUrl, idRange);
+
+
+            if (response.IsSuccessStatusCode)
+            {
+                string jsonResponse = await response.Content.ReadAsStringAsync();
+                var productResponse = JsonConvert.DeserializeObject<ProductResponseById>(jsonResponse);
+                return productResponse!;
+            }
+
+            return null!;
         }
     }
 }

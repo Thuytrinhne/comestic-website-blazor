@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\FurnitureStore.Shared.csproj": {}
+    "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\FurnitureStore.Shared.csproj": {}
   },
   "projects": {
-    "D:\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\FurnitureStore.Shared.csproj": {
+    "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\FurnitureStore.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\FurnitureStore.Shared.csproj",
+        "projectUniqueName": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\FurnitureStore.Shared.csproj",
         "projectName": "FurnitureStore.Shared",
-        "projectPath": "D:\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\FurnitureStore.Shared.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\obj\\",
+        "projectPath": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\FurnitureStore.Shared.csproj",
+        "packagesPath": "C:\\Users\\mongt\\.nuget\\packages\\",
+        "outputPath": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mongt\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +35,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -78,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

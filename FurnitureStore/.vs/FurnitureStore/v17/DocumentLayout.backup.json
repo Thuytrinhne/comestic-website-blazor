@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\pages\\customer\\ordermanagement\\historyorder.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\pages\\customer\\ordermanagement\\historyorder.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73A906CB-2C43-4C09-AD4A-73E61CD9B7E3}|FurnitureStore.Shared\\FurnitureStore.Shared.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.shared\\dtos\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73A906CB-2C43-4C09-AD4A-73E61CD9B7E3}|FurnitureStore.Shared\\FurnitureStore.Shared.csproj|solutionrelative:furniturestore.shared\\dtos\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73A906CB-2C43-4C09-AD4A-73E61CD9B7E3}|FurnitureStore.Shared\\FurnitureStore.Shared.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.shared\\responses\\productresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73A906CB-2C43-4C09-AD4A-73E61CD9B7E3}|FurnitureStore.Shared\\FurnitureStore.Shared.csproj|solutionrelative:furniturestore.shared\\responses\\productresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\pages\\customer\\ordermanagement\\detailhistoryorder.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\pages\\customer\\ordermanagement\\detailhistoryorder.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\pages\\customer\\detailproduct.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\pages\\customer\\detailproduct.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\services\\iservice\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\services\\iservice\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\pages\\customer\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\pages\\customer\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\pages\\customer\\checkoutaddress\\addaddress.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\pages\\customer\\checkoutaddress\\addaddress.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\pages\\auth\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\pages\\auth\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\pages\\customer\\checkoutaddress\\addfirstaddress.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\pages\\customer\\checkoutaddress\\addfirstaddress.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderItemDto.cs",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\DTOs\\OrderItemDto.cs",
+              "RelativeDocumentMoniker": "FurnitureStore.Shared\\DTOs\\OrderItemDto.cs",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\DTOs\\OrderItemDto.cs",
+              "RelativeToolTip": "FurnitureStore.Shared\\DTOs\\OrderItemDto.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAADwvwkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T11:25:32.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DetailProduct.razor",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\DetailProduct.razor",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Pages\\Customer\\DetailProduct.razor",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\DetailProduct.razor",
+              "RelativeToolTip": "FurnitureStore.Client\\Pages\\Customer\\DetailProduct.razor",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAjwF8AAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T10:51:57.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Home.razor",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\Home.razor",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Pages\\Customer\\Home.razor",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\Home.razor",
+              "RelativeToolTip": "FurnitureStore.Client\\Pages\\Customer\\Home.razor",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAAANwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T10:34:10.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Services\\ProductService.cs",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Services\\ProductService.cs",
+              "RelativeToolTip": "FurnitureStore.Client\\Services\\ProductService.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAewLEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T10:32:06.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Services\\CategoryService.cs",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Services\\CategoryService.cs",
+              "RelativeToolTip": "FurnitureStore.Client\\Services\\CategoryService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBYAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T10:31:49.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DetailHistoryOrder.razor",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\OrderManagement\\DetailHistoryOrder.razor",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Pages\\Customer\\OrderManagement\\DetailHistoryOrder.razor",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\OrderManagement\\DetailHistoryOrder.razor",
+              "RelativeToolTip": "FurnitureStore.Client\\Pages\\Customer\\OrderManagement\\DetailHistoryOrder.razor",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T08:42:17.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HistoryOrder.razor",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\OrderManagement\\HistoryOrder.razor",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Pages\\Customer\\OrderManagement\\HistoryOrder.razor",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\OrderManagement\\HistoryOrder.razor",
+              "RelativeToolTip": "FurnitureStore.Client\\Pages\\Customer\\OrderManagement\\HistoryOrder.razor",
+              "ViewState": "AgIAAEcAAAAAAAAAAADgv1gAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T08:37:11.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Services\\IService\\IProductService.cs",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Services\\IService\\IProductService.cs",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Services\\IService\\IProductService.cs",
+              "RelativeToolTip": "FurnitureStore.Client\\Services\\IService\\IProductService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAD4vw8AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T10:34:14.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductResponse.cs",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\Responses\\ProductResponse.cs",
+              "RelativeDocumentMoniker": "FurnitureStore.Shared\\Responses\\ProductResponse.cs",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Shared\\Responses\\ProductResponse.cs",
+              "RelativeToolTip": "FurnitureStore.Shared\\Responses\\ProductResponse.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T10:56:45.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Services\\AuthService.cs",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Services\\AuthService.cs",
+              "RelativeToolTip": "FurnitureStore.Client\\Services\\AuthService.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAgwFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T11:06:29.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Login.razor",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Auth\\Login.razor",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Pages\\Auth\\Login.razor",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Auth\\Login.razor",
+              "RelativeToolTip": "FurnitureStore.Client\\Pages\\Auth\\Login.razor",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T08:42:22.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Services\\OrderService.cs",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Services\\OrderService.cs",
+              "RelativeToolTip": "FurnitureStore.Client\\Services\\OrderService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAjwC4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T08:37:11.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AddFirstAddress.razor",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\CheckoutAddress\\AddFirstAddress.razor",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Pages\\Customer\\CheckoutAddress\\AddFirstAddress.razor",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\CheckoutAddress\\AddFirstAddress.razor",
+              "RelativeToolTip": "FurnitureStore.Client\\Pages\\Customer\\CheckoutAddress\\AddFirstAddress.razor",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAGcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T08:32:53.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AddAddress.razor",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\CheckoutAddress\\AddAddress.razor",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\Pages\\Customer\\CheckoutAddress\\AddAddress.razor",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Pages\\Customer\\CheckoutAddress\\AddAddress.razor",
+              "RelativeToolTip": "FurnitureStore.Client\\Pages\\Customer\\CheckoutAddress\\AddAddress.razor",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAuwNsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T08:31:56.61Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -19,8 +19,8 @@ namespace FurnitureStore.Client.Services
         {
             string apiUrl =
           $"{GlobalConfig.AUTH_BASE_URL}"+"/otps";
-
-            var response = await _httpClient.PostAsJsonAsync(apiUrl, email);
+            var emailObject = new { Email = email };
+            var response = await _httpClient.PostAsJsonAsync(apiUrl, emailObject);
 
             if (response.IsSuccessStatusCode)
             {
@@ -73,5 +73,24 @@ namespace FurnitureStore.Client.Services
         private async  void PersistUserToBrowser(string token)
             => await _localStorageService.SetItemAsync("authToken", token);
 
+        public async Task<bool> Register(RegisterDto User)
+        {
+            string apiUrl =
+           $"{GlobalConfig.AUTH_BASE_URL}" + "/register";
+            
+            var response = await _httpClient.PostAsJsonAsync(apiUrl, User);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<RegisterResponse>();
+               
+                return result.IsSuccess;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

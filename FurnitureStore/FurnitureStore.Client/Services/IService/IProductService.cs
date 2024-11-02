@@ -13,5 +13,7 @@ namespace FurnitureStore.Client.Services.IService
         Task<ProductResponse> GetProductsByTitle(string title);
         Task<IEnumerable<ProductDTO>> GetProductsByCategoryId(string id);
         Task<ProductResponse> SearchProductByNameAsync(string Name);
+        Task<ProductResponseById> SearchProductByRangeIdAsync(List<Guid> idRange);
+
     }
 }

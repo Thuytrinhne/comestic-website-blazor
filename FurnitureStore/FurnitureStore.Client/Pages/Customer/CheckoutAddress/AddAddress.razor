@@ -1,5 +1,15 @@
 @page "/checkout/add-address"
+@using FurnitureStore.Client.Helpers
 @using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Client.Services
+@using FurnitureStore.Client.Services.IService
+@using FurnitureStore.Shared.DTOs
+@inject LocationService LocationService
+@inject IUserService _userService
+@inject CustomAuthenticationStateProvider _authStateProvider
+@inject NotificationService _notificationService
+@inject NavigationManager navManager
+
 @layout MainLayout
 
 <PageTitle>Home</PageTitle>
@@ -20,13 +30,14 @@
 
 	<div class="checkout_detail">
 		<div class="payment_info">
+            <EditForm Model="@AddressModel" OnValidSubmit="HandleValidSubmit">
+
 			<div class="info">
 				<h1>Thêm địa chỉ mới</h1>
-				<form class="form_info" action="{{route('handle-add-location-checkout')}}" method="POST">
 				
 					<div class="info_input">
 						<label for="">Họ và tên</label><br>
-						<input name="full_name" type="text">
+                        <input @bind="@AddressModel.Name" type="text">
 					
 						<br>
 						<span class="msg-error">{{$message}}</span>
@@ -35,7 +46,7 @@
 
 					<div class="info_input">
 						<label for="">Số điện thoại <span style="color: red;">*</span></label><br>
-						<input name="phone" type="tel">
+                        <input @bind="@AddressModel.Phone" type="tel">
 					
 						<br>
 						<span class="msg-error">{{$message}}</span>
@@ -46,9 +57,12 @@
 					<div class="Location">
 						<div class="info_input">
 							<label for="">Tỉnh/ Thành phố <span style="color: red;">*</span></label><br>
-							<select id="city-select" name="city">
+                            <select id="city-select" name="city" @onchange="OnProvinceChange">
 								<option value="">Chọn khu vực</option>
-
+                                @foreach (var province in Provinces)
+                                {
+                                    <option value="@province.ProvinceID">@province.ProvinceName</option>
+                                }
 							</select>
 						
 							<br>
@@ -58,9 +72,12 @@
 
 						<div class="info_input">
 							<label for="">Quận/ Huyện <span style="color: red;">*</span></label><br>
-							<select id="district-select" name="district">
+                            <select id="district-select" name="district" @onchange="OnDistrictChange">
 								<option value="">Chọn khu vực</option>
-
+                                @foreach (var district in Districts)
+                                {
+                                    <option value="@district.DistrictID">@district.DistrictName</option>
+                                }
 							</select>
 						
 							<br>
@@ -69,9 +86,12 @@
 						</div>
 						<div class="info_input">
 							<label for="">Phường/ Xã <span style="color: red;">*</span></label><br>
-							<select id="ward-select" name="village">
+                            <select id="ward-select" name="village" @onchange="OnWardChange">
 								<option value="">Chọn phường xã</option>
-
+                                @foreach (var ward in Wards)
+                                {
+                                    <option value="@ward.WardID">@ward.WardName</option>
+                                }
 							</select>
 						
 							<br>
@@ -82,17 +102,18 @@
 
 					<div class="info_input">
 						<label for="">Số nhà, tên đường <span style="color: red;">*</span></label><br>
-						<input name="detail_address" type="text">
+                        <input @bind="@AddressModel.DetailAddress" type="text">
 					
 						<br>
 						<span class="msg-error">{{$message}}</span>
 						
 					</div>
 
-					<div class="info_input default-address">
-						<input name="default" value="1" type="radio">
+					@* <div class="info_input default-address">
+
+                        <input name="@AddressModel.Default==1" type="radio" checked>
 						<label for="">Đặt làm địa chỉ mặc định</label><br>
-					</div>
+					</div> *@
 					<div>
 						<button type="button" onclick="backClick()" class="addLocation-btn">
 							Trở lại
@@ -100,14 +121,10 @@
 						<button type="submit" class="addLocation-btn">
 							Thêm địa chỉ
 						</button>
-
 					</div>
-				</form>
-
-
-
 
 			</div>
+            </EditForm>
 
 
 		</div>
@@ -138,3 +155,75 @@
 		return idUserAddressChoosed;
 	}
 </script>
+@code
+{
+    private List<Province> Provinces = new List<Province>();
+    private List<District> Districts = new List<District>();
+    private List<Ward> Wards = new List<Ward>();
+    private UserAddressDTO AddressModel = new UserAddressDTO();
+    private bool IsDefault
+    {
+        get => AddressModel.Default == 1;
+        set => AddressModel.Default = value ? 1 : 0;
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadProvinces();
+    }
+
+    private async Task LoadProvinces()
+    {
+        Provinces = await LocationService.GetProvinces();
+    }
+
+    private async Task OnProvinceChange(ChangeEventArgs e)
+    {
+        var selectedValue = e.Value?.ToString();
+        if (!string.IsNullOrEmpty(selectedValue))
+        {
+
+            Districts = await LocationService.GetDistricts(selectedValue);
+            Wards.Clear();  // Clear wards when a new province is selected
+
+            AddressModel.Province = Provinces.FirstOrDefault(p => p.ProvinceID == selectedValue).ProvinceName;
+            AddressModel.District = string.Empty;
+            AddressModel.Ward = string.Empty;
+        }
+    }
+
+    private async Task OnDistrictChange(ChangeEventArgs e)
+    {
+        var selectedValue = e.Value?.ToString();
+        if (!string.IsNullOrEmpty(selectedValue))
+        {
+            Wards = await LocationService.GetWards(selectedValue);
+            AddressModel.District = Districts.FirstOrDefault(p => p.DistrictID == selectedValue).DistrictName;
+            AddressModel.Ward = string.Empty;
+        }
+    }
+
+    private void OnWardChange(ChangeEventArgs e)
+    {
+        var selectedValue = e.Value?.ToString();
+        if (!string.IsNullOrEmpty(selectedValue))
+        {
+            AddressModel.Ward = Wards.FirstOrDefault(p => p.WardID == selectedValue).WardName;
+        }
+    }
+    private async void HandleValidSubmit()
+    {
+        // Handle form submission here
+        var result = await _userService.AddUserAddress(AddressModel, _authStateProvider.CurrentUser.Id);
+        if (result)
+        {
+            await _notificationService.DisplaySuccessMessage("Thêm địa chỉ thành công !");
+            navManager.NavigateTo("/checkout");
+
+        }
+        else
+        {
+            await _notificationService.DisplayErrorMessage("Đã có lỗi xảy ra, bạn vui lòng thử lại nhé ! ");
+        }
+    }
+
+}

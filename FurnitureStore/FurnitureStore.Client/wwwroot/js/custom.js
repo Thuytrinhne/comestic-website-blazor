@@ -5,9 +5,9 @@ jQuery( document ).ready(function( $ ) {
 
 
     
-        $(function() {
-            $( "#tabs" ).tabs();
-        });
+        //$(function() {
+        //    $( "#tabs" ).tabs();
+        //});
 
 
         // Page loading animation

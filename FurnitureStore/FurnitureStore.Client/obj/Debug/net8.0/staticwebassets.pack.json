@@ -1,187 +1,187 @@
 {
   "Files": [
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\obj\\Debug\\net8.0\\compressed\\1wmffoqxib.gz",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\obj\\Debug\\net8.0\\compressed\\ew1ec2po1j.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FurnitureStore.Client.styles.css",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FurnitureStore.Client.styles.css",
       "PackagePath": "staticwebassets\\FurnitureStore.Client.styles.css"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\base.css",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\base.css",
       "PackagePath": "staticwebassets\\css\\base.css"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\fontawesome.css",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\fontawesome.css",
       "PackagePath": "staticwebassets\\css\\fontawesome.css"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\homepage.css",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\homepage.css",
       "PackagePath": "staticwebassets\\css\\homepage.css"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\favicon.png",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\icon-192.png",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\person_1.jpg",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\person_1.jpg",
       "PackagePath": "staticwebassets\\images\\person_1.jpg"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\person_2.jpg",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\person_2.jpg",
       "PackagePath": "staticwebassets\\images\\person_2.jpg"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\person_3.jpg",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\person_3.jpg",
       "PackagePath": "staticwebassets\\images\\person_3.jpg"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\person_4.jpg",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\person_4.jpg",
       "PackagePath": "staticwebassets\\images\\person_4.jpg"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\slide_01.jpg",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\slide_01.jpg",
       "PackagePath": "staticwebassets\\images\\slide_01.jpg"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\slide_02.jpg",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\slide_02.jpg",
       "PackagePath": "staticwebassets\\images\\slide_02.jpg"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\slide_03.jpg",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\slide_03.jpg",
       "PackagePath": "staticwebassets\\images\\slide_03.jpg"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\why-choose-us-img.jpg",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\images\\why-choose-us-img.jpg",
       "PackagePath": "staticwebassets\\images\\why-choose-us-img.jpg"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\index.html",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\accordions.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\accordions.js",
       "PackagePath": "staticwebassets\\js\\accordions.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\address.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\address.js",
       "PackagePath": "staticwebassets\\js\\address.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\custom.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\custom.js",
       "PackagePath": "staticwebassets\\js\\custom.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\homepage.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\homepage.js",
       "PackagePath": "staticwebassets\\js\\homepage.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\isotope.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\isotope.js",
       "PackagePath": "staticwebassets\\js\\isotope.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\owl.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\owl.js",
       "PackagePath": "staticwebassets\\js\\owl.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\shoppingCart.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\shoppingCart.js",
       "PackagePath": "staticwebassets\\js\\shoppingCart.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\slick.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\slick.js",
       "PackagePath": "staticwebassets\\js\\slick.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\sample-data\\weather.json",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.css",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.css.map",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.min.css",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.js.map",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.min.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.min.js.map",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.js",
       "PackagePath": "staticwebassets\\vendor\\jquery\\jquery.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.min.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.min.js",
       "PackagePath": "staticwebassets\\vendor\\jquery\\jquery.min.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.min.map",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.min.map",
       "PackagePath": "staticwebassets\\vendor\\jquery\\jquery.min.map"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.slim.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.slim.js",
       "PackagePath": "staticwebassets\\vendor\\jquery\\jquery.slim.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.slim.min.js",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.slim.min.js",
       "PackagePath": "staticwebassets\\vendor\\jquery\\jquery.slim.min.js"
     },
     {
-      "Id": "D:\\HK6\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.slim.min.map",
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\vendor\\jquery\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\vendor\\jquery\\jquery.slim.min.map"
     },
     {

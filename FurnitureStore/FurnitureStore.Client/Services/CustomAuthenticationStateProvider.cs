@@ -9,7 +9,6 @@ namespace FurnitureStore.Client.Services
     public class CustomAuthenticationStateProvider 
         : AuthenticationStateProvider
     {
-
         public UserDTO CurrentUser { get; private set; } = new();
         private readonly IAuthService _authService;
         public CustomAuthenticationStateProvider(IAuthService authService)
@@ -47,6 +46,7 @@ namespace FurnitureStore.Client.Services
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(principal)));
             return true;
         }
+
 
     }
 }

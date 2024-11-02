@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FurnitureStore.Shared
-build_property.ProjectDir = D:\comestic-website-blazor\FurnitureStore\FurnitureStore.Shared\
+build_property.ProjectDir = D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Shared\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

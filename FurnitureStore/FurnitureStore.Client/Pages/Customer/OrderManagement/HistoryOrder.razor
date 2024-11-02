@@ -3,9 +3,12 @@
 @using FurnitureStore.Client.IServices
 @using FurnitureStore.Client.Layout.Customer
 @using FurnitureStore.Client.Services
+@using FurnitureStore.Client.Services.IService
+@using FurnitureStore.Shared.DTOs
 @using FurnitureStore.Shared.Enums
 @using Ordering.Application.Dtos
 @inject IOrderService OrderService
+@inject IProductService ProductService
 @inject CustomAuthenticationStateProvider _authStateProvider
 @inject NotificationService NotiService
 
@@ -24,113 +27,135 @@
                 <hr class="body-user-display-line">
                 <div class="body-user-display-container">
                     <div class="item_order grid">
-			@if (HistoryOrders is not null && HistoryOrders.Count() > 0)
-			{
-				@foreach (var order in HistoryOrders)
-				{
-					<div class="item_order-title">
-						<a class="item_order-title-link" href="">
+			    @if (HistoryOrders is not null && HistoryOrders.Count() > 0)
+			    {
+				    @foreach (var order in HistoryOrders)
+				    {
+					    <div class="item_order-title">
+						    <a class="item_order-title-link" href="">
 
-							<div>
-								Mã đơn hàng:
-								<span>@order.Id</span> | Đặt ngày:
-								<span>@order.DateOrder</span>
-								| Thanh toán:
-								@if (@order.Payment.PaymentMethod == 1)
-								{
-									<span>Tiền mặt</span>
-								}else
-								{
-									<span>VNPAY</span>
+							    <div>
+								    Mã đơn hàng:
+								    <span>@order.Id</span> | Đặt ngày:
+								    <span>@order.DateOrder</span>
+								    | Thanh toán:
+								    @if (@order.Payment.PaymentMethod == 1)
+								    {
+									    <span>Tiền mặt</span>
+								    }else
+								    {
+									    <span>VNPAY</span>
 
-								}
+								    }
 
-							</div>
-							<div class="item_order-status">
-								<span class="item_order-status">
-									@switch (@order.Status)
-									{
+							    </div>
+							    <div class="item_order-status">
+								    <span class="item_order-status">
+									    @switch (@order.Status)
+									    {
 
-										case OrderStatus.Pending:
-											<p>Chờ xác nhận</p>
-											break;
-										case OrderStatus.Shipping:
-											<p>Đang vận chuyển</p>
-											break;
-										case OrderStatus.Completed:
-											<p>Thành công</p>
-											break;
-										case OrderStatus.Cancelled:
-											<p>Đã hủy</p>
-											break;
-										default:
-											<p>Không hợp lệ</p>
-											break;
-									}
+										    case OrderStatus.Pending:
+											    <p>Chờ xác nhận</p>
+											    break;
+										    case OrderStatus.Shipping:
+											    <p>Đang vận chuyển</p>
+											    break;
+										    case OrderStatus.Completed:
+											    <p>Thành công</p>
+											    break;
+										    case OrderStatus.Cancelled:
+											    <p>Đã hủy</p>
+											    break;
+										    default:
+											    <p>Không hợp lệ</p>
+											    break;
+									    }
 									                              
-								</span>
-								<a style="" href="@("/user/detail-order/"+order.Id)">Xem chi tiết</a>
-							</div>
+								    </span>
+								    <a style="" href="@("/user/detail-order/"+order.Id)">Xem chi tiết</a>
+							    </div>
 
-						</a>
+						    </a>
 
-					</div>
-					<div class="item_order-list">
-						@foreach(var item in @order.OrderItems)
-						{
-						<div class="item_order-detail">
-							<div class="item_order-infor">
-								<img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTaaqE97x0BKbCiJAUeWROV61UaMnaWBKt5TrHD0taxr6j6XA4fDcaHYuXZYC_J_FbC9vVGPVYVcuYPdeot_0wV63JU6VOq3d4l_3FyvU5mOM5puaVG2S_ufYVEiQ&usqp=CAc" alt="">
-								<div>
-									<strong class="item_order-infor-name">Nước tẩy trang dịu nhẹ</strong>
-									<div class="item_order-infor-sort">
-										Phân loại hàng: 500ml
-										@*  @if($product->variation_id == 1)
+					    </div>
+					    <div class="item_order-list">
+						    @foreach(var item in @order.OrderItems)
+						    {
+						    <div class="item_order-detail">
+							    <div class="item_order-infor">
+                                    <img src="@item.ImgUrl" alt="">
+								    <div>
+                                        <strong class="item_order-infor-name">@item.Name</strong>
+									    <div class="item_order-infor-sort">
+                                            Phân loại hàng: @item.Description
+										    @*  @if($product->variation_id == 1)
 
-                                        {{$product->name_color }}
+                                            {{$product->name_color }}
 
-                                      @else 
-                                        {{$product->variation_value }}
+                                          @else 
+                                            {{$product->variation_value }}
 
-                                      @endif *@
-									</div>
-										<div class="item_order-infor-sort">x @item.Quantity</div>
-								</div>
-							</div>
-							<div class="item_order-price">
-									@item.Price
-							</div>
-						</div>
-						}
-					</div>
+                                          @endif *@
+									    </div>
+										    <div class="item_order-infor-sort">x @item.Quantity</div>
+								    </div>
+							    </div>
+							    <div class="item_order-price">
+									    @item.Price
+							    </div>
+                            </div>
+                            i++;
+                            }
+					    </div>
 
-					<div class="item_order-btn">
-						@if (@order.Status == OrderStatus.Pending)
-						{
-							<a href="#"
-							   @onclick="@(e => cancelOrder(@order.Id))" @onclick:preventDefault="preventDefault"
-							   class="body-footer-seemore body-footer-delete">Hủy đơn</a>
-						}
-						@if (@order.Status == OrderStatus.Completed)
-						{
-							<a href="{{ route('re-checkout',[$item[0]->cart_id])}}" class="body-footer-seemore body-footer-reorder">Mua lại</a>
-						}
-				</div>
-				}
-			}
-		</div>
+					    <div class="item_order-btn">
+						    @if (@order.Status == OrderStatus.Pending)
+						    {
+							    <a href="#"
+							       @onclick="@(e => cancelOrder(@order.Id))" @onclick:preventDefault="preventDefault"
+							       class="body-footer-seemore body-footer-delete">Hủy đơn</a>
+						    }
+						    @if (@order.Status == OrderStatus.Completed)
+						    {
+							    <a href="{{ route('re-checkout',[$item[0]->cart_id])}}" class="body-footer-seemore body-footer-reorder">Mua lại</a>
+						    }
+				    </div>
+				    }
+			    }
+                else
+                {
+                    <span>Bạn chưa có đơn hàng nào cả, Tiếp tục mua sắm nào !!!</span>
+                }
+		          </div>
                   </div>
                 </div>
             
 @code{
-	bool preventDefault = true;
+    bool preventDefault = true;
+    int i = 0;
 
-	public IEnumerable<OrderDto> HistoryOrders { get; set; } 
-	protected override async Task OnInitializedAsync()
-	{
-		HistoryOrders = await OrderService.GetOrderByCustomerIdAsync(_authStateProvider.CurrentUser.Id);
+    public IEnumerable<OrderDto> HistoryOrders { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        HistoryOrders = await OrderService.GetOrderByCustomerIdAsync(_authStateProvider.CurrentUser.Id);
+        foreach (var order in HistoryOrders)
+        {
+            var productIdList =  order.OrderItems
+                                .Select(item => item.ProductId).ToList();
+            var productNameFrmDb = await ProductService.SearchProductByRangeIdAsync(productIdList.ToList());
+            var RespectiveNameProducts = productNameFrmDb.Products;
+            for ( int i=0;i< order.OrderItems.Count;i++)
+            {
+                order.OrderItems[i].Name = RespectiveNameProducts[i].Name;
+                order.OrderItems[i].ImgUrl = RespectiveNameProducts[i].Image.ImageUrl;
+                order.OrderItems[i].Description = RespectiveNameProducts[i].Description;
 
-	}
+            }
+
+        }
+       
+
+    }
 	public async  Task cancelOrder(Guid OrderId)
 	{
 		var identified = await NotiService.DisplayAreUSureMesssage("Bạn có chắc muốn hủy đơn hàng này không ??? ");
