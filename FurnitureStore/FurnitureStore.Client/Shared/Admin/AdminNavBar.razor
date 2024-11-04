@@ -1,3 +1,15 @@
+@code {
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = default!;
+
+    private string NavLinkMatch(string href)
+    {
+        var currentUri = NavigationManager.Uri;
+        return currentUri.Contains(href, StringComparison.OrdinalIgnoreCase) ? "activeNav" : "";
+    }
+}
+
+
 <div class="container_list">
 	<ul class="list_item">
 		<li class="list_choice">
@@ -19,7 +31,7 @@
 			</a>
 		</li>
 		<li class="list_choice">
-			<a href="/admin/orders" class="order">
+            <a href="/admin/orders" class="order @(NavLinkMatch("/admin/orders"))">
 				<ion-icon name="cart"></ion-icon>
 				Đơn hàng
 			</a>
@@ -37,3 +49,4 @@
 		</li>
 	</ul>
 </div>
+

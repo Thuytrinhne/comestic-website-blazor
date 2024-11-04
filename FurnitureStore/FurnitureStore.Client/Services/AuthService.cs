@@ -48,6 +48,7 @@ namespace FurnitureStore.Client.Services
                 var claimPrincipal = CreateClaimsPrincipalFromToken(result.Token);
                 var user = UserDTO.FromClaimsPrincipal(claimPrincipal);
                 PersistUserToBrowser(result.Token);
+
                 return user;
 
             }

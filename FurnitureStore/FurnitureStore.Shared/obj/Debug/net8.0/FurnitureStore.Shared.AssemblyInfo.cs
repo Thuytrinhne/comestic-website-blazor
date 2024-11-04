@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FurnitureStore.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a17b7f36a53ab5fb424788c8f48ddc05b924efe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c58fbf37bfe007542c4dac9d2835f6d4e06a50b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("FurnitureStore.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FurnitureStore.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

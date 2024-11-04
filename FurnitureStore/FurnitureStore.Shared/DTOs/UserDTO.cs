@@ -16,7 +16,7 @@ namespace FurnitureStore.Shared.DTOs
           
             public List<string> Roles { get; set; } = new();
 
-        public ClaimsPrincipal ToClaimsPrincipal()=>
+            public ClaimsPrincipal ToClaimsPrincipal()=>
     
                 new(new ClaimsIdentity(new Claim[]
             {
@@ -25,9 +25,7 @@ namespace FurnitureStore.Shared.DTOs
                 new (JwtRegisteredClaimNames.Name, Name)
             }.Concat(Roles.Select(r => new Claim(ClaimTypes.Role, r)).ToArray()),
             "Blazor School"));
-
-        
-        public static UserDTO FromClaimsPrincipal(ClaimsPrincipal principal) => new()
+            public static UserDTO FromClaimsPrincipal(ClaimsPrincipal principal) => new()
             {
                 Id= new  Guid (principal.FindFirst(JwtRegisteredClaimNames.Sub)?.Value ?? "" ),
                 Name  = principal.FindFirst(JwtRegisteredClaimNames.Name)?.Value ?? "",

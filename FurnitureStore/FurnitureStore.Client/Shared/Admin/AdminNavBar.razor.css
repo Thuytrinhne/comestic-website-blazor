@@ -114,3 +114,8 @@ body {
     height: 100%;
     max-width: 1930px;
 }
+.activeNav {
+    color: #f78da7 !important;
+    font-weight: bold !important;
+}
+

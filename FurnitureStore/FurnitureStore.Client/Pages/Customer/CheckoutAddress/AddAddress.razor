@@ -40,7 +40,6 @@
                         <input @bind="@AddressModel.Name" type="text">
 					
 						<br>
-						<span class="msg-error">{{$message}}</span>
 						
 					</div>
 
@@ -49,7 +48,7 @@
                         <input @bind="@AddressModel.Phone" type="tel">
 					
 						<br>
-						<span class="msg-error">{{$message}}</span>
+				
 					
 					</div>
 
@@ -66,7 +65,6 @@
 							</select>
 						
 							<br>
-							<span class="msg-error">{{$message}}</span>
 						
 						</div>
 
@@ -81,7 +79,7 @@
 							</select>
 						
 							<br>
-							<span class="msg-error">{{$message}}</span>
+					
 						
 						</div>
 						<div class="info_input">
@@ -95,7 +93,7 @@
 							</select>
 						
 							<br>
-							<span class="msg-error">{{$message}}</span>
+						
 						
 						</div>
 					</div>
@@ -105,7 +103,7 @@
                         <input @bind="@AddressModel.DetailAddress" type="text">
 					
 						<br>
-						<span class="msg-error">{{$message}}</span>
+						
 						
 					</div>
 
@@ -115,7 +113,7 @@
 						<label for="">Đặt làm địa chỉ mặc định</label><br>
 					</div> *@
 					<div>
-						<button type="button" onclick="backClick()" class="addLocation-btn">
+						<button type="button" @onclick="@backClick" class="addLocation-btn">
 							Trở lại
 						</button>
 						<button type="submit" class="addLocation-btn">
@@ -133,28 +131,7 @@
 
 </div>
 <script src="{{asset('Assets/js/address.js')}}"></script>
-<script>
-	function backClick() {
 
-		var idUserAddressChoosed = getIDUserAddressFromCookie();
-		var url = "{{ route('back-choose-location', ['id' => '14']) }}";
-		url = url.replace('14', idUserAddressChoosed);
-		window.location.href = url;
-	}
-	function getIDUserAddressFromCookie() {
-		var cookies = document.cookie.split("; ");
-
-		var idUserAddressChoosed = "";
-		for (var i = 0; i < cookies.length; i++) {
-			var cookie = cookies[i].split("=");
-			if (cookie[0] === "idUserAddressChoosed") {
-				idUserAddressChoosed = decodeURIComponent(cookie[1]);
-				break;
-			}
-		}
-		return idUserAddressChoosed;
-	}
-</script>
 @code
 {
     private List<Province> Provinces = new List<Province>();
@@ -217,13 +194,17 @@
         if (result)
         {
             await _notificationService.DisplaySuccessMessage("Thêm địa chỉ thành công !");
-            navManager.NavigateTo("/checkout");
+            backClick();
 
         }
         else
         {
             await _notificationService.DisplayErrorMessage("Đã có lỗi xảy ra, bạn vui lòng thử lại nhé ! ");
         }
+    }
+    private void backClick()
+    {
+        navManager.NavigateTo("/checkout");
     }
 
 }

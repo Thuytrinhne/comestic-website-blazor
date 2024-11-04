@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h/7ptOWIRPyEWy/4U9FTFsGOlZ9mzeXOUP1yvJs9kHg=",
+  "Hash": "/ia84K8OsL86XHSFo+971mD1Om/Z/v+1YRBAvyM4+ag=",
   "Source": "FurnitureStore.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -8983,6 +8983,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FurnitureStore.Client.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\admin.css",
+      "SourceId": "FurnitureStore.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/admin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin.css"
     },
     {
       "Identity": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\css\\base.css",

@@ -114,3 +114,8 @@ body[b-3rx47dg99l] {
     height: 100%;
     max-width: 1930px;
 }
+.activeNav[b-3rx47dg99l] {
+    color: #f78da7 !important;
+    font-weight: bold !important;
+}
+

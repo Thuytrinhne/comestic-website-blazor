@@ -3620,7 +3620,7 @@ a.breadcrumbs__a--active[b-6qltuqvwbs] {
     font-size: 18px;
 }
 
-.form_info .addLocation-btn[b-7lc8t38ck6] {
+.addLocation-btn[b-7lc8t38ck6] {
     outline: none;
     text-decoration: none;
     position: relative;
@@ -6241,6 +6241,11 @@ body[b-3rx47dg99l] {
     height: 100%;
     max-width: 1930px;
 }
+.activeNav[b-3rx47dg99l] {
+    color: #f78da7 !important;
+    font-weight: bold !important;
+}
+
 /* /Shared/Customer/Cart.razor.rz.scp.css */
 .cart p[b-x66fhrtvbm],
 .cart dl[b-x66fhrtvbm] {

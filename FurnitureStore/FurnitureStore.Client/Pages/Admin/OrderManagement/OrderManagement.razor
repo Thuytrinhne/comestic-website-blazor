@@ -8,6 +8,7 @@
 @layout AdminLayout
 
 
+
 <div class="content order">
                 <div class="order_header">
                     <div class="header_title">
@@ -140,10 +141,85 @@
 	public int STT = 0;
 	private OrderStatus? selectedStatus;
 
-
+  
 	protected override async Task OnInitializedAsync()
 	{
+      
 		AllOrdersPagination = await OrderService.GetAllOrdersAsync();
+        // // Tạo danh sách các đơn hàng mẫu
+        // var orders = new List<OrderDto>
+        // {
+        //     new OrderDto(
+        //         id: Guid.NewGuid(),
+        //         customerId: Guid.NewGuid(),
+        //         orderName: "Đơn hàng số 1",
+        //         shippingAddress: new AddressDto
+        //         {
+        //             CustomerName = "Nguyễn Văn A",
+        //             Phone = "0123456789",
+        //             Province = "Thành phố X",
+        //             District = "Quận 1",
+        //             Ward = "Phường B",
+        //             DetailAddress = "123 Đường A"
+        //         },
+        //         billingAddress: new AddressDto
+        //         {
+        //             CustomerName = "Nguyễn Văn A",
+        //             Phone = "0123456789",
+        //             Province = "Thành phố X",
+        //             District = "Quận 1",
+        //             Ward = "Phường B",
+        //             DetailAddress = "456 Đường B"
+        //         },
+        //         payment: new PaymentDto(
+        //             CardName: "Nguyễn Văn A",
+        //             CardNumber: "4111111111111111",
+        //             Expiration: "12/25",
+        //             Cvv: "123",
+        //             PaymentMethod: 1
+        //         ),
+        //         status: OrderStatus.Pending,
+        //         orderItems: new List<OrderItemDto>
+        //         {
+        //             new OrderItemDto
+        //             {
+        //                 OrderId = Guid.NewGuid(),
+        //                 ProductId = Guid.NewGuid(),
+        //                 Quantity = 2,
+        //                 Price = 1500000,
+        //                 Name = "Ghế sofa",
+        //                 ImgUrl = "https://example.com/img/sofa.jpg",
+        //                 Description = "Ghế sofa êm ái cho phòng khách"
+        //             },
+        //             new OrderItemDto
+        //             {
+        //                 OrderId = Guid.NewGuid(),
+        //                 ProductId = Guid.NewGuid(),
+        //                 Quantity = 1,
+        //                 Price = 3000000,
+        //                 Name = "Bàn ăn",
+        //                 ImgUrl = "https://example.com/img/table.jpg",
+        //                 Description = "Bàn ăn gỗ cao cấp"
+        //             }
+        //         },
+        //         note: "Giao hàng trước thứ 7",
+        //         dateOrder: DateTime.Now.AddDays(-3),
+        //         totalPrice: 6000000
+        //     ),
+           
+        //     // Thêm nhiều đơn hàng mẫu khác nếu cần
+        // };
+
+        // // Tạo PaginationResult với dữ liệu mẫu
+        // AllOrdersPagination = new PaginationResult<OrderDto>(
+        //     pageIndex: 1,
+        //     pageSize: 10,
+        //     count: orders.Count,
+        //     data: orders
+        // );
+
+
+
 	}
 	public async Task OnStatusChanged(ChangeEventArgs e)
 	{

@@ -57,11 +57,22 @@
     private string Email { get; set; }
     private string Password { get; set; }
 
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public string ReturnUrl { get; set; }
+
     async Task  sigInOnclick()
     {
         if (await _authStateProvider.LoginAsync(Email, Password))
         {
-            navManager.NavigateTo("/");
+            if (!string.IsNullOrEmpty(ReturnUrl))
+            {
+                navManager.NavigateTo(ReturnUrl);
+            }
+            else
+            {
+                navManager.NavigateTo("/");
+            }
         }
         else
         {

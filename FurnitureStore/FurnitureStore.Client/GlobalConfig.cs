@@ -2,7 +2,7 @@ namespace FurnitureStore.Client
 {
     public class GlobalConfig
     {
-        public const string BASE_URL = "https://40.90.184.129";
+        public const string BASE_URL = "https://20.24.161.57";
         public const string PRODUCT_BASE_URL = $"{BASE_URL}/product-api/products";
         public const string CART_BASE_URL = $"{BASE_URL}/basket-api/basket";
         public const string AUTH_BASE_URL = $"{BASE_URL}/auth-api/auth";
