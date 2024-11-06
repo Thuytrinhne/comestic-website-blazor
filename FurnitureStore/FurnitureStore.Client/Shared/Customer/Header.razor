@@ -74,7 +74,7 @@
 										{
 											<div>
 												<a href="">
-										            <li>Đăng nhập</li>
+										            <li>Đăng nhập nef</li>
 										        </a>
 										<a href="">
 										<li>Đăng ký</li>
@@ -213,12 +213,15 @@
 												<a class="header-auth-subLogin-link" @onclick="@(e => addressManagementClick())" @onclick:preventDefault="preventDefault">
                                                    Địa chỉ giao hàng</a>
 											</div>
+                                             @if (context.User.IsInRole("Admin"))
+    {
                                                 <div class="header-auth-subLogin-item">
                                                     <span class="material-symbols-outlined">
                                                         admin_panel_settings
                                                     </span>
                                                     <a class="header-auth-subLogin-link" @onclick="@(e => AdminClick())" @onclick:preventDefault="preventDefault">Quản lý</a>
                                                 </div>
+    }
 											<div class="header-auth-subLogin-item">
 												<span class="material-symbols-outlined header-auth-subLogin-icon">
 													logout

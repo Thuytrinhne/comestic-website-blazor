@@ -100,6 +100,8 @@ namespace FurnitureStore.Client.Helpers
             {
                 principal = user.ToClaimsPrincipal();
                 CurrentUser = user;
+                // here
+                await GetAuthenticationStateAsync();
             }
             else return false;
 

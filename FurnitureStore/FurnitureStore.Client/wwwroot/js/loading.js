@@ -4,4 +4,5 @@ window.showLoading = function () {
 
 window.hideLoading = function () {
     document.getElementById('loading-spinner').style.display = 'none';
-} 
+}
+

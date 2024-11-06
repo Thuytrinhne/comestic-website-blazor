@@ -10,12 +10,15 @@
 	<div class="row">
         <AdminNavBar></AdminNavBar>
         <div class="col-lg-10 col-md-9 col-sm-12">
-             <AuthorizeView>
+            <AuthorizeView Roles="Admin">
                 <Authorized>
 			@Body
               </Authorized>
-            <NotAuthorized>
-                <RedirectToLogin/>
+           <NotAuthorized>
+                    <div class="alert alert-danger">
+                        <p>Bạn không có quyền truy cập trang này.</p>
+                        <a href="/" class="btn btn-primary">Về trang chủ</a>
+                    </div>
             </NotAuthorized>
         </AuthorizeView>
 		</div>
