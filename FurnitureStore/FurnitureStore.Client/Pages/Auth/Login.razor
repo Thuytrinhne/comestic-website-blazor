@@ -8,6 +8,7 @@
 @inject IAuthService authService
 @inject CustomAuthenticationStateProvider _authStateProvider
 @inject NotificationService _notificationService
+@inject LoadingService LoadingService
 
 
 
@@ -52,15 +53,22 @@
             </div>
         </div>
     </div>
-	@code
+@code
 {
+
     private string Email { get; set; }
     private string Password { get; set; }
 
     [Parameter]
     [SupplyParameterFromQuery]
     public string ReturnUrl { get; set; }
-
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadingService.ExecuteWithLoadingAsync(async () =>
+        {
+          
+        });
+    }
     async Task  sigInOnclick()
     {
         if (await _authStateProvider.LoginAsync(Email, Password))

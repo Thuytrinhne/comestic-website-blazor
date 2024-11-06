@@ -828,6 +828,7 @@
     margin-left: 14px;
     text-decoration: none;
     color: var(--text-color);
+    cursor:pointer;
 }
 
 .header-auth-subLogin-item:hover {

@@ -7,8 +7,7 @@
 @inject NavigationManager navManager
 @inject IProductService ProductServiceDI
 @inject IBasketService BasketServiceDI
-
-
+@inject LoadingService LoadingService
 @layout MainLayout
 
 
@@ -100,7 +99,7 @@
 
   </div>
   <div class="body-footer">
-    <a href="{{ route('products.search') }}" class="body-footer-seemore">Xem tất cả</a>
+    <a href="{{ route('products.search') }}" class="body-footer-seemore">Xem thêm</a>
   </div>
 
   <div class="body-catogory grid" style="overflow: hidden">
@@ -108,7 +107,7 @@
     @*   @foreach($categories as $item) *@
       <div class="body-category-item">
         <a href="{{ route('get.products.by.category',[$item->id]) }}" class="body-category-link">
-					<img src="https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-422209392-1695118797_img_358x358_843626_fit_center.jpg" alt="" class="body-category-img">
+                    <img src="https://rosslyn.vn/cdn/shop/files/son-moi-nhung-li-colorkey-2.jpg?v=1719204125" alt="" class="body-category-img">
           <h3 class="body-category-name">SON MÔI</h3>
         </a>
       </div>
@@ -217,8 +216,12 @@
 
 	protected override async Task OnInitializedAsync()
 	{
+        await LoadingService.ExecuteWithLoadingAsync(async () =>
+         {
+        
 		var latestProducts = await ProductServiceDI.GetLatestProducts(0,20);
 		ProductDtos = latestProducts.ProductDtos;
+         });
 	}
 
 	public void productClick( Guid idProduct, string title)

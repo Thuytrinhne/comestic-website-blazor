@@ -109,12 +109,12 @@
 				{
 					<div class="body-list__item">
 						<div>
-							<a class="body-item-link" href="{{route('products.show',[$product->id])}}">
+                            <a class="body-item-link" href="/product-detail/@item.Title/@item.Id">
 								<img class="body-item-img" src="@item.Image.ImageUrl" alt="">
 							</a>
 						</div> 
 						<div class="body-item-des">
-							<a class="body-item-link" href="{{route('products.show',[$product->id])}}">@item.Name</a>
+                            <a class="body-item-link" href="/product-detail/@item.Title/@item.Id">@item.Name</a>
 							<div class="body-item-price">
 								<span>@item.Price</span>
 							</div>

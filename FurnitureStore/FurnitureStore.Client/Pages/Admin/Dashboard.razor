@@ -1,5 +1,6 @@
 @page "/admin/dashboard"
 @using FurnitureStore.Client.Layout.Admin
+@inject LoadingService LoadingService
 @layout AdminLayout
 
 <div class="container-fluid content dashboard">
@@ -15,7 +16,7 @@
                             <input type="input" placeholder="Tìm kiếm">
                         </div>
                         <div class="col-lg-1 col-sm-2 user_infor">
-                            <img src="/Assets/Images/user-icon.jpg" alt="Ảnh đại diện">
+                <img src="https://static.vecteezy.com/system/resources/previews/043/900/708/non_2x/user-profile-icon-illustration-vector.jpg" alt="Ảnh đại diện">
                             <div class="logout">
                                 <ion-icon name="log-in"></ion-icon>
                                 <a class="logout-link" href="{{route('logout')}}">Đăng xuất</a>
@@ -62,3 +63,13 @@
                 </div>
             </div>
         </div>
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadingService.ExecuteWithLoadingAsync(async () =>
+          {
+          });
+
+    }
+}

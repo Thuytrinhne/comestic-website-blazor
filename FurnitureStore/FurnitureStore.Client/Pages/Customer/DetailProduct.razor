@@ -1,6 +1,5 @@
 @page "/product-detail/{Title}/{ProductId:guid}"
 
-
 @using CurrieTechnologies.Razor.SweetAlert2
 @using FurnitureStore.Client.Helpers
 @using FurnitureStore.Client.Layout.Customer
@@ -285,8 +284,9 @@
 				Tags = CurrentProduct.Tags,
 				Price = CurrentProduct.Price
 			};
+        var currentUser = await _authStateProvider.GetCurrentUserAsync();
 
-		newCart.UserId = _authStateProvider.CurrentUser.Id;
+		newCart.UserId = currentUser.Id;
 		newCart.Items.Add(newCartItem);
 		var success = await BasketServiceDI.StoreShoppingCart(newCart);
 		if (success)

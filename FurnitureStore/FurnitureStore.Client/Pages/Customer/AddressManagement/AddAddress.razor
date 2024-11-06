@@ -161,8 +161,10 @@
 	}
 	private async void HandleValidSubmit()
 	{
+        var currentUser = await _authStateProvider.GetCurrentUserAsync();
+
 		// Handle form submission here
-		var result = await _userService.AddUserAddress(addressModel, _authStateProvider.CurrentUser.Id);
+        var result = await _userService.AddUserAddress(addressModel, currentUser.Id);
 		if (result)
 		{
 			await _notificationService.DisplaySuccessMessage("Thêm địa chỉ thành công !");

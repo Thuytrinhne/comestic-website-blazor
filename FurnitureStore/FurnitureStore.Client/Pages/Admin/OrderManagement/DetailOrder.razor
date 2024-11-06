@@ -7,6 +7,7 @@
 @using Ordering.Application.Dtos
 @inject CustomAuthenticationStateProvider _authStateProvider
 @inject IOrderService OrderService
+@inject LoadingService LoadingService
 @inject NotificationService NotiService
 @layout AdminLayout
 
@@ -206,7 +207,10 @@
 	public OrderDto Order { get; set; } = default!;
 	protected override async Task OnInitializedAsync()
 	{
-		Order = await OrderService.GetOrderByIdAsync(OrderId);
+        await LoadingService.ExecuteWithLoadingAsync(async () =>
+		{
+		   Order = await OrderService.GetOrderByIdAsync(OrderId);
+        });
 	}
 	private async  Task UpdateStatusClick()
 	{

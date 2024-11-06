@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/ia84K8OsL86XHSFo+971mD1Om/Z/v+1YRBAvyM4+ag=",
+  "Hash": "IX5xp7hrMssz8GoLqwAy9+g/YqzQxHoLd5bSEcDKLdk=",
   "Source": "FurnitureStore.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -9401,6 +9401,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\isotope.js"
+    },
+    {
+      "Identity": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\loading.js",
+      "SourceId": "FurnitureStore.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "js/loading.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\loading.js"
     },
     {
       "Identity": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\owl.js",

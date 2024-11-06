@@ -101,6 +101,10 @@
       "PackagePath": "staticwebassets\\js\\isotope.js"
     },
     {
+      "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\loading.js",
+      "PackagePath": "staticwebassets\\js\\loading.js"
+    },
+    {
       "Id": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\owl.js",
       "PackagePath": "staticwebassets\\js\\owl.js"
     },

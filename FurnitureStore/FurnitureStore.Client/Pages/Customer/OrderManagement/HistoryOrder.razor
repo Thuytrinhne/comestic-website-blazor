@@ -6,6 +6,7 @@
 @using FurnitureStore.Client.Services.IService
 @using FurnitureStore.Shared.DTOs
 @using FurnitureStore.Shared.Enums
+@using Microsoft.AspNetCore.Components.Authorization
 @using Ordering.Application.Dtos
 @inject IOrderService OrderService
 @inject IProductService ProductService
@@ -14,7 +15,8 @@
 
 @layout ManagementLayout
 
-
+ <AuthorizeView>
+ <Authorized>
 <div class="body-user-display-myaccount">
                 <div class="body-user-display-header">
                     <a href="{{ route('.front.customer.history-orders')}}" class="body-footer-seemore body-footer-seemore-Active">Tất cả</a>
@@ -129,15 +131,19 @@
 		          </div>
                   </div>
                 </div>
-            
+
+    </Authorized>
+</AuthorizeView>
 @code{
     bool preventDefault = true;
     int i = 0;
 
     public IEnumerable<OrderDto> HistoryOrders { get; set; }
     protected override async Task OnInitializedAsync()
-    {
-        HistoryOrders = await OrderService.GetOrderByCustomerIdAsync(_authStateProvider.CurrentUser.Id);
+    { 
+
+        var currentUser = await _authStateProvider.GetCurrentUserAsync();
+        HistoryOrders = await OrderService.GetOrderByCustomerIdAsync(currentUser.Id);
         foreach (var order in HistoryOrders)
         {
             var productIdList =  order.OrderItems
@@ -170,3 +176,4 @@
 		}
 	}
 }
+ 

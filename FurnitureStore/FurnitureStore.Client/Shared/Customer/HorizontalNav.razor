@@ -1,6 +1,10 @@
+@using FurnitureStore.Client.Helpers
 @using FurnitureStore.Client.Services
+@using Microsoft.AspNetCore.Components.Authorization
+@inject NavigationManager navManager
 @inject CustomAuthenticationStateProvider _authStateProvider
-
+	<AuthorizeView>
+	<Authorized>
 <div class="body-user-feature">
 	<div class="body-user-feature-header">
 		<a href="">
@@ -8,7 +12,7 @@
 		</a>
 		<div class="body-user-infor">
 			<div class="body-user-infor-name">
-				<strong>Chào @_authStateProvider.CurrentUser.Name </strong>
+                <strong> Chào @(NameHelper.GetLastName(context.User.Identity?.Name ?? "khách")) </strong>
 			</div>
 			<div class="body-user-infor-edit">
 				<a href="/user/account" class="body-user-infor-link">Sửa tài khoản</a>
@@ -20,7 +24,7 @@
 	</div>
 
 	<div class="body-user-feature-footer">
-		<div class="body-user-feature-item" onclick="changeMainPageOnClick(`account`)">
+		<div class="body-user-feature-item">
 			<span class="material-symbols-outlined body-user-feature-item-icon  body-user-feature-item-icon--blue">
 				manage_accounts
 			</span>
@@ -30,7 +34,7 @@
 				</span>
 			</a>
 		</div>
-		<div class="body-user-feature-item" onclick="changeMainPageOnClick(`orders`)">
+		<div class="body-user-feature-item" >
 			<span class="material-symbols-outlined body-user-feature-item-icon body-user-feature-item-icon--blue2">
 				list_alt
 			</span>
@@ -39,7 +43,7 @@
 			</a>
 		</div>
 
-		<div class="body-user-feature-item" onclick="changeMainPageOnClick(`location`)">
+		<div class="body-user-feature-item" >
 			<span class="material-symbols-outlined body-user-feature-item-icon body-user-feature-item-icon--orange">
 				distance
 			</span>
@@ -47,14 +51,24 @@
 				<span class="body-user-feature-text">Sổ Địa Chỉ Nhận Hàng</span>
 			</a>
 		</div>
-		<div class="body-user-feature-item" onclick="changeMainPageOnClick(`logout`)">
+		<div class="body-user-feature-item" >
 			<span class="material-symbols-outlined body-user-feature-item-icon body-user-feature-item-icon--yellow">
 				logout
 			</span>
-			<a href="{{route('logout')}}">
+                    <a @onclick="LogoutAsync">
 				<span class="body-user-feature-text">Thoát</span>
 			</a>
 		</div>
 
 	</div>
 </div>
+</Authorized>
+</AuthorizeView>
+@code
+{
+    private async Task LogoutAsync()
+    {
+        await _authStateProvider.LogoutAsync();
+        navManager.NavigateTo("/login");
+    }
+}

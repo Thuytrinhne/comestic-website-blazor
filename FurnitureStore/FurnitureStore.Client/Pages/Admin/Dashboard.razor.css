@@ -85,8 +85,10 @@
 
 .user_infor {
     padding: 5px;
-    background: #f1f1f1;
     border-radius: 50%;
+    width:65px;
+    height: 65px;
+    background:white !important;
 }
 
 .search_box ion-icon {

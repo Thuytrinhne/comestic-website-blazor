@@ -6,6 +6,7 @@
 @layout AuthLayout
 @inject IAuthService authService
 @inject NotificationService _notificationService
+@inject LoadingService LoadingService
 
 
 
@@ -136,9 +137,12 @@
 
     private string ErrorMessage { get; set; }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        // Initialization logic if needed
+        await LoadingService.ExecuteWithLoadingAsync(async () =>
+        {
+            
+        });
     }
 
 

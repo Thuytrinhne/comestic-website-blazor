@@ -46,18 +46,18 @@
 
 <body>
 	<div id="app">
-		<svg class="loading-progress">
-			<circle r="40%" cx="50%" cy="50%" />
-			<circle r="40%" cx="50%" cy="50%" />
-		</svg>
-		<div class="loading-progress-text"></div>
-	</div>
 
-	<div id="blazor-error-ui">
+	</div>
+	<div id="loading-spinner" style="display: none">
+		<div class="loading-spinner">
+			<div class="spinner"></div>
+		</div>
+	</div>
+	<!--<div id="blazor-error-ui">
 		An unhandled error has occurred.
 		<a href="" class="reload">Reload</a>
 		<a class="dismiss">🗙</a>
-	</div>
+	</div>-->
 
 	<script src="_framework/blazor.webassembly.js"></script>
 	<!--trinh link js for banner-->
@@ -70,6 +70,9 @@
 	<script src="_content/CurrieTechnologies.Razor.SweetAlert2/sweetAlert2.min.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+	<!-- Thêm vào cuối body trước </body> -->
+	<script src="js/loading.js"></script>
 
 </body>
 </html>

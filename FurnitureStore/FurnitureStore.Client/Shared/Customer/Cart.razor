@@ -1,3 +1,4 @@
+@using FurnitureStore.Client.Helpers
 @using FurnitureStore.Client.Services
 @using FurnitureStore.Client.Services.IService
 @using FurnitureStore.Shared.DTOs
@@ -70,7 +71,7 @@
 					</div>
 
 				}
-				else if(_authStateProvider.CurrentUser is not null )
+                else if (CurrentUser is not null)
 				{
 					<h5>Giỏ hàng của bạn chưa có gì cả ! Tiếp tục mua sắm cùng HASAKI nhé ! </h5>
 
@@ -90,28 +91,32 @@
 
 @code
 {
-	public void Dispose()
-	{
-		BasketServiceDI.OnChange -= StateHasChanged;
-		BasketServiceDI.OnShowCartChanged -= LoadCartFromDb; // Hủy đăng ký sự kiện
-	}
+    UserDTO CurrentUser = new UserDTO();
 
-	bool preventDefault = true;
+    public void Dispose()
+    {
+        BasketServiceDI.OnChange -= StateHasChanged;
+        BasketServiceDI.OnShowCartChanged -= LoadCartFromDb; // Hủy đăng ký sự kiện
+    }
 
-	public ShoppingCart cart { get; set; }
+    bool preventDefault = true;
 
-	[Parameter]
-	public EventCallback<ShoppingCart> CurrentCartValueChanged { get; set; }
+    public ShoppingCart cart { get; set; }
 
-	protected override async Task OnInitializedAsync()
-	{
-		BasketServiceDI.OnChange += StateHasChanged;
-		BasketServiceDI.OnShowCartChanged += LoadCartFromDb; // Đăng ký sự kiện
-		LoadCartFromDb();
-	}
+    [Parameter]
+    public EventCallback<ShoppingCart> CurrentCartValueChanged { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        BasketServiceDI.OnChange += StateHasChanged;
+        BasketServiceDI.OnShowCartChanged += LoadCartFromDb; // Đăng ký sự kiện
+        LoadCartFromDb();
+        CurrentUser = await  _authStateProvider.GetCurrentUserAsync();
+    }
 	private async void LoadCartFromDb()
 	{
-		cart = await BasketServiceDI.GetCartByUsername(_authStateProvider.CurrentUser.Id);
+
+        cart = await BasketServiceDI.GetCartByUsername(CurrentUser.Id);
 		await CurrentCartValueChanged.InvokeAsync(cart);
 		StateHasChanged();
 	}
@@ -139,7 +144,7 @@
 			}
 		}
 
-		cart = await BasketServiceDI.GetCartByUsername(_authStateProvider.CurrentUser.Id);
+        cart = await BasketServiceDI.GetCartByUsername(CurrentUser.Id);
 		await CurrentCartValueChanged.InvokeAsync(cart);
 	}
 
@@ -155,7 +160,7 @@
 				Price = choosenItem.Price
 			};
 
-		newCart.UserId = _authStateProvider.CurrentUser.Id;
+        newCart.UserId = CurrentUser.Id;
 		newCart.Items.Add(newCartItem);
 		return newCart;
 	}

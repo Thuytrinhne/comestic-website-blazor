@@ -1,4 +1,6 @@
+@using FurnitureStore.Client.Shared
 @using FurnitureStore.Client.Shared.Customer
+@using Microsoft.AspNetCore.Components.Authorization
 @inherits LayoutComponentBase
 @layout MainLayout
 
@@ -7,7 +9,14 @@
 	<div class="body-user-flex">
 		<HorizontalNav></HorizontalNav>
 		<div class="body-user-display">
-			@Body
+            <AuthorizeView>
+                <Authorized>
+			     @Body
+               </Authorized>
+            <NotAuthorized>
+                <RedirectToLogin/>
+            </NotAuthorized>
+        </AuthorizeView>
 		</div>
 	</div>
 </div>

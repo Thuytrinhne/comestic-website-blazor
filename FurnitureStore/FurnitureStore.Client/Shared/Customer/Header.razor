@@ -1,3 +1,5 @@
+@using FurnitureStore.Client.Helpers
+@using Microsoft.AspNetCore.Components.Authorization
 @using FurnitureStore.Client.Services
 @using FurnitureStore.Client.Services.IService
 @inject IBasketService CartService
@@ -26,7 +28,7 @@
 												<div class="header-auth-logined">
 													<div class="nav-link-black nav-link-subLogin">
 														<i class="fa-solid fa-user"></i>
-														Chào Trinh
+														Chào Trinh nè
 													</div>
 													<div class="nav-link-subLogin-user">
 														<div class="header-auth-subLogin">
@@ -55,6 +57,7 @@
 																	</span>
 																	<a class="header-auth-subLogin-link" @onclick="@(e => addressManagementClick())" @onclick:preventDefault="preventDefault">Địa chỉ giao hàng</a>
 																</div>
+                                                                
 																<div class="header-auth-subLogin-item">
 																	<span class="material-symbols-outlined header-auth-subLogin-icon">
 																		logout
@@ -71,14 +74,14 @@
 										{
 											<div>
 												<a href="">
-										<li>Đăng nhập</li>
-										</a>
+										            <li>Đăng nhập</li>
+										        </a>
 										<a href="">
 										<li>Đăng ký</li>
 										</a>
-								</div>
+								            </div>
 										}
-							</a>
+							        </a>
 
 
 
@@ -170,11 +173,14 @@
               <li class="nav-item-align">
                 <img src="https://hasaki.vn/images/graphics/icon_header_2.svg" alt class="loading" data-was-processed="true">
 				<div class="header-auth-login">
-									@if (_authStateProvider.CurrentUser is not null && _authStateProvider.CurrentUser.Id != Guid.Empty)
-									{
+								<AuthorizeView>
+								<Authorized>
 						<div class="header-auth">
 							<div class="header-auth-logined">
-								<div class="nav-link-black nav-link-subLogin">Chào @_authStateProvider.CurrentUser.Name,</div>
+                                    <div class="nav-link-black nav-link-subLogin">
+                                        Chào @(NameHelper.GetLastName(context.User.Identity?.Name ?? "khách")),
+           
+                                    </div>
 								<div class="nav-link-subLogin-user">
 									<div class="nav-link-black nav-link-subLogin">
 										Tài khoản
@@ -186,7 +192,7 @@
 												<span class="material-symbols-outlined header-auth-subLogin-icon">
 													manage_accounts
 												</span>
-												<a class="header-auth-subLogin-link" href="{{route('front.account')}}" onclick="">Tài khoản của bạn</a>
+												<a class="header-auth-subLogin-link" href="/user/account" onclick="">Tài khoản của bạn</a>
 											</div>
 											<div class="header-auth-subLogin-item">
 												<span class="material-symbols-outlined header-auth-subLogin-icon">
@@ -204,28 +210,36 @@
 												<span class="material-symbols-outlined header-auth-subLogin-icon">
 													location_on
 												</span>
-												<a class="header-auth-subLogin-link" @onclick="@(e => addressManagementClick())" @onclick:preventDefault="preventDefault">Địa chỉ giao hàng</a>
+												<a class="header-auth-subLogin-link" @onclick="@(e => addressManagementClick())" @onclick:preventDefault="preventDefault">
+                                                   Địa chỉ giao hàng</a>
 											</div>
+                                                <div class="header-auth-subLogin-item">
+                                                    <span class="material-symbols-outlined">
+                                                        admin_panel_settings
+                                                    </span>
+                                                    <a class="header-auth-subLogin-link" @onclick="@(e => AdminClick())" @onclick:preventDefault="preventDefault">Quản lý</a>
+                                                </div>
 											<div class="header-auth-subLogin-item">
 												<span class="material-symbols-outlined header-auth-subLogin-icon">
 													logout
 												</span>
-												<a class="header-auth-subLogin-link" href="{{route('logout')}}">Thoát</a>
+                                                    <a class="header-auth-subLogin-link" @onclick="LogoutAsync">Thoát</a>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-									}
-									else
-									{
+                                </Authorized>
+								<NotAuthorized>
 						<div class="header-auth-notlogin">
 							<a class="nav-link-black" href="/register" target="_blank">Đăng ký</a>
 							<div class="nav-link-line"></div>
 							<a class="nav-link-black" @onclick="@(e => loginClick())" @onclick:preventDefault="preventDefault" target="_blank">Đăng nhập</a>
 						</div>
-									}
+								</NotAuthorized>
+								</AuthorizeView>
+
 				</div>
 
               </li>
@@ -233,13 +247,13 @@
                 <img src="https://hasaki.vn/images/graphics/icon_header_store.svg" alt class="loading" data-was-processed="true">
 				<a class="nav-link active nav-link-white" href="/about-us">Về Chúng Tôi</a>
               </li>
-              <li>
+             @*  <li>
                 <div class="nav-item-frame nav-item-pointer">
                   <a href="{{route('wishlist')}}">
                     <i class="fa-solid fa-heart nav-item__icon"></i>
                   </a>
                 </div>
-              </li>
+              </li> *@
               <li>
 								<a href="#" class="cart-click" @onclick="@(e => cartOnClick())" @onclick:preventDefault="preventDefault">
                   <img id="button_cart_item" class="nav-item-pointer" src="https://hasaki.vn/images/graphics/icon_header_1.svg" alt="">
@@ -270,37 +284,46 @@
 
 @code{
 
-	public bool preventDefault = true;
-	public string keyWord { get; set; }
-	public void cartOnClick()
-	{
-		CartService.ShowCart = true;
-	}
-	public void loginClick()
-	{
-		navManager.NavigateTo("/login");
+    public bool preventDefault = true;
+    public string keyWord { get; set; }
+    public void cartOnClick()
+    {
+        CartService.ShowCart = true;
+    }
+    public void loginClick()
+    {
+        navManager.NavigateTo("/login");
 
-	}
-	public void addressManagementClick()
-	{
-		navManager.NavigateTo("/user/addresses");
+    }
+    public void addressManagementClick()
+    {
+        navManager.NavigateTo("/user/addresses");
 
-	}
-	public void searchProductClick()
-	{
-	
-		navManager.NavigateTo($"/products/{keyWord}");
+    }
+    public void searchProductClick()
+    {
 
-	
+        navManager.NavigateTo($"/products/{keyWord}");
 
-	}
-	 
-	private void HandleKeyPress(KeyboardEventArgs e)
-	{
-		
-		if (e.Key == "Enter")
-		{
-			searchProductClick();
-		}
-	}
+
+
+    }
+
+    private void HandleKeyPress(KeyboardEventArgs e)
+    {
+
+        if (e.Key == "Enter")
+        {
+            searchProductClick();
+        }
+    }
+    private async Task LogoutAsync()
+    {
+        await _authStateProvider.LogoutAsync();
+        navManager.NavigateTo("/login");
+    }
+    private void  AdminClick()
+    {
+        navManager.NavigateTo("/admin/dashboard");
+    }
 }

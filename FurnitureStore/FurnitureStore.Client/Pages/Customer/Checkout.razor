@@ -156,9 +156,11 @@
 	public BasketCheckoutDTO BasketCheckoutDTO = new();
 	protected override async Task OnInitializedAsync()
 	{
+        var currentUser = await _authStateProvider.GetCurrentUserAsync();
+
 		checkCloseCart();
-		Cart = await BasketServiceDI.GetCartByUsername(_authStateProvider.CurrentUser.Id);
-		DefaultAddress = await UserService.GetDefaultUserAddress(_authStateProvider.CurrentUser.Id);
+		Cart = await BasketServiceDI.GetCartByUsername(currentUser.Id);
+		DefaultAddress = await UserService.GetDefaultUserAddress(currentUser.Id);
 	}
 	private void  checkCloseCart()
 	{
@@ -170,8 +172,9 @@
 		var idenfified =await NotificationService.DisplayAreUSureMesssage("Bạn đã kiểm tra lại kỹ thông tin chưa ?");
 		if (idenfified)
 		{
-			
-			BasketCheckoutDTO.CustomerId = _authStateProvider.CurrentUser.Id;
+            var currentUser = await _authStateProvider.GetCurrentUserAsync();
+
+			BasketCheckoutDTO.CustomerId = currentUser.Id;
 			BasketCheckoutDTO.Phone = DefaultAddress.Phone;
 
 			BasketCheckoutDTO.CustomerName = DefaultAddress.Name;
@@ -181,7 +184,7 @@
 			BasketCheckoutDTO.DetailAddress = DefaultAddress.DetailAddress;
 			BasketCheckoutDTO.TotalPrice = Cart.TotalPrice;
 
-			var result = await OrderService.AddOrderAsync(BasketCheckoutDTO, _authStateProvider.CurrentUser.Id);
+			var result = await OrderService.AddOrderAsync(BasketCheckoutDTO, currentUser.Id);
 			if (result)
 			{
 				navManager.NavigateTo("/checkout/success");

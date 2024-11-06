@@ -9,6 +9,7 @@
 @layout AdminLayout
 @inject IJSRuntime JS
 @inject NotificationService  NotiService
+@inject LoadingService LoadingService
 
 
 
@@ -156,8 +157,11 @@
 	private CreateProductRequest ProductToAdd = new(); 
 	protected override async Task OnInitializedAsync()
 	{
-		var latestProducts = await ProductServiceDI.GetLatestProducts(0, 20);
-		ProductDtos = latestProducts.ProductDtos;
+		await LoadingService.ExecuteWithLoadingAsync(async () =>
+		{
+			var latestProducts = await ProductServiceDI.GetLatestProducts(0, 20);
+			ProductDtos = latestProducts.ProductDtos;
+		});
 	}
 
 	private async Task ShowContent(string section)
@@ -170,25 +174,26 @@
 	}
 	private async void HandleAddProduct()
 	{
-		var identified = await NotiService.DisplayAreUSureMesssage("Bạn có chắc chắn muốn thêm sản phẩm không ?");
-		if (identified == true)
-		{
-			ProductToAdd.Title= ProductToAdd.Title.Trim();
-			ProductToAdd.Name= ProductToAdd.Name.Trim();
-			ProductToAdd.CategoryId = new Guid("008ed07c-a28a-4103-893f-abe095d822aa");
-			var result = await ProductServiceDI.CreateProductAsync(ProductToAdd);
-			if (result)
+	        var identified = await NotiService.DisplayAreUSureMesssage("Bạn có chắc chắn muốn thêm sản phẩm không ?");
+			if (identified)
 			{
-
-				await NotiService.DisplaySuccessMessage("Thêm sản phẩm thành công");
-				await OnInitializedAsync();
+            
+				ProductToAdd.Title = ProductToAdd.Title.Trim();
+				ProductToAdd.Name = ProductToAdd.Name.Trim();
+				ProductToAdd.CategoryId = new Guid("008ed07c-a28a-4103-893f-abe095d822aa");
+				var result = await ProductServiceDI.CreateProductAsync(ProductToAdd);
+				if (result)
+				{
+					await NotiService.DisplaySuccessMessage("Thêm sản phẩm thành công");
+					await OnInitializedAsync();
+				}
+				else
+				{
+					await NotiService.DisplayErrorMessage("Đã có lỗi trong quá trình thêm. Vui lòng thử lại nhé ! ");
+				}
+           
 			}
-			else
-			{
-				await NotiService.DisplayErrorMessage("Đã có lỗi trong quá trình thêm. Vui lòng thử lại nhé ! ");
-
-			}
-		}
+	
 	}
 
 

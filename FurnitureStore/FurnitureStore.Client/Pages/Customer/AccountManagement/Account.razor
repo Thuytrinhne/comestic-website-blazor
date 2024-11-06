@@ -1,12 +1,11 @@
 @page "/user/account"
 @using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Client.Shared
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
 @layout ManagementLayout
-@attribute [Authorize]
 
-<AuthorizeView>
-    <Authorized>
+
         <div class="body-user-display-myaccount">
             <div class="body-user-display-header1">
                 <div class="body-user-display-title1">Tài Khoản Của Tôi</div>
@@ -89,10 +88,5 @@
 
             </div>
         </div>
-    </Authorized>
-    <NotAuthorized>
-        <RedirectToLogin />
-    </NotAuthorized>
-</AuthorizeView>
-
+ 
 
