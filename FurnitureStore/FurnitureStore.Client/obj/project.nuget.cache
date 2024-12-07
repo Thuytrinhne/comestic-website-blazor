@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nvAFhnF4jUo=",
+  "dgSpecHash": "9W+Y4C8OH2M=",
   "success": true,
   "projectFilePath": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\FurnitureStore.Client.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,6 @@
     "C:\\Users\\mongt\\.nuget\\packages\\microsoft.aspnetcore.components.web\\8.0.6\\microsoft.aspnetcore.components.web.8.0.6.nupkg.sha512",
     "C:\\Users\\mongt\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.6\\microsoft.aspnetcore.components.webassembly.8.0.6.nupkg.sha512",
     "C:\\Users\\mongt\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\8.0.6\\microsoft.aspnetcore.components.webassembly.devserver.8.0.6.nupkg.sha512",
-    "C:\\Users\\mongt\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\mongt\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.10\\microsoft.aspnetcore.metadata.8.0.10.nupkg.sha512",
     "C:\\Users\\mongt\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\mongt\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

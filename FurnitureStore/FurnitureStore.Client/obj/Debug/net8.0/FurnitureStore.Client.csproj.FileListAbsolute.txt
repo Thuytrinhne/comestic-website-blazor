@@ -1141,15 +1141,12 @@ D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\ne
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.runtime.8.0.10.6b5snodwgo.js
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\FurnitureStore.Client.pdb
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\FurnitureStore.Client.wasm
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\FurnitureStore.Shared.pdb
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\FurnitureStore.Shared.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Forms.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.WebAssembly.wasm
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Http.Features.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Metadata.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.CSharp.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Abstractions.wasm
@@ -1383,7 +1380,6 @@ D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\ne
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.TextWriterTraceListener.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Json.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.Reflection.Primitives.wasm.gz
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\FurnitureStore.Shared.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.Threading.Channels.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.ComponentModel.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.wasm.gz
@@ -1398,7 +1394,6 @@ D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\ne
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.native.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Forms.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.Xml.XPath.wasm.gz
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Http.Features.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.Reflection.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.Collections.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.Memory.wasm.gz
@@ -1504,7 +1499,6 @@ D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\ne
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.Private.DataContractSerialization.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.Cryptography.wasm.gz
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\FurnitureStore.Shared.pdb.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.AppContext.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.DependencyInjection.Abstractions.wasm.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.Ping.wasm.gz
@@ -1571,7 +1565,6 @@ D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\ne
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\Microsoft.AspNetCore.Components.WebAssembly.dll
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Features.dll
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -1773,8 +1766,6 @@ D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\ne
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\icudt_CJK.dat
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\icudt_EFIGS.dat
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\icudt_no_CJK.dat
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\FurnitureStore.Shared.dll
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\bin\Debug\net8.0\FurnitureStore.Shared.pdb
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\FurnitureStore.Client.csproj.AssemblyReference.cache
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\FurnitureStore.Client.GeneratedMSBuildEditorConfig.editorconfig
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\FurnitureStore.Client.AssemblyInfoInputs.cache
@@ -1791,7 +1782,6 @@ D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\ne
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Forms.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Web.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.WebAssembly.wasm
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Http.Features.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Metadata.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\Microsoft.Extensions.Configuration.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\Microsoft.Extensions.Configuration.Abstractions.wasm
@@ -1984,7 +1974,6 @@ D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\ne
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\mscorlib.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\netstandard.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\System.Private.CoreLib.wasm
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\FurnitureStore.Shared.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\webcil\FurnitureStore.Client.wasm
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\blazor.build.boot-extension.json
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\blazor.boot.json
@@ -2040,7 +2029,6 @@ D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\ne
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\9gu3zq9sqi.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\uztwqlmlok.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\5l5dhcv3ld.gz
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\9pcb6x09sv.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\pxqg0um4ih.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\dx68knz1me.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\pj1hiqjf5i.gz
@@ -2242,8 +2230,6 @@ D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\ne
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\nnlpxnqkfj.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\4wa252m0om.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\xzw7vmqswb.gz
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\7524u3aogn.gz
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\s0cvm2onkd.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\jihhe31cc5.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\sk6t64qur5.gz
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\compressed\fveyapdap7.gz

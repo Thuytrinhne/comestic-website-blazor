@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "FurnitureStore.Client",
   "resources": {
-    "hash": "sha256-xzLIh5Lftbnth4g7WJHwjSsdMKIafYzDFMLWat9WNAc=",
+    "hash": "sha256-rVm/Z2ylBbr1LwNdrGZdY/QaVd9+IOUC+gxOk/wRDbQ=",
     "jsModuleNative": {
       "dotnet.native.8.0.10.c9ucepmoeq.js": "sha256-QVxMlY7ohmjgde/bZMA0dlWDAeuUP+tEfkiSdg4DFcE="
     },
@@ -26,7 +26,6 @@
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-akzgy1uAnRG/g4YlT0MwG1bOtrv61SEGE6Sr+AiIkCE=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-Mfv/Wds4tY+jX0AY8lIFtYCYhvXOliEK58jv2q6r2Lk=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-970luUF85QlWsg4VH4Ml/vKhq3i3UQd5s1J1XyUSw6g=",
-      "Microsoft.AspNetCore.Http.Features.wasm": "sha256-Wv/L2DCI0TXDORvAS5pea7Slkttfwv+ZHiwJv2cRvq8=",
       "Microsoft.AspNetCore.Metadata.wasm": "sha256-M6d6kRld7okbnIpnX8hLjwBfs/aIXl7ubpmAdEmiysE=",
       "Microsoft.Extensions.Configuration.wasm": "sha256-UDGEQR7J3WTfzYMgOzxVIBwFQtKEeJvO8UgrWagypdE=",
       "Microsoft.Extensions.Configuration.Abstractions.wasm": "sha256-yNdqbqDWGiJo943D7LPak5xryCBEsNH0wtdiuU1R9VE=",
@@ -219,12 +218,10 @@
       "mscorlib.wasm": "sha256-masKveCdoRSahF99doEQk7H3YN2wHLVIE4M/Zu8OoD8=",
       "netstandard.wasm": "sha256-z1EJOmgVhSpTopn7Tek/0P//MKGF1I3NUD/sh4oLnwY=",
       "System.Private.CoreLib.wasm": "sha256-tuIWpR30u0OoEVtv4pXZ47mEpI2AmFBIyYFPnqDZZfw=",
-      "FurnitureStore.Shared.wasm": "sha256-FwGZt30SThkL1h3q7nc7+sfDSdPXNYg1CZGiF2etDuk=",
-      "FurnitureStore.Client.wasm": "sha256-Qb5KqGeaYqST8zgI7vn/uJCzh0HbOVK9p0FzT+XfmCk="
+      "FurnitureStore.Client.wasm": "sha256-gvZ/PLJ766VfiSqQATtUfE4vb5mEo8m3owqpzhqPomE="
     },
     "pdb": {
-      "FurnitureStore.Shared.pdb": "sha256-hQ2VnzpNWDWueoO+qUr3XAdUW9t/ZVMaO6TqDaYbOw0=",
-      "FurnitureStore.Client.pdb": "sha256-lTnCbwIrY12h31sf32Iw1t2cCNNgDIf0QWnBGtD3GfE="
+      "FurnitureStore.Client.pdb": "sha256-hs3Wry6xv5rxH733Z3nn5Tj2cVHwHPG0QIchy+2UeWg="
     }
   },
   "cacheBootResources": true,
