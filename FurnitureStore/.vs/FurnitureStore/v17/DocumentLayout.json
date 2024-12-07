@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\globalconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\globalconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|d:\\hk7\\comestic-website-blazor\\furniturestore\\furniturestore.client\\helpers\\customauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46DF2B4A-3BD9-4509-9B45-003900A042C1}|FurnitureStore.Client\\FurnitureStore.Client.csproj|solutionrelative:furniturestore.client\\helpers\\customauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,19 +39,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GlobalConfig.cs",
+              "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\GlobalConfig.cs",
+              "RelativeDocumentMoniker": "FurnitureStore.Client\\GlobalConfig.cs",
+              "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\GlobalConfig.cs",
+              "RelativeToolTip": "FurnitureStore.Client\\GlobalConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T03:39:40.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "CustomAuthenticationStateProvider.cs",
               "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Helpers\\CustomAuthenticationStateProvider.cs",
               "RelativeDocumentMoniker": "FurnitureStore.Client\\Helpers\\CustomAuthenticationStateProvider.cs",
               "ToolTip": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Helpers\\CustomAuthenticationStateProvider.cs",
               "RelativeToolTip": "FurnitureStore.Client\\Helpers\\CustomAuthenticationStateProvider.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAYwGYAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T14:55:13.088Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AdminLayout.razor",
               "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Layout\\Admin\\AdminLayout.razor",
               "RelativeDocumentMoniker": "FurnitureStore.Client\\Layout\\Admin\\AdminLayout.razor",
@@ -55,12 +72,11 @@
               "RelativeToolTip": "FurnitureStore.Client\\Layout\\Admin\\AdminLayout.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-06T14:49:00.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T14:49:00.592Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Header.razor",
               "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\Shared\\Customer\\Header.razor",
               "RelativeDocumentMoniker": "FurnitureStore.Client\\Shared\\Customer\\Header.razor",
@@ -68,12 +84,11 @@
               "RelativeToolTip": "FurnitureStore.Client\\Shared\\Customer\\Header.razor",
               "ViewState": "AgIAAN4AAAAAAAAAAAAAACEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-06T14:47:36.76Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T14:47:36.76Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "index.html",
               "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "FurnitureStore.Client\\wwwroot\\index.html",
@@ -81,12 +96,11 @@
               "RelativeToolTip": "FurnitureStore.Client\\wwwroot\\index.html",
               "ViewState": "AgIAADkAAAAAAAAAAAAAAEcAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-11-06T14:46:47.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T14:46:47.363Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "loading.js",
               "DocumentMoniker": "D:\\HK7\\comestic-website-blazor\\FurnitureStore\\FurnitureStore.Client\\wwwroot\\js\\loading.js",
               "RelativeDocumentMoniker": "FurnitureStore.Client\\wwwroot\\js\\loading.js",
@@ -94,8 +108,7 @@
               "RelativeToolTip": "FurnitureStore.Client\\wwwroot\\js\\loading.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-11-06T14:46:34.99Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T14:46:34.99Z"
             }
           ]
         }
