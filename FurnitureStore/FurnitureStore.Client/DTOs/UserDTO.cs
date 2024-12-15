@@ -13,7 +13,9 @@ namespace FurnitureStore.Shared.DTOs
             public Guid Id { get; set; }
             public string Email { get; set; } = "";
             public string Name { get; set; } = "";
-          
+            public string? ImageUrl { get; set; }
+            public int? Gender { get; set; } = null;
+            public DateTime? DOB { get; set; } = null;
             public List<string> Roles { get; set; } = new();
 
             public ClaimsPrincipal ToClaimsPrincipal()=>

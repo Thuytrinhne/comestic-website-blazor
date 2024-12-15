@@ -2011,7 +2011,6 @@ D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\ne
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\scopedcss\Pages\Customer\OrderManagement\DetailHistoryOrder.razor.rz.scp.css
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\scopedcss\Pages\Customer\OrderManagement\HistoryOrder.razor.rz.scp.css
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\scopedcss\Pages\Customer\OrderSuccess.razor.rz.scp.css
-D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\scopedcss\Pages\Customer\ProductDetail.razor.rz.scp.css
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\scopedcss\Pages\Customer\SearchProducts.razor.rz.scp.css
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\scopedcss\Shared\Admin\AdminNavBar.razor.rz.scp.css
 D:\HK7\comestic-website-blazor\FurnitureStore\FurnitureStore.Client\obj\Debug\net8.0\scopedcss\Shared\Customer\Cart.razor.rz.scp.css

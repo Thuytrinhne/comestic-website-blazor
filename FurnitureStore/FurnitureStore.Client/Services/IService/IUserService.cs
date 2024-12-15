@@ -1,3 +1,4 @@
+using FurnitureStore.Client.Requests;
 using FurnitureStore.Shared.DTOs;
 
 namespace FurnitureStore.Client.Services.IService
@@ -10,5 +11,11 @@ namespace FurnitureStore.Client.Services.IService
         Task<bool> AddUserAddress(UserAddressDTO UserAddress , Guid UserId);
         Task<bool> DeleteUserAddress(Guid UserAddressId, Guid UserId);
         Task<bool> UpdateUserAddress(UserAddressDTO UserAddress, Guid UserId);
+
+        Task<UserDTO> GetUserInfor(Guid UserId);
+        Task<bool> UpdateUserAsync(Guid Id, UpdateUserRequest user);
+        Task<bool> UpdateUserImageAsync(Guid Id, UpdateUserImageRequest user);
+
+
     }
 }

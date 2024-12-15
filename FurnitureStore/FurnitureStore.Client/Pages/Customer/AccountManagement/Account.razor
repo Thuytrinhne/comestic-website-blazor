@@ -1,11 +1,18 @@
 @page "/user/account"
+@using FurnitureStore.Client.Helpers
 @using FurnitureStore.Client.Layout.Customer
+@using FurnitureStore.Client.Requests
+@using FurnitureStore.Client.Services.IService
 @using FurnitureStore.Client.Shared
+@using FurnitureStore.Shared.DTOs
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
+@inject CustomAuthenticationStateProvider _authStateProvider
+@inject IUserService UserService
+@inject NotificationService _notificationService
+
+
 @layout ManagementLayout
-
-
         <div class="body-user-display-myaccount">
             <div class="body-user-display-header1">
                 <div class="body-user-display-title1">Tài Khoản Của Tôi</div>
@@ -13,7 +20,7 @@
             </div>
             <hr class="body-user-display-line">
             <div class="body-user-display-container1">
-                <form class="body-user-display-frm" action="{{route('updateInforUser')}}" method="POST">
+        <EditForm Model="@UserInfor" OnValidSubmit="HandleValidSubmit" class="body-user-display-frm">
 
                     <table class="body-user-display-tbl">
                         <tr class="body-user-display-tr">
@@ -21,21 +28,34 @@
                                 <label for="text">Họ và tên</label>
                             </td>
                             <td class="body-user-display-td-input">
-                                <input name="full_name" class="body-user-display-input" type="text" value="{{ Auth::user()->full_name}}">
+                        <input name="full_name" class="body-user-display-input" type="text" @bind="@UserInfor.Name" />
                             </td>
                         </tr>
                         <tr class="body-user-display-tr">
                             <td class="body-user-display-td-label">
                                 <label for="text">Giới tính</label>
                             </td>
+
                             <td class="body-user-display-td-input">
-                                <input class="body-user-display-rdo" type="radio" name="gender" value="0" {{  Auth::user()->sex == '0' ? 'checked' : '' }}>
+                        <InputRadioGroup @bind-Value="UserInfor.Gender">
+
+                            <InputRadio class="body-user-display-rdo" Value="1" />  <span class="body-user-display-rdo-text">Nam</span>
+
+                            <InputRadio class="body-user-display-rdo" Value="2" /> <span class="body-user-display-rdo-text">Nữ</span>
+                           
+                            <InputRadio class="body-user-display-rdo"  Value="3" />   <span class="body-user-display-rdo-text">Khác</span>
+
+                        </InputRadioGroup>
+                              @*   <input class="body-user-display-rdo" type="radio" name="gender" value="0" "@(UserInfor.Gender= =1 ? "checked" : "" )"/>
                                 <span class="body-user-display-rdo-text">Nam</span>
-                                <input class="body-user-display-rdo" type="radio" name="gender" value="1" {{  Auth::user()->sex == '1' ? 'checked' : '' }}>
+
+                        <input class="body-user-display-rdo" type="radio" name="gender" value="1" "@(UserInfor.Gender= =2 ? "checked" : "" )">
                                 <span class="body-user-display-rdo-text">Nữ</span>
-                                <input class="body-user-display-rdo" type="radio" name="gender" value="2" {{  Auth::user()->sex == '2' ? 'checked' : '' }}>
-                                <span class="body-user-display-rdo-text">Khác</span>
+
+                        <input class="body-user-display-rdo" type="radio" name="gender" value="2" "@(UserInfor.Gender= =3 ? "checked" : "" )" />
+                                <span class="body-user-display-rdo-text">Khác</span> *@
                             </td>
+
                         </tr>
 
                         <tr class="body-user-display-tr">
@@ -44,7 +64,7 @@
                             </td>
 
                             <td class="body-user-display-td-input">
-                                <input name="birth" class="body-user-display-input" type="date" value="{{Auth::user()->birth}}" >
+                        <input name="birth" class="body-user-display-input" type="date" value="@FormattedDOB" />
 
                             </td>
                         </tr>
@@ -52,7 +72,7 @@
                     </table>
                     <button class="body-footer-seemore btn-red btn-bottom" type="submit">LƯU THAY ĐỔI</button>
 
-                </form>
+                </EditForm>
                 <div class="line"></div>
                 <div class="security">
                     <div>
@@ -90,3 +110,44 @@
         </div>
  
 
+@code{
+    public UserDTO UserInfor { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        var currentUser = await _authStateProvider.GetCurrentUserAsync();
+        UserInfor = await UserService.GetUserInfor(currentUser.Id);
+    }
+    private async void HandleValidSubmit()
+    {
+        var currentUser = await _authStateProvider.GetCurrentUserAsync();
+        var updateUserRequest = new UpdateUserRequest
+            {
+                Name = UserInfor.Name,
+                Gender = UserInfor.Gender,
+                DOB = UserInfor.DOB
+
+            };
+        // Handle form submission here
+        var result = await UserService.UpdateUserAsync(currentUser.Id, updateUserRequest);
+        if (result)
+        {
+            await _notificationService.DisplaySuccessMessage("Cập nhật thông tin thành công !");
+        }
+        else
+        {
+            await _notificationService.DisplayErrorMessage("Đã có lỗi xảy ra, bạn vui lòng thử lại nhé ! ");
+        }
+    }
+    private string? FormattedDOB
+    {
+        get => UserInfor.DOB?.ToString("yyyy-MM-dd"); // Định dạng DateTime thành yyyy-MM-dd
+        set
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                UserInfor.DOB = DateTime.Parse(value); // Chuyển ngược chuỗi yyyy-MM-dd thành DateTime
+            }
+        }
+    }
+
+}

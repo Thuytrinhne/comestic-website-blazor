@@ -1,3 +1,4 @@
+using FurnitureStore.Client.Requests;
 using FurnitureStore.Client.Services.IService;
 using FurnitureStore.Client.Shared.Customer;
 using FurnitureStore.Shared.DTOs;
@@ -93,11 +94,11 @@ namespace FurnitureStore.Client.Services
             return null!;
         }
 
-        public async  Task<bool> UpdateUserAddress(UserAddressDTO UserAddress, Guid UserId)
+        public async Task<bool> UpdateUserAddress(UserAddressDTO UserAddress, Guid UserId)
         {
-            
-                string apiUrl =
-         $"{GlobalConfig.USER_BASE_URL}/" + UserId + "/addresses";
+
+            string apiUrl =
+     $"{GlobalConfig.USER_BASE_URL}/" + UserId + "/addresses";
             var response = await _httpClient.PatchAsJsonAsync(apiUrl, UserAddress);
             if (response.IsSuccessStatusCode)
             {
@@ -107,6 +108,46 @@ namespace FurnitureStore.Client.Services
             {
                 return false;
             }
+        }
+
+        public async Task<UserDTO> GetUserInfor(Guid UserId)
+        {
+            string apiUrl =
+        $"{GlobalConfig.USER_BASE_URL}/" + UserId;
+            var response = await _httpClient.GetAsync(new Uri(apiUrl));
+
+            if (response.IsSuccessStatusCode)
+            {
+                string jsonResponse = await response.Content.ReadAsStringAsync();
+                var jsonObject = JObject.Parse(jsonResponse);
+                var user = jsonObject["user"].ToObject<UserDTO>();
+                return user!;
+            }
+            return null!;
+        }
+        public async Task<bool> UpdateUserAsync(Guid Id, UpdateUserRequest user)
+        {
+
+            string apiUrl = $"{GlobalConfig.USER_BASE_URL}/" + Id;
+            var response = await _httpClient.PatchAsJsonAsync(apiUrl, user);
+            return response.IsSuccessStatusCode;
+        }
+        public async Task<bool> UpdateUserImageAsync(Guid Id, UpdateUserImageRequest user)
+        {
+
+            string apiUrl = $"{GlobalConfig.USER_BASE_URL}/" + Id+"/Image";
+            using var content = new MultipartFormDataContent();
+
+            if (user.Image != null)
+            {
+                var fileContent = new StreamContent(user.Image.OpenReadStream());
+                fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(user.Image.ContentType);
+                content.Add(fileContent, "Image", user.Image.Name);
+            }
+
+            var response = await _httpClient.PatchAsync(apiUrl, content);
+
+            return response.IsSuccessStatusCode;
         }
     }
 }

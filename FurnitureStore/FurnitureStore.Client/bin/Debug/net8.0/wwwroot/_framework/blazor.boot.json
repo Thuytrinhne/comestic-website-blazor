@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "FurnitureStore.Client",
   "resources": {
-    "hash": "sha256-rVm/Z2ylBbr1LwNdrGZdY/QaVd9+IOUC+gxOk/wRDbQ=",
+    "hash": "sha256-O/0EgIlMbDPniEjXT8IDsoQV8zU1gZ+ewfntbCGdL4U=",
     "jsModuleNative": {
       "dotnet.native.8.0.10.c9ucepmoeq.js": "sha256-QVxMlY7ohmjgde/bZMA0dlWDAeuUP+tEfkiSdg4DFcE="
     },
@@ -218,10 +218,10 @@
       "mscorlib.wasm": "sha256-masKveCdoRSahF99doEQk7H3YN2wHLVIE4M/Zu8OoD8=",
       "netstandard.wasm": "sha256-z1EJOmgVhSpTopn7Tek/0P//MKGF1I3NUD/sh4oLnwY=",
       "System.Private.CoreLib.wasm": "sha256-tuIWpR30u0OoEVtv4pXZ47mEpI2AmFBIyYFPnqDZZfw=",
-      "FurnitureStore.Client.wasm": "sha256-gvZ/PLJ766VfiSqQATtUfE4vb5mEo8m3owqpzhqPomE="
+      "FurnitureStore.Client.wasm": "sha256-Qrn37gYKBbmq7qRcKu6dxWllhXWi+q/enDyEYAG5gc8="
     },
     "pdb": {
-      "FurnitureStore.Client.pdb": "sha256-hs3Wry6xv5rxH733Z3nn5Tj2cVHwHPG0QIchy+2UeWg="
+      "FurnitureStore.Client.pdb": "sha256-2xA42ozGvPtKlG9z34c0PBvi4Z9+AYfIaQFT1X7IFHk="
     }
   },
   "cacheBootResources": true,
